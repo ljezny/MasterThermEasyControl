@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
         }
         
+        ApiManager.sharedInstance.login(userName: "ljezny@gmail.com", password: "") { (response,error) in
+            print(response)
+        }
+        
         return true
     }
 
