@@ -27,8 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
         }
         
-        ApiManager.sharedInstance.login(userName: "ljezny@gmail.com", password: "") { (response,error) in
-            print(response)
+        ApiManager.sharedInstance.login(userName: "ljezny@gmail.com", password: "ba2300514") { (response,error) in
+            ApiManager.sharedInstance.getData(moduleId: response?.modules.first?.id ?? "", completion: { (dataResponse, error) in
+                //print(dataResponse)
+            })
+            //print(response)
         }
         
         return true
