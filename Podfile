@@ -8,5 +8,5 @@ target 'MasterThermEasyControl' do
   use_frameworks!
 
   # Pods for MasterThermEasyControl
-  pod 'HandyJSON', '~> 5.0.0'
+  pod 'HandyJSON', '~> 4.2.0'
 end
