@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApiManager.sharedInstance.login(userName: "ljezny@gmail.com", password: "ba2300514") { (response,error) in
             ApiManager.sharedInstance.getData(moduleId: response?.modules.first?.id ?? "", completion: { (dataResponse, error) in
                 //print(dataResponse)
+                
+                let b = dataResponse?.getDigital(id: 3)
+                let i = dataResponse?.getInteger(id: 202)
+                let a = dataResponse?.getAnalog(id: 441)
             })
             //print(response)
         }
