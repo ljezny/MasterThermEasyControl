@@ -4,25 +4,33 @@ PODS:
     - ReactiveKit (~> 3.10)
   - Differ (1.4.1)
   - HandyJSON (5.0.0)
+  - R.swift (5.0.3):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.1)
   - ReactiveKit (3.12.0)
 
 DEPENDENCIES:
   - Bond
   - HandyJSON (~> 5.0.0)
+  - R.swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Bond
     - Differ
     - HandyJSON
+    - R.swift
+    - R.swift.Library
     - ReactiveKit
 
 SPEC CHECKSUMS:
   Bond: 6abbc33a4cf88e65a0f8b1ba8276ac34584ad897
   Differ: ca4350872e32a1aeedf3d9e2d9e47127833bfa9c
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
+  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   ReactiveKit: 7634cc10d9fb8791f9a87bf60c283fb420db3184
 
-PODFILE CHECKSUM: 91063f70921d691c2985831d5d0ac0c38f0fa856
+PODFILE CHECKSUM: d46b9c468ae7cda088ec9ad496cd21faaf22adde
 
 COCOAPODS: 1.5.3

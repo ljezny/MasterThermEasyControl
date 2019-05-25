@@ -10,4 +10,5 @@ target 'MasterThermEasyControl' do
   # Pods for MasterThermEasyControl
   pod 'HandyJSON', '~> 5.0.0'
   pod 'Bond'
+  pod 'R.swift'
 end

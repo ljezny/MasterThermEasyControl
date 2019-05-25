@@ -9,5 +9,6 @@
 import UIKit
 
 class HeatModel {
-    let 
+    let IS_ENABLED_DPARAM = 0
+    
 }

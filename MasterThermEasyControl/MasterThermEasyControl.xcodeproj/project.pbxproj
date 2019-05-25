@@ -21,6 +21,9 @@
 		56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB142291EA6900277DD7 /* DataResponse.swift */; };
 		56B6CB182293347000277DD7 /* HeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB172293347000277DD7 /* HeatModel.swift */; };
 		56B6CB1A2293386D00277DD7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB192293386D00277DD7 /* Session.swift */; };
+		56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB1B2299CA7400277DD7 /* GradientView.swift */; };
+		56B6CB1F2299CBFC00277DD7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB1E2299CBFC00277DD7 /* R.generated.swift */; };
+		56B6CB222299D81B00277DD7 /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB212299D81B00277DD7 /* Knob.swift */; };
 		57E0CE1F2468A0177449F14C /* Pods_MasterThermEasyControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,9 @@
 		56B6CB142291EA6900277DD7 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
 		56B6CB172293347000277DD7 /* HeatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatModel.swift; sourceTree = "<group>"; };
 		56B6CB192293386D00277DD7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		56B6CB1B2299CA7400277DD7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		56B6CB1E2299CBFC00277DD7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		56B6CB212299D81B00277DD7 /* Knob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
 		E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +67,7 @@
 		56315603228DC6A100C0B8D8 = {
 			isa = PBXGroup;
 			children = (
+				56B6CB1E2299CBFC00277DD7 /* R.generated.swift */,
 				5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */,
 				5631560D228DC6A100C0B8D8 /* Products */,
 				A39C377EABBF02FC7C886D3B /* Pods */,
@@ -79,6 +86,7 @@
 		5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */ = {
 			isa = PBXGroup;
 			children = (
+				56B6CB202299D7F700277DD7 /* Views */,
 				56B6CB162293341F00277DD7 /* Model */,
 				563A281622919E69002A3708 /* Extensions */,
 				563A281322919B9C002A3708 /* API */,
@@ -130,6 +138,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		56B6CB202299D7F700277DD7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56B6CB212299D81B00277DD7 /* Knob.swift */,
+				56B6CB1B2299CA7400277DD7 /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A39C377EABBF02FC7C886D3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +172,7 @@
 			buildConfigurationList = 5631561E228DC6A300C0B8D8 /* Build configuration list for PBXNativeTarget "MasterThermEasyControl" */;
 			buildPhases = (
 				3B09DF2C1CC4054504A166FA /* [CP] Check Pods Manifest.lock */,
+				56B6CB1D2299CAEE00277DD7 /* ShellScript */,
 				56315608228DC6A100C0B8D8 /* Sources */,
 				56315609228DC6A100C0B8D8 /* Frameworks */,
 				5631560A228DC6A100C0B8D8 /* Resources */,
@@ -238,6 +256,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		56B6CB1D2299CAEE00277DD7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		E9406F599A4BFB2E50F5D725 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,6 +286,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -259,6 +296,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,15 +313,18 @@
 			files = (
 				563A281522919BB5002A3708 /* ApiManager.swift in Sources */,
 				56B6CB182293347000277DD7 /* HeatModel.swift in Sources */,
+				56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */,
 				56315622228DC74200C0B8D8 /* MainViewController.swift in Sources */,
 				56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */,
 				563A281C22919ECE002A3708 /* StringEx.swift in Sources */,
+				56B6CB1F2299CBFC00277DD7 /* R.generated.swift in Sources */,
 				56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */,
 				563A281A22919E92002A3708 /* CharsetEx.swift in Sources */,
 				56B6CB1A2293386D00277DD7 /* Session.swift in Sources */,
 				56315625228DC79D00C0B8D8 /* TemperatureViewController.swift in Sources */,
 				56AC78752291A0C10025D128 /* LoginResponse.swift in Sources */,
 				563A281822919E7C002A3708 /* DictionaryEx.swift in Sources */,
+				56B6CB222299D81B00277DD7 /* Knob.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
