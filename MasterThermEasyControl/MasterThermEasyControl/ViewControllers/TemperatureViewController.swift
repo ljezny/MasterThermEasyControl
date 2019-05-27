@@ -11,11 +11,13 @@ import Bond
 
 class TemperatureViewController: UIViewController {
     @IBOutlet weak var gradientView: GradientView!
-    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var knob: Knob!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.slider.reactive.value.bind(to: gradientView.progress).dispose(in: self.bag)
+        self.knob.value.observeNext {[weak self] (v) in
+            self?.gradientView.progress.value = v
+        }.dispose(in: self.bag)
+       
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 import Bond
-class GradientView: UIView {
+@IBDesignable class GradientView: UIView {
 
     let gl = CAGradientLayer()
     
@@ -29,6 +29,10 @@ class GradientView: UIView {
         }.dispose(in: self.bag)
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
     func setup() {
         gl.colors = [ UIColor.red.cgColor, UIColor.orange.cgColor,UIColor.magenta.cgColor, UIColor.blue.cgColor]
         gl.locations = [ 0.0, 0.0, 0.0, 1.0]

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5617036B229C6B0100629790 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170369229C6B0100629790 /* LoginViewController.swift */; };
+		5617036C229C6B0100629790 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5617036A229C6B0100629790 /* LoginViewController.xib */; };
+		56170373229C76B300629790 /* StyleableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170370229C723500629790 /* StyleableButton.swift */; };
+		56170374229C76B300629790 /* StyleableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617036F229C723500629790 /* StyleableImageView.swift */; };
+		56170375229C76B300629790 /* StyleableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617036E229C723500629790 /* StyleableLabel.swift */; };
+		56170376229C76B300629790 /* StyleableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170372229C723500629790 /* StyleableSwitch.swift */; };
+		56170377229C76B300629790 /* StyleableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170371229C723500629790 /* StyleableTextField.swift */; };
+		5617037A229C78AA00629790 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170378229C78AA00629790 /* IntroViewController.swift */; };
+		5617037B229C78AA00629790 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56170379229C78AA00629790 /* IntroViewController.xib */; };
 		56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5631560F228DC6A100C0B8D8 /* AppDelegate.swift */; };
 		56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56315616228DC6A300C0B8D8 /* Assets.xcassets */; };
 		5631561A228DC6A300C0B8D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56315618228DC6A300C0B8D8 /* LaunchScreen.storyboard */; };
@@ -30,6 +39,15 @@
 /* Begin PBXFileReference section */
 		1EB2AABB870DBD7713726A5D /* Pods-MasterThermEasyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl.debug.xcconfig"; sourceTree = "<group>"; };
 		1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterThermEasyControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56170369229C6B0100629790 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5617036A229C6B0100629790 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5617036E229C723500629790 /* StyleableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableLabel.swift; sourceTree = "<group>"; };
+		5617036F229C723500629790 /* StyleableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableImageView.swift; sourceTree = "<group>"; };
+		56170370229C723500629790 /* StyleableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableButton.swift; sourceTree = "<group>"; };
+		56170371229C723500629790 /* StyleableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableTextField.swift; sourceTree = "<group>"; };
+		56170372229C723500629790 /* StyleableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableSwitch.swift; sourceTree = "<group>"; };
+		56170378229C78AA00629790 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		56170379229C78AA00629790 /* IntroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
 		5631560C228DC6A100C0B8D8 /* MasterThermEasyControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterThermEasyControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5631560F228DC6A100C0B8D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56315616228DC6A300C0B8D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +82,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56170366229C6AC200629790 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				56315623228DC79D00C0B8D8 /* TemperatureViewController.swift */,
+				56315624228DC79D00C0B8D8 /* TemperatureViewController.xib */,
+				56170369229C6B0100629790 /* LoginViewController.swift */,
+				5617036A229C6B0100629790 /* LoginViewController.xib */,
+				56170378229C78AA00629790 /* IntroViewController.swift */,
+				56170379229C78AA00629790 /* IntroViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5617036D229C71D300629790 /* Styleables */ = {
+			isa = PBXGroup;
+			children = (
+				56170370229C723500629790 /* StyleableButton.swift */,
+				5617036F229C723500629790 /* StyleableImageView.swift */,
+				5617036E229C723500629790 /* StyleableLabel.swift */,
+				56170372229C723500629790 /* StyleableSwitch.swift */,
+				56170371229C723500629790 /* StyleableTextField.swift */,
+			);
+			path = Styleables;
+			sourceTree = "<group>";
+		};
 		56315603228DC6A100C0B8D8 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +129,7 @@
 		5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */ = {
 			isa = PBXGroup;
 			children = (
+				56170366229C6AC200629790 /* ViewControllers */,
 				56B6CB202299D7F700277DD7 /* Views */,
 				56B6CB162293341F00277DD7 /* Model */,
 				563A281622919E69002A3708 /* Extensions */,
@@ -95,8 +139,6 @@
 				56315618228DC6A300C0B8D8 /* LaunchScreen.storyboard */,
 				5631561B228DC6A300C0B8D8 /* Info.plist */,
 				56315621228DC74200C0B8D8 /* MainViewController.swift */,
-				56315623228DC79D00C0B8D8 /* TemperatureViewController.swift */,
-				56315624228DC79D00C0B8D8 /* TemperatureViewController.xib */,
 			);
 			path = MasterThermEasyControl;
 			sourceTree = "<group>";
@@ -141,6 +183,7 @@
 		56B6CB202299D7F700277DD7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5617036D229C71D300629790 /* Styleables */,
 				56B6CB212299D81B00277DD7 /* Knob.swift */,
 				56B6CB1B2299CA7400277DD7 /* GradientView.swift */,
 			);
@@ -225,6 +268,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5617036C229C6B0100629790 /* LoginViewController.xib in Resources */,
+				5617037B229C78AA00629790 /* IntroViewController.xib in Resources */,
 				5631561A228DC6A300C0B8D8 /* LaunchScreen.storyboard in Resources */,
 				56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */,
 				56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */,
@@ -312,18 +357,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				563A281522919BB5002A3708 /* ApiManager.swift in Sources */,
+				56170373229C76B300629790 /* StyleableButton.swift in Sources */,
 				56B6CB182293347000277DD7 /* HeatModel.swift in Sources */,
 				56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */,
+				5617036B229C6B0100629790 /* LoginViewController.swift in Sources */,
 				56315622228DC74200C0B8D8 /* MainViewController.swift in Sources */,
 				56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */,
 				563A281C22919ECE002A3708 /* StringEx.swift in Sources */,
 				56B6CB1F2299CBFC00277DD7 /* R.generated.swift in Sources */,
+				5617037A229C78AA00629790 /* IntroViewController.swift in Sources */,
+				56170374229C76B300629790 /* StyleableImageView.swift in Sources */,
 				56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */,
 				563A281A22919E92002A3708 /* CharsetEx.swift in Sources */,
 				56B6CB1A2293386D00277DD7 /* Session.swift in Sources */,
+				56170377229C76B300629790 /* StyleableTextField.swift in Sources */,
 				56315625228DC79D00C0B8D8 /* TemperatureViewController.swift in Sources */,
 				56AC78752291A0C10025D128 /* LoginResponse.swift in Sources */,
 				563A281822919E7C002A3708 /* DictionaryEx.swift in Sources */,
+				56170376229C76B300629790 /* StyleableSwitch.swift in Sources */,
+				56170375229C76B300629790 /* StyleableLabel.swift in Sources */,
 				56B6CB222299D81B00277DD7 /* Knob.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

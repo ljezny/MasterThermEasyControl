@@ -27,7 +27,7 @@
 /// THE SOFTWARE.
 
 import UIKit
-
+import Bond
 class Knob: UIControl {
   /** Contains the minimum value of the receiver. */
   var minimumValue: Float = 0
@@ -36,15 +36,15 @@ class Knob: UIControl {
   var maximumValue: Float = 1
 
   /** Contains the receiver’s current value. */
-  private (set) var value: Float = 0
-
+  let value = Observable<Float>(0)
+    
   /** Sets the receiver’s current value, allowing you to animate the change visually. */
   func setValue(_ newValue: Float, animated: Bool = false) {
-    value = min(maximumValue, max(minimumValue, newValue))
+    value.value = min(maximumValue, max(minimumValue, newValue))
 
     let angleRange = endAngle - startAngle
     let valueRange = maximumValue - minimumValue
-    let angleValue = CGFloat(value - minimumValue) / CGFloat(valueRange) * angleRange + startAngle
+    let angleValue = CGFloat(value.value - minimumValue) / CGFloat(valueRange) * angleRange + startAngle
     renderer.setPointerAngle(angleValue, animated: animated)
   }
 
@@ -135,7 +135,7 @@ class Knob: UIControl {
 private class KnobRenderer {
   var color: UIColor = .white {
     didSet {
-      trackLayer.strokeColor = color.cgColor
+      trackLayer.strokeColor = color.withAlphaComponent(0.4).cgColor
       pointerLayer.strokeColor = color.cgColor
     }
   }
@@ -200,8 +200,6 @@ private class KnobRenderer {
     pointerLayer.strokeColor = color.cgColor
     trackLayer.lineWidth = lineWidth
     pointerLayer.lineWidth = lineWidth
-    trackLayer.cornerRadius = 10
-    pointerLayer.cornerRadius = 10
   }
 
   private func updateTrackLayerPath() {
@@ -212,7 +210,7 @@ private class KnobRenderer {
 
     let ring = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
     trackLayer.path = ring.cgPath
-    
+    trackLayer.lineCap = .round
   }
 
   private func updatePointerLayerPath() {
@@ -222,6 +220,7 @@ private class KnobRenderer {
     pointer.move(to: CGPoint(x: bounds.width - CGFloat(pointerLength) - CGFloat(lineWidth) / 2, y: bounds.midY))
     pointer.addLine(to: CGPoint(x: bounds.width, y: bounds.midY))
     pointerLayer.path = pointer.cgPath
+    pointerLayer.lineCap = .round
   }
 
   func updateBounds(_ bounds: CGRect) {
