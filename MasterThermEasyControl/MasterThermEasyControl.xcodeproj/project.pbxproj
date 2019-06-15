@@ -33,6 +33,14 @@
 		56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB1B2299CA7400277DD7 /* GradientView.swift */; };
 		56B6CB1F2299CBFC00277DD7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB1E2299CBFC00277DD7 /* R.generated.swift */; };
 		56B6CB222299D81B00277DD7 /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB212299D81B00277DD7 /* Knob.swift */; };
+		56D70D8D22B4F60A00F6E156 /* HotWaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */; };
+		56D70D8F22B4F66100F6E156 /* TemperatureModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */; };
+		56D70D9222B503A200F6E156 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9022B503A200F6E156 /* InitialViewController.swift */; };
+		56D70D9322B503A200F6E156 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9122B503A200F6E156 /* InitialViewController.xib */; };
+		56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */; };
+		56D70D9822B512DB00F6E156 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */; };
+		56D70D9A22B5303900F6E156 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9922B5303900F6E156 /* Localizable.strings */; };
+		56D70D9F22B532E700F6E156 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9E22B532E600F6E156 /* AlertUtils.swift */; };
 		57E0CE1F2468A0177449F14C /* Pods_MasterThermEasyControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +75,14 @@
 		56B6CB1B2299CA7400277DD7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		56B6CB1E2299CBFC00277DD7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		56B6CB212299D81B00277DD7 /* Knob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
+		56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotWaterModel.swift; sourceTree = "<group>"; };
+		56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureModelBase.swift; sourceTree = "<group>"; };
+		56D70D9022B503A200F6E156 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		56D70D9122B503A200F6E156 /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
+		56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
+		56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		56D70D9922B5303900F6E156 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		56D70D9E22B532E600F6E156 /* AlertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertUtils.swift; path = ../../../../fixedsmile.ios/fixedsmile/fixedsmile/AlertUtils.swift; sourceTree = "<group>"; };
 		E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +107,8 @@
 				5617036A229C6B0100629790 /* LoginViewController.xib */,
 				56170378229C78AA00629790 /* IntroViewController.swift */,
 				56170379229C78AA00629790 /* IntroViewController.xib */,
+				56D70D9022B503A200F6E156 /* InitialViewController.swift */,
+				56D70D9122B503A200F6E156 /* InitialViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -110,6 +128,7 @@
 		56315603228DC6A100C0B8D8 = {
 			isa = PBXGroup;
 			children = (
+				56D70D9922B5303900F6E156 /* Localizable.strings */,
 				56B6CB1E2299CBFC00277DD7 /* R.generated.swift */,
 				5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */,
 				5631560D228DC6A100C0B8D8 /* Products */,
@@ -129,6 +148,8 @@
 		5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */ = {
 			isa = PBXGroup;
 			children = (
+				56D70D9B22B530DA00F6E156 /* Utils */,
+				56D70D9422B512B300F6E156 /* Keychain */,
 				56170366229C6AC200629790 /* ViewControllers */,
 				56B6CB202299D7F700277DD7 /* Views */,
 				56B6CB162293341F00277DD7 /* Model */,
@@ -176,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				56B6CB172293347000277DD7 /* HeatModel.swift */,
+				56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */,
+				56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +211,23 @@
 				56B6CB1B2299CA7400277DD7 /* GradientView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		56D70D9422B512B300F6E156 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */,
+				56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		56D70D9B22B530DA00F6E156 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				56D70D9E22B532E600F6E156 /* AlertUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A39C377EABBF02FC7C886D3B /* Pods */ = {
@@ -271,8 +311,10 @@
 				5617036C229C6B0100629790 /* LoginViewController.xib in Resources */,
 				5617037B229C78AA00629790 /* IntroViewController.xib in Resources */,
 				5631561A228DC6A300C0B8D8 /* LaunchScreen.storyboard in Resources */,
+				56D70D9A22B5303900F6E156 /* Localizable.strings in Resources */,
 				56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */,
 				56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */,
+				56D70D9322B503A200F6E156 /* InitialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +402,7 @@
 				56170373229C76B300629790 /* StyleableButton.swift in Sources */,
 				56B6CB182293347000277DD7 /* HeatModel.swift in Sources */,
 				56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */,
+				56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */,
 				5617036B229C6B0100629790 /* LoginViewController.swift in Sources */,
 				56315622228DC74200C0B8D8 /* MainViewController.swift in Sources */,
 				56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */,
@@ -367,8 +410,11 @@
 				56B6CB1F2299CBFC00277DD7 /* R.generated.swift in Sources */,
 				5617037A229C78AA00629790 /* IntroViewController.swift in Sources */,
 				56170374229C76B300629790 /* StyleableImageView.swift in Sources */,
+				56D70D8D22B4F60A00F6E156 /* HotWaterModel.swift in Sources */,
 				56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */,
+				56D70D8F22B4F66100F6E156 /* TemperatureModelBase.swift in Sources */,
 				563A281A22919E92002A3708 /* CharsetEx.swift in Sources */,
+				56D70D9222B503A200F6E156 /* InitialViewController.swift in Sources */,
 				56B6CB1A2293386D00277DD7 /* Session.swift in Sources */,
 				56170377229C76B300629790 /* StyleableTextField.swift in Sources */,
 				56315625228DC79D00C0B8D8 /* TemperatureViewController.swift in Sources */,
@@ -376,7 +422,9 @@
 				563A281822919E7C002A3708 /* DictionaryEx.swift in Sources */,
 				56170376229C76B300629790 /* StyleableSwitch.swift in Sources */,
 				56170375229C76B300629790 /* StyleableLabel.swift in Sources */,
+				56D70D9F22B532E700F6E156 /* AlertUtils.swift in Sources */,
 				56B6CB222299D81B00277DD7 /* Knob.swift in Sources */,
+				56D70D9822B512DB00F6E156 /* KeychainPasswordItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

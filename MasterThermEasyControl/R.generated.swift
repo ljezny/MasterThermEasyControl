@@ -16,14 +16,22 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
+    /// Nib `InitialViewController`.
+    static let initialViewController = _R.nib._InitialViewController()
     /// Nib `IntroViewController`.
     static let introViewController = _R.nib._IntroViewController()
     /// Nib `LoginViewController`.
     static let loginViewController = _R.nib._LoginViewController()
     /// Nib `TemperatureViewController`.
     static let temperatureViewController = _R.nib._TemperatureViewController()
+    
+    /// `UINib(name: "InitialViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.initialViewController) instead")
+    static func initialViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.initialViewController)
+    }
     
     /// `UINib(name: "IntroViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.introViewController) instead")
@@ -41,6 +49,10 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.temperatureViewController) instead")
     static func temperatureViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.temperatureViewController)
+    }
+    
+    static func initialViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.initialViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func introViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -71,6 +83,73 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    struct localizable {
+      /// Value: Chyba připojení
+      static let connectionErrorTitle = Rswift.StringResource(key: "connection.error.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: MasterTherm Easy Control
+      static let generalAppname = Rswift.StringResource(key: "general.appname", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: OK
+      static let generalOk = Rswift.StringResource(key: "general.ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Přihlášení se nepodařilo
+      static let unauthorizedTitle = Rswift.StringResource(key: "unauthorized.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
+      static let unauthorizedMessage = Rswift.StringResource(key: "unauthorized.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.
+      static let connectionErrorMessage = Rswift.StringResource(key: "connection.error.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Zkusit znovu
+      static let generalRetry = Rswift.StringResource(key: "general.retry", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Zrušit
+      static let generalCancel = Rswift.StringResource(key: "general.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      
+      /// Value: Chyba připojení
+      static func connectionErrorTitle(_: Void = ()) -> String {
+        return NSLocalizedString("connection.error.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: MasterTherm Easy Control
+      static func generalAppname(_: Void = ()) -> String {
+        return NSLocalizedString("general.appname", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: OK
+      static func generalOk(_: Void = ()) -> String {
+        return NSLocalizedString("general.ok", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Přihlášení se nepodařilo
+      static func unauthorizedTitle(_: Void = ()) -> String {
+        return NSLocalizedString("unauthorized.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
+      static func unauthorizedMessage(_: Void = ()) -> String {
+        return NSLocalizedString("unauthorized.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.
+      static func connectionErrorMessage(_: Void = ()) -> String {
+        return NSLocalizedString("connection.error.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Zkusit znovu
+      static func generalRetry(_: Void = ()) -> String {
+        return NSLocalizedString("general.retry", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Zrušit
+      static func generalCancel(_: Void = ()) -> String {
+        return NSLocalizedString("general.cancel", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
+  }
+  
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -90,6 +169,17 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
+    struct _InitialViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "InitialViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _IntroViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "IntroViewController"

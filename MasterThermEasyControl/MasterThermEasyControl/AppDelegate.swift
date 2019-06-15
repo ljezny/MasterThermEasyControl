@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        UIView.appearance().tintColor = UIColor.white
+        //UIView.appearance().tintColor = UIColor.orange
         
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)
@@ -27,17 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let window = self.window{
             window.rootViewController = mainViewController
             window.makeKeyAndVisible()
-        }
-        
-        ApiManager.sharedInstance.login(userName: "ljezny@gmail.com", password: "ba2300514") { (response,error) in
-            ApiManager.sharedInstance.getData(moduleId: response?.modules.first?.id ?? "", completion: { (dataResponse, error) in
-                //print(dataResponse)
-                
-                let b = dataResponse?.getDigital(id: 3)
-                let i = dataResponse?.getInteger(id: 202)
-                let a = dataResponse?.getAnalog(id: 441)
-            })
-            //print(response)
         }
         
         return true

@@ -13,6 +13,8 @@ class TemperatureViewController: UIViewController {
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var knob: Knob!
     
+   // let model: TemperatureModelBase
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.knob.value.observeNext {[weak self] (v) in
