@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     let login = Observable<String?>("ljezny@gmail.com")
     let password = Observable<String?>("ba2300514")
     
+    weak var mainViewController:MainViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +39,7 @@ class LoginViewController: UIViewController {
                 switch result {
                 case .success:
                     //change view controllers
+                    self.mainViewController?.presentMainApp()
                     break
                 case .unauthorized:
                     self.present(AlertUtils.createNoInternetAlert(), animated: true)

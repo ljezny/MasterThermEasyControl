@@ -40,7 +40,10 @@ class ApiManager: NSObject {
                     }
                 } else {
                     if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8),let response = LoginResponse.deserialize(from: responseString) {
-                        completion(response,nil)
+                        DispatchQueue.main.async {
+                            completion(response,nil)
+                        }
+                        
                     }
                 }
             }
@@ -71,7 +74,9 @@ class ApiManager: NSObject {
                     }
                 } else {
                     if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8),let response = DataResponse.deserialize(from: responseString) {
-                        completion(response,nil)
+                        DispatchQueue.main.async {
+                           completion(response,nil)
+                        }
                     }
                 }
             }

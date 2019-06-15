@@ -10,13 +10,13 @@ import UIKit
 
 class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
 
-    let controllers = [
-        IntroViewController(nib: R.nib.introViewController),
+    var controllers = [UIViewController]()
+    /*IntroViewController(nib: R.nib.introViewController),
         LoginViewController(nib: R.nib.loginViewController),
         TemperatureViewController(nib: R.nib.temperatureViewController),
         TemperatureViewController(nib: R.nib.temperatureViewController),
         TemperatureViewController(nib: R.nib.temperatureViewController),
-        TemperatureViewController(nib: R.nib.temperatureViewController)] as [UIViewController]
+        TemperatureViewController(nib: R.nib.temperatureViewController)] as [UIViewController]*/
     
     init() {
         super.init(transitionStyle: UIPageViewController.TransitionStyle.scroll, navigationOrientation: UIPageViewController.NavigationOrientation.horizontal, options: nil)
@@ -26,17 +26,75 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func presentLogin(direction: UIPageViewController.NavigationDirection) {
+        let loginViewController = LoginViewController(nib: R.nib.loginViewController)
+        loginViewController.mainViewController = self
+        
+        self.controllers.removeAll()
+        self.controllers.append(IntroViewController(nib: R.nib.introViewController))
+        self.controllers.append(loginViewController)
+        if let firstVC = controllers.first {
+            self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
+    func presentMainApp() {
+        Session.shared.loadData { (dataResponse, result) in
+            switch result {
+            case .success:
+                self.controllers.removeAll()
+                self.controllers.append(TemperatureViewController(nib: R.nib.temperatureViewController))
+                self.controllers.append(TemperatureViewController(nib: R.nib.temperatureViewController))
+                if let firstVC = self.controllers.first {
+                    self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+                }
+                break
+            case .connectionError:
+                self.present(AlertUtils.createNoInternetAlert(), animated: true)
+                //TODO: some retry needed
+                break
+            case .unauthorized:
+                self.presentLogin(direction: .reverse)
+                break
+            case .expired:
+                //no op
+                break
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupPageControl()
         
         self.dataSource = self
+        
+        controllers.append(InitialViewController(nib: R.nib.initialViewController))
+        
         if let firstVC = controllers.first {
             self.setViewControllers([firstVC], direction: .forward, animated: false, completion: nil)
         }
         
+        Session.shared.relogin { (result) in
+            switch result {
+            case .success:
+                self.presentMainApp()
+                break
+            case .connectionError:
+                self.present(AlertUtils.createNoInternetAlert(), animated: true)
+                //TODO: some retry needed
+                break
+            case .unauthorized:
+                self.presentLogin(direction: .forward)
+                break
+            case .expired:
+                //no op
+                break
+            }
+        }
     }
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
