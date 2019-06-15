@@ -12,7 +12,7 @@ import Bond
 
     let gl = CAGradientLayer()
     
-    let progress = Observable<Float>(0.0)
+    let progress = Observable<Double>(0.0)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

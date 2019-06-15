@@ -30,21 +30,21 @@ import UIKit
 import Bond
 class Knob: UIControl {
   /** Contains the minimum value of the receiver. */
-  var minimumValue: Float = 0
+  var minimumValue: Double = 0
 
   /** Contains the maximum value of the receiver. */
-  var maximumValue: Float = 1
+  var maximumValue: Double = 1
 
   /** Contains the receiver’s current value. */
-  let value = Observable<Float>(0)
+  let value = Observable<Double?>(nil)
     
   /** Sets the receiver’s current value, allowing you to animate the change visually. */
-  func setValue(_ newValue: Float, animated: Bool = false) {
+  func setValue(_ newValue: Double, animated: Bool = false) {
     value.value = min(maximumValue, max(minimumValue, newValue))
 
     let angleRange = endAngle - startAngle
     let valueRange = maximumValue - minimumValue
-    let angleValue = CGFloat(value.value - minimumValue) / CGFloat(valueRange) * angleRange + startAngle
+    let angleValue = CGFloat((value.value ?? minimumValue) - minimumValue) / CGFloat(valueRange) * angleRange + startAngle
     renderer.setPointerAngle(angleValue, animated: animated)
   }
 
@@ -117,7 +117,7 @@ class Knob: UIControl {
     // 4
     let angleRange = endAngle - startAngle
     let valueRange = maximumValue - minimumValue
-    let angleValue = Float(boundedAngle - startAngle) / Float(angleRange) * valueRange + minimumValue
+    let angleValue = Double(boundedAngle - startAngle) / Double(angleRange) * valueRange + minimumValue
 
     // 5
     setValue(angleValue)

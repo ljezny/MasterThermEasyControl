@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="gradientView" destination="l8I-CC-MbF" id="g9Z-yc-N8p"/>
                 <outlet property="knob" destination="ImN-Oz-lf2" id="guo-g9-lMi"/>
+                <outlet property="realTemperatureLabel" destination="0uH-fA-H88" id="TLe-xD-UIH"/>
+                <outlet property="setTemperatureLabel" destination="oaR-kW-O58" id="drn-KO-XKV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,7 +37,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImN-Oz-lf2" customClass="Knob" customModule="MasterThermEasyControl" customModuleProvider="target">
                                     <rect key="frame" x="87" y="0.0" width="240" height="240"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaR-kW-O58">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaR-kW-O58" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
                                             <rect key="frame" x="87" y="102" width="66" height="36"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,7 +54,7 @@
                                 </view>
                             </subviews>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-fA-H88">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-fA-H88" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="240" width="414" height="578"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

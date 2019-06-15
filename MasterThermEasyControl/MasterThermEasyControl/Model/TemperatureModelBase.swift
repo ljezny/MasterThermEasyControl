@@ -18,4 +18,17 @@ class TemperatureModelBase {
     func updateFromData(response: DataResponse) {
         
     }
+    
+    static func createListFromData(response: DataResponse) -> [TemperatureModelBase] {
+        var result = [TemperatureModelBase]()
+        
+        result.append(HotWaterModel())
+        result.append(HotWaterModel())
+        result.append(HotWaterModel())
+        
+        result.forEach { (m) in
+            m.updateFromData(response: response)
+        }
+        return result
+    }
 }

@@ -18,6 +18,8 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         TemperatureViewController(nib: R.nib.temperatureViewController),
         TemperatureViewController(nib: R.nib.temperatureViewController)] as [UIViewController]*/
     
+    var temperatureControllers = [TemperatureViewController]()
+    
     init() {
         super.init(transitionStyle: UIPageViewController.TransitionStyle.scroll, navigationOrientation: UIPageViewController.NavigationOrientation.horizontal, options: nil)
     }
@@ -42,11 +44,25 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         Session.shared.loadData { (dataResponse, result) in
             switch result {
             case .success:
-                self.controllers.removeAll()
-                self.controllers.append(TemperatureViewController(nib: R.nib.temperatureViewController))
-                self.controllers.append(TemperatureViewController(nib: R.nib.temperatureViewController))
-                if let firstVC = self.controllers.first {
-                    self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+                if let dataResponse = dataResponse {
+                    if self.temperatureControllers.isEmpty {
+                        TemperatureModelBase.createListFromData(response: dataResponse).forEach({ (m) in
+                            let vc = TemperatureViewController(nib: R.nib.temperatureViewController)
+                            vc.model = m
+                            self.temperatureControllers.append(vc)
+                        })
+                        self.controllers.removeAll()
+                        self.temperatureControllers.forEach({ (vc) in
+                            self.controllers.append(vc)
+                        })
+                        if let firstVC = self.controllers.first {
+                            self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+                        }
+                    } else {
+                        self.temperatureControllers.forEach({ (vc) in
+                            vc.model?.updateFromData(response: dataResponse)
+                        })
+                    }
                 }
                 break
             case .connectionError:
@@ -65,6 +81,8 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.black
         
         setupPageControl()
         
