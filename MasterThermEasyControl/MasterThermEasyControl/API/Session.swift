@@ -18,6 +18,7 @@ enum ApiResult {
 
 class Session {
     static let ACCOUNT_USER_DEFAULTS_KEY = "account"
+    static let SHARED_APP_GROUP_KEY = "group.masterthermeasycontrol"
     
     static let shared = Session()
     
@@ -47,8 +48,8 @@ class Session {
     }
     
     func relogin(completion:@escaping (ApiResult)->()) {
-        if let account = UserDefaults.standard.string(forKey: Session.ACCOUNT_USER_DEFAULTS_KEY) {
-            let keychainPasswordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName, account: account)
+        if let account = UserDefaults.init(suiteName: Session.SHARED_APP_GROUP_KEY)?.string(forKey: Session.ACCOUNT_USER_DEFAULTS_KEY) {
+            let keychainPasswordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName, account: account,accessGroup: KeychainConfiguration.accessGroup)
             if let password = try? keychainPasswordItem.readPassword() {
                 self.login(user: account, password: password, completion: completion)
             } else {
@@ -71,14 +72,14 @@ class Session {
     
     func storeCredentials(user: String, password:String) {
         clearCredentials()
-        UserDefaults.standard.set(user,forKey: Session.ACCOUNT_USER_DEFAULTS_KEY)
-        let keychainPasswordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName, account: user)
+        UserDefaults.init(suiteName: Session.SHARED_APP_GROUP_KEY)?.set(user,forKey: Session.ACCOUNT_USER_DEFAULTS_KEY)
+        let keychainPasswordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName, account: user,accessGroup: KeychainConfiguration.accessGroup)
         try? keychainPasswordItem.savePassword(password)
     }
     
     func clearCredentials() {
-        if let account = UserDefaults.standard.string(forKey: Session.ACCOUNT_USER_DEFAULTS_KEY) {
-            let keychainPasswordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName, account: account)
+        if let account = UserDefaults.init(suiteName: Session.SHARED_APP_GROUP_KEY)?.string(forKey: Session.ACCOUNT_USER_DEFAULTS_KEY) {
+            let keychainPasswordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName, account: account,accessGroup: KeychainConfiguration.accessGroup)
             try? keychainPasswordItem.deleteItem()
         }
         UserDefaults.standard.removeObject(forKey: Session.ACCOUNT_USER_DEFAULTS_KEY)

@@ -42,12 +42,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
     /// Image `ic_home`.
     static let ic_home = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_home")
     /// Image `ic_lock`.
     static let ic_lock = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_lock")
+    /// Image `ic_water`.
+    static let ic_water = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_water")
     
     /// `UIImage(named: "ic_home", bundle: ..., traitCollection: ...)`
     static func ic_home(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -57,6 +59,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_lock", bundle: ..., traitCollection: ...)`
     static func ic_lock(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_lock, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_water", bundle: ..., traitCollection: ...)`
+    static func ic_water(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_water, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -131,10 +138,14 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 14 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 18 localization keys.
     struct localizable {
+      /// Value: Aktuální
+      static let temperatureReal = Rswift.StringResource(key: "temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Chyba připojení
       static let connectionErrorTitle = Rswift.StringResource(key: "connection.error.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Domov
+      static let heatmodelName = Rswift.StringResource(key: "heatmodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: E-mail
       static let loginEmailPlaceholder = Rswift.StringResource(key: "login.email.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Heslo
@@ -147,12 +158,16 @@ struct R: Rswift.Validatable {
       static let generalOk = Rswift.StringResource(key: "general.ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pokračovat
       static let introContinueButton = Rswift.StringResource(key: "intro.continue.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Požadováno
+      static let temperatureSet = Rswift.StringResource(key: "temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pro přihlášení použijte údaje, které jste obdrželi od firmy MasterTherm a které používáte pro přihlášení na webovém rozhraní nebo v originální aplikaci. Přihlašovací údaje aplikace uloží bezpečně do tzv. klíčenky a Vaše heslo bude posíláno bezpečně přes šifrované spojení. Vaše údaje aplikace dále nijak nezpracovává.
       static let loginMessage = Rswift.StringResource(key: "login.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Přihlásit
       static let loginButton = Rswift.StringResource(key: "login.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Přihlášení se nepodařilo
       static let unauthorizedTitle = Rswift.StringResource(key: "unauthorized.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Teplá užitková voda
+      static let hotwatermodelName = Rswift.StringResource(key: "hotwatermodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
       static let unauthorizedMessage = Rswift.StringResource(key: "unauthorized.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.
@@ -162,9 +177,19 @@ struct R: Rswift.Validatable {
       /// Value: Zrušit
       static let generalCancel = Rswift.StringResource(key: "general.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       
+      /// Value: Aktuální
+      static func temperatureReal(_: Void = ()) -> String {
+        return NSLocalizedString("temperature.real", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: Chyba připojení
       static func connectionErrorTitle(_: Void = ()) -> String {
         return NSLocalizedString("connection.error.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Domov
+      static func heatmodelName(_: Void = ()) -> String {
+        return NSLocalizedString("heatmodel.name", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: E-mail
@@ -197,6 +222,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("intro.continue.button", bundle: R.hostingBundle, comment: "")
       }
       
+      /// Value: Požadováno
+      static func temperatureSet(_: Void = ()) -> String {
+        return NSLocalizedString("temperature.set", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: Pro přihlášení použijte údaje, které jste obdrželi od firmy MasterTherm a které používáte pro přihlášení na webovém rozhraní nebo v originální aplikaci. Přihlašovací údaje aplikace uloží bezpečně do tzv. klíčenky a Vaše heslo bude posíláno bezpečně přes šifrované spojení. Vaše údaje aplikace dále nijak nezpracovává.
       static func loginMessage(_: Void = ()) -> String {
         return NSLocalizedString("login.message", bundle: R.hostingBundle, comment: "")
@@ -210,6 +240,11 @@ struct R: Rswift.Validatable {
       /// Value: Přihlášení se nepodařilo
       static func unauthorizedTitle(_: Void = ()) -> String {
         return NSLocalizedString("unauthorized.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Teplá užitková voda
+      static func hotwatermodelName(_: Void = ()) -> String {
+        return NSLocalizedString("hotwatermodel.name", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
@@ -261,6 +296,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try _IntroViewController.validate()
       try _LoginViewController.validate()
+      try _TemperatureViewController.validate()
     }
     
     struct _InitialViewController: Rswift.NibResourceType {
@@ -308,12 +344,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _TemperatureViewController: Rswift.NibResourceType {
+    struct _TemperatureViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "TemperatureViewController"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_home' is used in nib 'TemperatureViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}

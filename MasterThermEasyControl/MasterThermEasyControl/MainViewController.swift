@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
 
-    var controllers = [UIViewController]()
+    var controllers = [PageBaseViewController]()
     /*IntroViewController(nib: R.nib.introViewController),
         LoginViewController(nib: R.nib.loginViewController),
         TemperatureViewController(nib: R.nib.temperatureViewController),
@@ -32,11 +32,20 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         let loginViewController = LoginViewController(nib: R.nib.loginViewController)
         loginViewController.mainViewController = self
         
+        let introViewController = IntroViewController(nib: R.nib.introViewController)
+        introViewController.mainViewController = self
+        
         self.controllers.removeAll()
-        self.controllers.append(IntroViewController(nib: R.nib.introViewController))
+        self.controllers.append(introViewController)
         self.controllers.append(loginViewController)
         if let firstVC = controllers.first {
             self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
+    func goToLast() {
+        if let lastVC = controllers.last {
+            self.setViewControllers([lastVC], direction: .forward, animated: true, completion: nil)
         }
     }
     
@@ -53,6 +62,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
                         })
                         self.controllers.removeAll()
                         self.temperatureControllers.forEach({ (vc) in
+                            vc.mainViewController = self
                             self.controllers.append(vc)
                         })
                         if let firstVC = self.controllers.first {
@@ -139,7 +149,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if let index = controllers.index(of: viewController) {
+        if let index = controllers.index(of: viewController as! PageBaseViewController) {
             if index < controllers.count - 1 {
                 return controllers[index + 1]
             } else {
@@ -150,7 +160,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if let index = controllers.index(of: viewController) {
+        if let index = controllers.index(of: viewController as! PageBaseViewController) {
             if index > 0 {
                 return controllers[index - 1]
             } else {

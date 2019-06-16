@@ -34,56 +34,64 @@
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nCK-lL-gHU">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3kv-Hn-M0Z">
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IDz-65-dut">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lock" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-ex-jUo">
-                                            <rect key="frame" x="44" y="44" width="326" height="42.5"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qy-mR-EdU" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="44" y="98.5" width="326" height="19.5"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login.message"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFN-s7-al2" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="44" y="130" width="326" height="34"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholderKey" value="login.email.placeholder"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgO-EU-oqC" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="44" y="176" width="326" height="34"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholderKey" value="login.password.placeholder"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0f-ay-D8N" customClass="StyleableButton" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="44" y="222" width="326" height="32"/>
-                                            <state key="normal" title="Login"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login.button"/>
-                                            </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="lU0-BZ-awn"/>
-                                            </connections>
-                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3kv-Hn-M0Z">
+                                            <rect key="frame" x="65.5" y="0.0" width="283" height="298"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lock" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-ex-jUo">
+                                                    <rect key="frame" x="44" y="44" width="195" height="42.5"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qy-mR-EdU" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="44" y="98.5" width="195" height="19.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login.message"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFN-s7-al2" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="44" y="130" width="195" height="34"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholderKey" value="login.email.placeholder"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgO-EU-oqC" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="44" y="176" width="195" height="34"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholderKey" value="login.password.placeholder"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0f-ay-D8N" customClass="StyleableButton" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="44" y="222" width="195" height="32"/>
+                                                    <state key="normal" title="Login"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login.button"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="lU0-BZ-awn"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="480" id="amP-04-b0p"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="44" left="44" bottom="44" right="44"/>
+                                        </stackView>
                                     </subviews>
-                                    <edgeInsets key="layoutMargins" top="44" left="44" bottom="44" right="44"/>
                                 </stackView>
                             </subviews>
                         </stackView>

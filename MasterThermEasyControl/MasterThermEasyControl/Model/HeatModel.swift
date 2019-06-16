@@ -27,10 +27,20 @@ class HeatModel : TemperatureModelBase {
         self.is_on_param_id = is_on_param_id
     }*/
     
-    override func updateFromData(response: DataResponse) {
+    override var name: String? {
+        return NSLocalizedString("heatmodel.name", comment: "")
+    }
+    
+    override var icon: String? {
+        return "ic_home"
+    }
+    
+    override func updateFromData(response: DataResponse) -> TemperatureModelBase {
         realTemperature.value = response.getAnalog(id: 211)
-        setTemperature.value = response.getAnalog(id: 210)
+        setTemperature.value = response.getAnalog(id: 191)
         minSetTemperature.value = 10.0//response.getAnalog(id: 296)
         maxSetTemperature.value = 40.0//response.getAnalog(id: 297)
+        
+        return self
     }
 }

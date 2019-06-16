@@ -9,11 +9,15 @@
 import UIKit
 import Bond
 
-class TemperatureViewController: UIViewController {
+class TemperatureViewController: PageBaseViewController {
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var knob: Knob!
     @IBOutlet weak var setTemperatureLabel: UILabel!
     @IBOutlet weak var realTemperatureLabel: UILabel!
+    @IBOutlet weak var minSetTemperatureLabel: StyleableLabel!
+    @IBOutlet weak var maxSetTemperatureLabel: StyleableLabel!
+    @IBOutlet weak var nameLabel: StyleableLabel!
+    @IBOutlet weak var iconImage: UIImageView!
     
     var model: TemperatureModelBase? = nil {
         didSet {
@@ -22,21 +26,38 @@ class TemperatureViewController: UIViewController {
             
             model?.setTemperature.map({ (d) -> String? in
                 if let d = d {
-                    return String(format: "%.1f", d)
+                    return String(format: "%.1f °C", d)
                 }
-                return "--"
+                return "--,- °C"
             }).bind(to: setTemperatureLabel.reactive.text).dispose(in: self.bag)
             model?.realTemperature.map({ (d) -> String? in
                 if let d = d {
-                    return String(format: "%.1f", d)
+                    return String(format: "%.1f °C", d)
                 }
-                return "--"
+                return "--,- °C"
             }).bind(to: realTemperatureLabel.reactive.text).dispose(in: self.bag)
-            
+            model?.minSetTemperature.map({ (d) -> String? in
+                if let d = d {
+                    return String(format: "%.0f °C", d)
+                }
+                return "-- °C"
+            }).bind(to: minSetTemperatureLabel.reactive.text).dispose(in: self.bag)
+            model?.maxSetTemperature.map({ (d) -> String? in
+                if let d = d {
+                    return String(format: "%.0f °C", d)
+                }
+                return "-- °C"
+            }).bind(to: maxSetTemperatureLabel.reactive.text).dispose(in: self.bag)
             self.knob.minimumValue = model?.minSetTemperature.value ?? 0.0
             self.knob.maximumValue = model?.maxSetTemperature.value ?? 1.0
             model?.setTemperature.bidirectionalBind(to: self.knob.value).dispose(in: self.bag)
             self.knob.setValue(model?.setTemperature.value ?? 0.0, animated: true)
+            self.updateGradient(v: model?.realTemperature.value ?? 0.0)
+            self.nameLabel.text = model?.name
+            if let icon = model?.icon {
+               self.iconImage.image = UIImage.init(named: icon)
+            }
+            
         }
     }
     
@@ -45,11 +66,17 @@ class TemperatureViewController: UIViewController {
         
         self.knob.value.observeNext {[weak self] (v) in
             self?.updateGradient(v: v ?? 0.0)
-            }.dispose(in: self.bag)
+            self?.postValue()
+        }.dispose(in: self.bag)
 
     }
     
     func updateGradient(v: Double) {
         self.gradientView.progress.value = v / (self.knob.maximumValue - self.knob.minimumValue)
+    }
+    
+    func postValue() {
+        //api call
+        //dont forget debounce
     }
 }

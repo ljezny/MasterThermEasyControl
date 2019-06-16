@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43349EAEF319198A2181A68B /* Pods_MasterThermEasyControl_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055168DB7882FD99037CBE4F /* Pods_MasterThermEasyControl_Today.framework */; };
 		5617036B229C6B0100629790 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170369229C6B0100629790 /* LoginViewController.swift */; };
 		5617036C229C6B0100629790 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5617036A229C6B0100629790 /* LoginViewController.xib */; };
 		56170373229C76B300629790 /* StyleableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170370229C723500629790 /* StyleableButton.swift */; };
@@ -44,10 +45,63 @@
 		56D70D9822B512DB00F6E156 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */; };
 		56D70D9A22B5303900F6E156 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9922B5303900F6E156 /* Localizable.strings */; };
 		56D70D9F22B532E700F6E156 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9E22B532E600F6E156 /* AlertUtils.swift */; };
+		56D70DA222B6848A00F6E156 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DA122B6848A00F6E156 /* BaseViewController.swift */; };
+		56D70DA422B684A200F6E156 /* PageBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DA322B684A200F6E156 /* PageBaseViewController.swift */; };
+		56D70DAB22B6B6A200F6E156 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D70DAA22B6B6A200F6E156 /* NotificationCenter.framework */; };
+		56D70DAE22B6B6A300F6E156 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DAD22B6B6A300F6E156 /* TodayViewController.swift */; };
+		56D70DB122B6B6A300F6E156 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D70DAF22B6B6A300F6E156 /* MainInterface.storyboard */; };
+		56D70DB522B6B6A300F6E156 /* MasterThermEasyControl.Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 56D70DA922B6B6A200F6E156 /* MasterThermEasyControl.Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		56D70DBA22B6B6DB00F6E156 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB1B2299CA7400277DD7 /* GradientView.swift */; };
+		56D70DBB22B6B73000F6E156 /* StyleableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170370229C723500629790 /* StyleableButton.swift */; };
+		56D70DBC22B6B73000F6E156 /* StyleableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617036F229C723500629790 /* StyleableImageView.swift */; };
+		56D70DBD22B6B73000F6E156 /* StyleableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617036E229C723500629790 /* StyleableLabel.swift */; };
+		56D70DBE22B6B73000F6E156 /* StyleableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170372229C723500629790 /* StyleableSwitch.swift */; };
+		56D70DBF22B6B73000F6E156 /* StyleableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170371229C723500629790 /* StyleableTextField.swift */; };
+		56D70DC022B6C29800F6E156 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E0D4B22B6686900E434AD /* Theme.swift */; };
+		56D70DC122B6C2A700F6E156 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */; };
+		56D70DC422B6C5FD00F6E156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56315616228DC6A300C0B8D8 /* Assets.xcassets */; };
+		56D70DC522B6CB5800F6E156 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A281422919BB5002A3708 /* ApiManager.swift */; };
+		56D70DC622B6CB5800F6E156 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB192293386D00277DD7 /* Session.swift */; };
+		56D70DC722B6CB5F00F6E156 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AC78742291A0C10025D128 /* LoginResponse.swift */; };
+		56D70DC822B6CB5F00F6E156 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB142291EA6900277DD7 /* DataResponse.swift */; };
+		56D70DC922B6CBA100F6E156 /* DictionaryEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A281722919E7B002A3708 /* DictionaryEx.swift */; };
+		56D70DCA22B6CBA100F6E156 /* CharsetEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A281922919E92002A3708 /* CharsetEx.swift */; };
+		56D70DCB22B6CBA100F6E156 /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A281B22919ECE002A3708 /* StringEx.swift */; };
+		56D70DCC22B6CBB000F6E156 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */; };
+		56D70DCD22B6CBB000F6E156 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */; };
+		56D70DCE22B6D14300F6E156 /* HeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB172293347000277DD7 /* HeatModel.swift */; };
+		56D70DCF22B6D14300F6E156 /* HotWaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */; };
+		56D70DD022B6D14300F6E156 /* TemperatureModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */; };
+		56D70DD122B6D74B00F6E156 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9922B5303900F6E156 /* Localizable.strings */; };
 		57E0CE1F2468A0177449F14C /* Pods_MasterThermEasyControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		56D70DB322B6B6A300F6E156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56315604228DC6A100C0B8D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56D70DA822B6B6A200F6E156;
+			remoteInfo = MasterThermEasyControl.Today;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		56D70DB922B6B6A300F6E156 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				56D70DB522B6B6A300F6E156 /* MasterThermEasyControl.Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		055168DB7882FD99037CBE4F /* Pods_MasterThermEasyControl_Today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterThermEasyControl_Today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB2AABB870DBD7713726A5D /* Pods-MasterThermEasyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl.debug.xcconfig"; sourceTree = "<group>"; };
 		1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterThermEasyControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56170369229C6B0100629790 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +143,18 @@
 		56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		56D70D9922B5303900F6E156 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		56D70D9E22B532E600F6E156 /* AlertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertUtils.swift; path = ../../../../fixedsmile.ios/fixedsmile/fixedsmile/AlertUtils.swift; sourceTree = "<group>"; };
+		56D70DA122B6848A00F6E156 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		56D70DA322B684A200F6E156 /* PageBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBaseViewController.swift; sourceTree = "<group>"; };
+		56D70DA922B6B6A200F6E156 /* MasterThermEasyControl.Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MasterThermEasyControl.Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D70DAA22B6B6A200F6E156 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		56D70DAD22B6B6A300F6E156 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		56D70DB022B6B6A300F6E156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		56D70DB222B6B6A300F6E156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D70DC222B6C3C600F6E156 /* MasterThermEasyControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasterThermEasyControl.entitlements; sourceTree = "<group>"; };
+		56D70DC322B6C3D600F6E156 /* MasterThermEasyControl.Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasterThermEasyControl.Today.entitlements; sourceTree = "<group>"; };
+		984AD930A9D79CB8B99970E9 /* Pods-MasterThermEasyControl.Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.Today.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl.Today/Pods-MasterThermEasyControl.Today.debug.xcconfig"; sourceTree = "<group>"; };
 		E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl.release.xcconfig"; sourceTree = "<group>"; };
+		F272EADFC22189E62E568538 /* Pods-MasterThermEasyControl.Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.Today.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl.Today/Pods-MasterThermEasyControl.Today.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +166,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56D70DA622B6B6A200F6E156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D70DAB22B6B6A200F6E156 /* NotificationCenter.framework in Frameworks */,
+				43349EAEF319198A2181A68B /* Pods_MasterThermEasyControl_Today.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		56170366229C6AC200629790 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				56D70DA022B6847700F6E156 /* Base */,
 				56315623228DC79D00C0B8D8 /* TemperatureViewController.swift */,
 				56315624228DC79D00C0B8D8 /* TemperatureViewController.xib */,
 				56170369229C6B0100629790 /* LoginViewController.swift */,
@@ -137,6 +212,7 @@
 				56D70D9922B5303900F6E156 /* Localizable.strings */,
 				56B6CB1E2299CBFC00277DD7 /* R.generated.swift */,
 				5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */,
+				56D70DAC22B6B6A200F6E156 /* MasterThermEasyControl.Today */,
 				5631560D228DC6A100C0B8D8 /* Products */,
 				A39C377EABBF02FC7C886D3B /* Pods */,
 				D611E6C580849BD450F38F5C /* Frameworks */,
@@ -147,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				5631560C228DC6A100C0B8D8 /* MasterThermEasyControl.app */,
+				56D70DA922B6B6A200F6E156 /* MasterThermEasyControl.Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +231,7 @@
 		5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */ = {
 			isa = PBXGroup;
 			children = (
+				56D70DC222B6C3C600F6E156 /* MasterThermEasyControl.entitlements */,
 				56D70D9B22B530DA00F6E156 /* Utils */,
 				56D70D9422B512B300F6E156 /* Keychain */,
 				56170366229C6AC200629790 /* ViewControllers */,
@@ -239,11 +317,33 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		56D70DA022B6847700F6E156 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				56D70DA122B6848A00F6E156 /* BaseViewController.swift */,
+				56D70DA322B684A200F6E156 /* PageBaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		56D70DAC22B6B6A200F6E156 /* MasterThermEasyControl.Today */ = {
+			isa = PBXGroup;
+			children = (
+				56D70DC322B6C3D600F6E156 /* MasterThermEasyControl.Today.entitlements */,
+				56D70DAD22B6B6A300F6E156 /* TodayViewController.swift */,
+				56D70DAF22B6B6A300F6E156 /* MainInterface.storyboard */,
+				56D70DB222B6B6A300F6E156 /* Info.plist */,
+			);
+			path = MasterThermEasyControl.Today;
+			sourceTree = "<group>";
+		};
 		A39C377EABBF02FC7C886D3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				1EB2AABB870DBD7713726A5D /* Pods-MasterThermEasyControl.debug.xcconfig */,
 				E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */,
+				984AD930A9D79CB8B99970E9 /* Pods-MasterThermEasyControl.Today.debug.xcconfig */,
+				F272EADFC22189E62E568538 /* Pods-MasterThermEasyControl.Today.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -252,6 +352,8 @@
 			isa = PBXGroup;
 			children = (
 				1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */,
+				56D70DAA22B6B6A200F6E156 /* NotificationCenter.framework */,
+				055168DB7882FD99037CBE4F /* Pods_MasterThermEasyControl_Today.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,15 +371,35 @@
 				56315609228DC6A100C0B8D8 /* Frameworks */,
 				5631560A228DC6A100C0B8D8 /* Resources */,
 				E9406F599A4BFB2E50F5D725 /* [CP] Embed Pods Frameworks */,
+				56D70DB922B6B6A300F6E156 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				56D70DB422B6B6A300F6E156 /* PBXTargetDependency */,
 			);
 			name = MasterThermEasyControl;
 			productName = MasterThermEasyControl;
 			productReference = 5631560C228DC6A100C0B8D8 /* MasterThermEasyControl.app */;
 			productType = "com.apple.product-type.application";
+		};
+		56D70DA822B6B6A200F6E156 /* MasterThermEasyControl.Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56D70DB622B6B6A300F6E156 /* Build configuration list for PBXNativeTarget "MasterThermEasyControl.Today" */;
+			buildPhases = (
+				4B7B39C90915E3D75A8F918A /* [CP] Check Pods Manifest.lock */,
+				56D70DA522B6B6A200F6E156 /* Sources */,
+				56D70DA622B6B6A200F6E156 /* Frameworks */,
+				56D70DA722B6B6A200F6E156 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MasterThermEasyControl.Today;
+			productName = MasterThermEasyControl.Today;
+			productReference = 56D70DA922B6B6A200F6E156 /* MasterThermEasyControl.Today.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -285,12 +407,31 @@
 		56315604228DC6A100C0B8D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Lukas Jezny";
 				TargetAttributes = {
 					5631560B228DC6A100C0B8D8 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					56D70DA822B6B6A200F6E156 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -308,6 +449,7 @@
 			projectRoot = "";
 			targets = (
 				5631560B228DC6A100C0B8D8 /* MasterThermEasyControl */,
+				56D70DA822B6B6A200F6E156 /* MasterThermEasyControl.Today */,
 			);
 		};
 /* End PBXProject section */
@@ -326,6 +468,17 @@
 				56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */,
 				56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */,
 				56D70D9322B503A200F6E156 /* InitialViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56D70DA722B6B6A200F6E156 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D70DC122B6C2A700F6E156 /* SF-Pro-Display-Thin.otf in Resources */,
+				56D70DD122B6D74B00F6E156 /* Localizable.strings in Resources */,
+				56D70DC422B6C5FD00F6E156 /* Assets.xcassets in Resources */,
+				56D70DB122B6B6A300F6E156 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +501,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-MasterThermEasyControl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B7B39C90915E3D75A8F918A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MasterThermEasyControl.Today-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -425,6 +600,7 @@
 				565E0D4C22B6686900E434AD /* Theme.swift in Sources */,
 				56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */,
 				56D70D8F22B4F66100F6E156 /* TemperatureModelBase.swift in Sources */,
+				56D70DA422B684A200F6E156 /* PageBaseViewController.swift in Sources */,
 				563A281A22919E92002A3708 /* CharsetEx.swift in Sources */,
 				56D70D9222B503A200F6E156 /* InitialViewController.swift in Sources */,
 				56B6CB1A2293386D00277DD7 /* Session.swift in Sources */,
@@ -437,10 +613,46 @@
 				56D70D9F22B532E700F6E156 /* AlertUtils.swift in Sources */,
 				56B6CB222299D81B00277DD7 /* Knob.swift in Sources */,
 				56D70D9822B512DB00F6E156 /* KeychainPasswordItem.swift in Sources */,
+				56D70DA222B6848A00F6E156 /* BaseViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56D70DA522B6B6A200F6E156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D70DC622B6CB5800F6E156 /* Session.swift in Sources */,
+				56D70DC922B6CBA100F6E156 /* DictionaryEx.swift in Sources */,
+				56D70DBF22B6B73000F6E156 /* StyleableTextField.swift in Sources */,
+				56D70DCB22B6CBA100F6E156 /* StringEx.swift in Sources */,
+				56D70DC522B6CB5800F6E156 /* ApiManager.swift in Sources */,
+				56D70DC022B6C29800F6E156 /* Theme.swift in Sources */,
+				56D70DBA22B6B6DB00F6E156 /* GradientView.swift in Sources */,
+				56D70DD022B6D14300F6E156 /* TemperatureModelBase.swift in Sources */,
+				56D70DCD22B6CBB000F6E156 /* KeychainPasswordItem.swift in Sources */,
+				56D70DBB22B6B73000F6E156 /* StyleableButton.swift in Sources */,
+				56D70DBC22B6B73000F6E156 /* StyleableImageView.swift in Sources */,
+				56D70DBE22B6B73000F6E156 /* StyleableSwitch.swift in Sources */,
+				56D70DCC22B6CBB000F6E156 /* KeychainConfiguration.swift in Sources */,
+				56D70DBD22B6B73000F6E156 /* StyleableLabel.swift in Sources */,
+				56D70DC722B6CB5F00F6E156 /* LoginResponse.swift in Sources */,
+				56D70DCA22B6CBA100F6E156 /* CharsetEx.swift in Sources */,
+				56D70DC822B6CB5F00F6E156 /* DataResponse.swift in Sources */,
+				56D70DAE22B6B6A300F6E156 /* TodayViewController.swift in Sources */,
+				56D70DCE22B6D14300F6E156 /* HeatModel.swift in Sources */,
+				56D70DCF22B6D14300F6E156 /* HotWaterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56D70DB422B6B6A300F6E156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56D70DA822B6B6A200F6E156 /* MasterThermEasyControl.Today */;
+			targetProxy = 56D70DB322B6B6A300F6E156 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		56315618228DC6A300C0B8D8 /* LaunchScreen.storyboard */ = {
@@ -449,6 +661,14 @@
 				56315619228DC6A300C0B8D8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		56D70DAF22B6B6A300F6E156 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56D70DB022B6B6A300F6E156 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -574,7 +794,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1EB2AABB870DBD7713726A5D /* Pods-MasterThermEasyControl.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl/MasterThermEasyControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42NG6AU5AL;
 				INFOPLIST_FILE = MasterThermEasyControl/Info.plist;
@@ -593,7 +815,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl/MasterThermEasyControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42NG6AU5AL;
 				INFOPLIST_FILE = MasterThermEasyControl/Info.plist;
@@ -603,6 +827,50 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ljezny.MasterThermEasyControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		56D70DB722B6B6A300F6E156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 984AD930A9D79CB8B99970E9 /* Pods-MasterThermEasyControl.Today.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl.Today/MasterThermEasyControl.Today.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42NG6AU5AL;
+				INFOPLIST_FILE = MasterThermEasyControl.Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.ljezny.MasterThermEasyControl.MasterThermEasyControl-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		56D70DB822B6B6A300F6E156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F272EADFC22189E62E568538 /* Pods-MasterThermEasyControl.Today.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl.Today/MasterThermEasyControl.Today.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42NG6AU5AL;
+				INFOPLIST_FILE = MasterThermEasyControl.Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.ljezny.MasterThermEasyControl.MasterThermEasyControl-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -625,6 +893,15 @@
 			buildConfigurations = (
 				5631561F228DC6A300C0B8D8 /* Debug */,
 				56315620228DC6A300C0B8D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56D70DB622B6B6A300F6E156 /* Build configuration list for PBXNativeTarget "MasterThermEasyControl.Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56D70DB722B6B6A300F6E156 /* Debug */,
+				56D70DB822B6B6A300F6E156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

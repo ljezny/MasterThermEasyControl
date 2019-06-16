@@ -13,7 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TemperatureViewController" customModule="MasterThermEasyControl" customModuleProvider="target">
             <connections>
                 <outlet property="gradientView" destination="l8I-CC-MbF" id="g9Z-yc-N8p"/>
+                <outlet property="iconImage" destination="YIg-Ya-TyL" id="w7b-Tc-w8N"/>
                 <outlet property="knob" destination="ImN-Oz-lf2" id="guo-g9-lMi"/>
+                <outlet property="maxSetTemperatureLabel" destination="SWI-Ks-RZD" id="4hk-1q-kOz"/>
+                <outlet property="minSetTemperatureLabel" destination="ukR-d9-84X" id="Fbz-AR-Qgy"/>
+                <outlet property="nameLabel" destination="4C9-Mg-3HG" id="ZJm-m7-35n"/>
                 <outlet property="realTemperatureLabel" destination="0uH-fA-H88" id="TLe-xD-UIH"/>
                 <outlet property="setTemperatureLabel" destination="oaR-kW-O58" id="drn-KO-XKV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,53 +32,162 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <viewLayoutGuide key="safeArea" id="0od-KZ-ABi"/>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bdr-fp-xqC">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uzr-pB-u58">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BjV-oF-Knk">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ldd-wG-A30">
+                            <rect key="frame" x="87" y="16" width="240" height="786"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImN-Oz-lf2" customClass="Knob" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                    <rect key="frame" x="87" y="0.0" width="240" height="240"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hGR-2o-Lgn">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaR-kW-O58" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="87" y="102" width="66" height="36"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iYy-Bi-vGI">
+                                            <rect key="frame" x="0.0" y="33.5" width="240" height="82.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOMA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C9-Mg-3HG" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="91" y="0.0" width="58.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="header"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home" translatesAutoresizingMaskIntoConstraints="NO" id="YIg-Ya-TyL">
+                                                    <rect key="frame" x="98.5" y="40" width="43" height="42.5"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="oaR-kW-O58" firstAttribute="centerY" secondItem="ImN-Oz-lf2" secondAttribute="centerY" id="H5d-yL-Lry"/>
-                                        <constraint firstItem="oaR-kW-O58" firstAttribute="centerX" secondItem="ImN-Oz-lf2" secondAttribute="centerX" id="hfd-bA-mkO"/>
-                                        <constraint firstAttribute="width" constant="240" id="wmD-Dn-VQh"/>
-                                        <constraint firstAttribute="height" constant="240" id="xfu-6f-7ae"/>
-                                    </constraints>
-                                </view>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BjV-oF-Knk">
+                                    <rect key="frame" x="0.0" y="150" width="240" height="479"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4xE-T9-zAw">
+                                            <rect key="frame" x="0.0" y="107.5" width="240" height="264"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B0E-lm-2Ri">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="264"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImN-Oz-lf2" customClass="Knob" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N3l-qU-Ccv">
+                                                                    <rect key="frame" x="45.5" y="76.5" width="149.5" height="86.5"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF3-91-c0l" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="149.5" height="29"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="caption"/>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="temperature.set"/>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaR-kW-O58" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="29" width="149.5" height="57.5"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="value"/>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="N3l-qU-Ccv" firstAttribute="centerY" secondItem="ImN-Oz-lf2" secondAttribute="centerY" id="Q9F-EB-rdE"/>
+                                                                <constraint firstItem="N3l-qU-Ccv" firstAttribute="centerX" secondItem="ImN-Oz-lf2" secondAttribute="centerX" id="hND-6M-gQm"/>
+                                                                <constraint firstAttribute="width" constant="240" id="wmD-Dn-VQh"/>
+                                                                <constraint firstAttribute="height" constant="240" id="xfu-6f-7ae"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="W54-9B-ATo">
+                                                            <rect key="frame" x="0.0" y="240" width="240" height="24"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukR-d9-84X" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="subvalue"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-Ks-RZD" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                                    <rect key="frame" x="120" y="0.0" width="120" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="subvalue"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="900" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zuh-TJ-T67">
+                                    <rect key="frame" x="0.0" y="629" width="240" height="157"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tHP-3x-Sha">
+                                            <rect key="frame" x="0.0" y="35" width="240" height="86.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDM-tE-F5H" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="caption"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="temperature.real"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-fA-H88" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="29" width="240" height="57.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="value"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="480" id="mAg-Qx-Upl"/>
+                            </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-fA-H88" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="240" width="414" height="578"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
+                    <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bdr-fp-xqC" secondAttribute="trailing" id="0xf-OA-iCf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bdr-fp-xqC" secondAttribute="bottom" id="6jg-BR-4eV"/>
-                <constraint firstItem="bdr-fp-xqC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Pyx-Yi-hvI"/>
+                <constraint firstItem="uzr-pB-u58" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Mhf-CI-Evm"/>
                 <constraint firstItem="l8I-CC-MbF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="T1G-cq-chn"/>
+                <constraint firstItem="uzr-pB-u58" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="djK-qU-Jnj"/>
                 <constraint firstAttribute="bottom" secondItem="l8I-CC-MbF" secondAttribute="bottom" id="fUE-Xb-gi2"/>
-                <constraint firstItem="bdr-fp-xqC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kwR-Nx-Edw"/>
                 <constraint firstItem="l8I-CC-MbF" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="maS-OL-HCH"/>
+                <constraint firstItem="uzr-pB-u58" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qdN-JO-8Lv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uzr-pB-u58" secondAttribute="bottom" id="xea-Ct-d8k"/>
                 <constraint firstItem="l8I-CC-MbF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zxK-w4-gBA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_home" width="42.666667938232422" height="42.666667938232422"/>
+    </resources>
 </document>

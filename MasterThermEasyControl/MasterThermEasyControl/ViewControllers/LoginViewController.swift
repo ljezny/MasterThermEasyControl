@@ -9,7 +9,7 @@
 import UIKit
 import Bond
 
-class LoginViewController: UIViewController {
+class LoginViewController: PageBaseViewController {
 
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var loginTextField: StyleableTextField!
@@ -18,8 +18,6 @@ class LoginViewController: UIViewController {
     
     let login = Observable<String?>("ljezny@gmail.com")
     let password = Observable<String?>("ba2300514")
-    
-    weak var mainViewController:MainViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

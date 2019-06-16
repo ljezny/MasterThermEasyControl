@@ -51,8 +51,16 @@ import UIKit
             self.font = Theme.getLightFont(size: 16.0)
             self.textColor = UIColor.white
             break
-        case "subtitle":
-            self.font = Theme.getLightFont(size: 12.0)
+        case "caption":
+            self.font = Theme.getLightFont(size: 24.0)
+            self.textColor = UIColor.white
+            break
+        case "value":
+            self.font = Theme.getLightFont(size: 48.0)
+            self.textColor = UIColor.white
+            break
+        case "subvalue":
+            self.font = Theme.getLightFont(size: 20.0)
             self.textColor = UIColor.white
             break
         default:

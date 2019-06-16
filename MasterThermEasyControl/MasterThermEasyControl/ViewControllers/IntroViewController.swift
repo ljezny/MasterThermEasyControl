@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IntroViewController: UIViewController {
+class IntroViewController: PageBaseViewController {
 
     @IBOutlet weak var gradientView: GradientView!
     override func viewDidLoad() {
@@ -17,4 +17,7 @@ class IntroViewController: UIViewController {
         gradientView.progress.value = 0.4
     }
 
+    @IBAction func continueAction(_ sender: Any) {
+        mainViewController?.goToLast()
+    }
 }

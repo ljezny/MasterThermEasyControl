@@ -23,3 +23,9 @@
 "login.button" = "Přihlásit";
 "login.email.placeholder" = "E-mail";
 "login.password.placeholder" = "Heslo";
+
+"temperature.set" = "Požadováno";
+"temperature.real" = "Aktuální";
+
+"heatmodel.name" = "Domov";
+"hotwatermodel.name" = "Teplá užitková voda";
