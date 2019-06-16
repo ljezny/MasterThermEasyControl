@@ -86,6 +86,8 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         
         setupPageControl()
         
+        setupViewResizerOnKeyboardShown()
+        
         self.dataSource = self
         
         controllers.append(InitialViewController(nib: R.nib.initialViewController))
@@ -141,7 +143,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
             if index < controllers.count - 1 {
                 return controllers[index + 1]
             } else {
-                return controllers.first
+                return nil
             }
         }
         return nil
@@ -152,7 +154,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
             if index > 0 {
                 return controllers[index - 1]
             } else {
-                return controllers.last
+                return nil
             }
         }
         return nil
@@ -166,4 +168,46 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         
         return 0
     }
+    
+    func setupViewResizerOnKeyboardShown() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardAdjustFrame),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardAdjustFrame),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardAdjustFrame),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+    }
+    
+    @objc func keyboardAdjustFrame(notification: Notification) {
+        
+        if  let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+            let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
+            let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt,
+            let window = self.view.window?.frame {
+            
+            let options = UIView.AnimationOptions(rawValue: curve << 16)
+            let keyboardHeight = notification.name == UIResponder.keyboardWillHideNotification ? 0 : keyboardSize.height
+            
+            self.view.frame = CGRect(x: self.view.frame.origin.x,
+                                     y: self.view.frame.origin.y,
+                                     width: self.view.frame.width,
+                                     height: window.origin.y + window.height - keyboardHeight)
+            
+            UIView.animate(withDuration: duration, delay: 0, options: options,
+                           animations: {
+                            self.view?.window?.layoutIfNeeded()
+            },
+                           completion: nil
+            )
+        } else {
+            debugPrint("We're showing the keyboard and either the keyboard size or window is nil: panic widely.")
+        }
+    }
+
 }

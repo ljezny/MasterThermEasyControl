@@ -10,10 +10,10 @@ import UIKit
 
 class Theme {
     public static func getLightFont(size: CGFloat) -> UIFont? {
-        return UIFont(name: "SF-Pro-Display-Thin", size: size)
+        return UIFont(name: "SFProDisplay-Thin", size: size)
     }
     
     public static func getRegularFont(size: CGFloat) ->UIFont? {
-        return UIFont(name: "SF-Pro-Display-Medium", size: size)
+        return UIFont(name: "SFProDisplay-Medium", size: size)
     }
 }

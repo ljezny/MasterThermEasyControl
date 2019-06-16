@@ -28,67 +28,89 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nCK-lL-gHU">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zva-iL-WZC">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3kv-Hn-M0Z">
-                            <rect key="frame" x="0.0" y="329.5" width="414" height="237.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nCK-lL-gHU">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qy-mR-EdU" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                    <rect key="frame" x="44" y="44" width="326" height="19.5"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login.message"/>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
-                                <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFN-s7-al2" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                    <rect key="frame" x="44" y="75.5" width="326" height="31"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
-                                    </userDefinedRuntimeAttributes>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgO-EU-oqC" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                    <rect key="frame" x="44" y="118.5" width="326" height="31"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
-                                    </userDefinedRuntimeAttributes>
-                                </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0f-ay-D8N" customClass="StyleableButton" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                    <rect key="frame" x="44" y="161.5" width="326" height="32"/>
-                                    <state key="normal" title="Login"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="lU0-BZ-awn"/>
-                                    </connections>
-                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3kv-Hn-M0Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lock" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-ex-jUo">
+                                            <rect key="frame" x="44" y="44" width="326" height="42.5"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qy-mR-EdU" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                            <rect key="frame" x="44" y="98.5" width="326" height="19.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login.message"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFN-s7-al2" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                            <rect key="frame" x="44" y="130" width="326" height="34"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholderKey" value="login.email.placeholder"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgO-EU-oqC" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                            <rect key="frame" x="44" y="176" width="326" height="34"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedPlaceholderKey" value="login.password.placeholder"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0f-ay-D8N" customClass="StyleableButton" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                            <rect key="frame" x="44" y="222" width="326" height="32"/>
+                                            <state key="normal" title="Login"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="login.button"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="lU0-BZ-awn"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <edgeInsets key="layoutMargins" top="44" left="44" bottom="44" right="44"/>
+                                </stackView>
                             </subviews>
-                            <edgeInsets key="layoutMargins" top="44" left="44" bottom="44" right="44"/>
                         </stackView>
                     </subviews>
-                </stackView>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="nCK-lL-gHU" secondAttribute="trailing" id="0QD-D4-xCx"/>
+                        <constraint firstItem="nCK-lL-gHU" firstAttribute="width" secondItem="Zva-iL-WZC" secondAttribute="width" id="5NN-PJ-biN"/>
+                        <constraint firstAttribute="bottom" secondItem="nCK-lL-gHU" secondAttribute="bottom" id="Ies-Si-enj"/>
+                        <constraint firstItem="nCK-lL-gHU" firstAttribute="top" secondItem="Zva-iL-WZC" secondAttribute="top" id="qbN-7y-IfY"/>
+                        <constraint firstItem="nCK-lL-gHU" firstAttribute="leading" secondItem="Zva-iL-WZC" secondAttribute="leading" id="xFV-DK-xai"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="nCK-lL-gHU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3Xy-40-lWW"/>
-                <constraint firstItem="nCK-lL-gHU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Da2-MJ-gJN"/>
                 <constraint firstItem="5KF-qy-vKb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ds8-2r-dM4"/>
                 <constraint firstItem="5KF-qy-vKb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N9R-Hx-O3F"/>
                 <constraint firstAttribute="bottom" secondItem="5KF-qy-vKb" secondAttribute="bottom" id="OlG-vy-ZcJ"/>
-                <constraint firstItem="nCK-lL-gHU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QAN-hC-NBf"/>
-                <constraint firstAttribute="bottom" secondItem="nCK-lL-gHU" secondAttribute="bottom" id="prk-Ul-Qvj"/>
+                <constraint firstItem="Zva-iL-WZC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Q2S-Wz-RQE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Zva-iL-WZC" secondAttribute="bottom" id="QUB-bu-XNJ"/>
+                <constraint firstItem="Zva-iL-WZC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="e0d-Vu-2mO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zva-iL-WZC" secondAttribute="trailing" id="jLR-Kz-r2L"/>
                 <constraint firstAttribute="trailing" secondItem="5KF-qy-vKb" secondAttribute="trailing" id="qcV-Pc-Qve"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_lock" width="42.666667938232422" height="42.666667938232422"/>
+    </resources>
 </document>

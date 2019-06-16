@@ -13,7 +13,53 @@ struct R: Rswift.Validatable {
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
   
   static func validate() throws {
+    try font.validate()
     try intern.validate()
+  }
+  
+  /// This `R.font` struct is generated, and contains static references to 2 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `SFProDisplay-Medium`.
+    static let sfProDisplayMedium = Rswift.FontResource(fontName: "SFProDisplay-Medium")
+    /// Font `SFProDisplay-Thin`.
+    static let sfProDisplayThin = Rswift.FontResource(fontName: "SFProDisplay-Thin")
+    
+    /// `UIFont(name: "SFProDisplay-Medium", size: ...)`
+    static func sfProDisplayMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sfProDisplayMedium, size: size)
+    }
+    
+    /// `UIFont(name: "SFProDisplay-Thin", size: ...)`
+    static func sfProDisplayThin(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sfProDisplayThin, size: size)
+    }
+    
+    static func validate() throws {
+      if R.font.sfProDisplayMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Medium' could not be loaded, is 'SF-Pro-Display-Medium.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.sfProDisplayThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Thin' could not be loaded, is 'SF-Pro-Display-Thin.otf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.image` struct is generated, and contains static references to 2 images.
+  struct image {
+    /// Image `ic_home`.
+    static let ic_home = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_home")
+    /// Image `ic_lock`.
+    static let ic_lock = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_lock")
+    
+    /// `UIImage(named: "ic_home", bundle: ..., traitCollection: ...)`
+    static func ic_home(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_home, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_lock", bundle: ..., traitCollection: ...)`
+    static func ic_lock(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_lock, compatibleWith: traitCollection)
+    }
+    
+    fileprivate init() {}
   }
   
   /// This `R.nib` struct is generated, and contains static references to 4 nibs.
@@ -85,18 +131,26 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 10 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 14 localization keys.
     struct localizable {
       /// Value: Chyba připojení
       static let connectionErrorTitle = Rswift.StringResource(key: "connection.error.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: E-mail
+      static let loginEmailPlaceholder = Rswift.StringResource(key: "login.email.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Heslo
+      static let loginPasswordPlaceholder = Rswift.StringResource(key: "login.password.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze a jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem nepokrývá funkcionalitu originální aplikace, ale naopak jsem chtěl zjednodušit ovládání tepelného čerpadla. Cílem je tedy jednoduše a pohodlněji ovládát vytápění a naopak nastavování teplotních křivek a složitějších parametrů dále neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem ladil a testoval na svém vlastním tepelném čerpadle žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
       static let introMessage = Rswift.StringResource(key: "intro.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: MasterTherm Easy Control
       static let generalAppname = Rswift.StringResource(key: "general.appname", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: OK
       static let generalOk = Rswift.StringResource(key: "general.ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Pokračovat
+      static let introContinueButton = Rswift.StringResource(key: "intro.continue.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pro přihlášení použijte údaje, které jste obdrželi od firmy MasterTherm a které používáte pro přihlášení na webovém rozhraní nebo v originální aplikaci. Přihlašovací údaje aplikace uloží bezpečně do tzv. klíčenky a Vaše heslo bude posíláno bezpečně přes šifrované spojení. Vaše údaje aplikace dále nijak nezpracovává.
       static let loginMessage = Rswift.StringResource(key: "login.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Přihlásit
+      static let loginButton = Rswift.StringResource(key: "login.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Přihlášení se nepodařilo
       static let unauthorizedTitle = Rswift.StringResource(key: "unauthorized.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
@@ -111,6 +165,16 @@ struct R: Rswift.Validatable {
       /// Value: Chyba připojení
       static func connectionErrorTitle(_: Void = ()) -> String {
         return NSLocalizedString("connection.error.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: E-mail
+      static func loginEmailPlaceholder(_: Void = ()) -> String {
+        return NSLocalizedString("login.email.placeholder", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Heslo
+      static func loginPasswordPlaceholder(_: Void = ()) -> String {
+        return NSLocalizedString("login.password.placeholder", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze a jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem nepokrývá funkcionalitu originální aplikace, ale naopak jsem chtěl zjednodušit ovládání tepelného čerpadla. Cílem je tedy jednoduše a pohodlněji ovládát vytápění a naopak nastavování teplotních křivek a složitějších parametrů dále neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem ladil a testoval na svém vlastním tepelném čerpadle žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
@@ -128,9 +192,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("general.ok", bundle: R.hostingBundle, comment: "")
       }
       
+      /// Value: Pokračovat
+      static func introContinueButton(_: Void = ()) -> String {
+        return NSLocalizedString("intro.continue.button", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: Pro přihlášení použijte údaje, které jste obdrželi od firmy MasterTherm a které používáte pro přihlášení na webovém rozhraní nebo v originální aplikaci. Přihlašovací údaje aplikace uloží bezpečně do tzv. klíčenky a Vaše heslo bude posíláno bezpečně přes šifrované spojení. Vaše údaje aplikace dále nijak nezpracovává.
       static func loginMessage(_: Void = ()) -> String {
         return NSLocalizedString("login.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Přihlásit
+      static func loginButton(_: Void = ()) -> String {
+        return NSLocalizedString("login.button", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Přihlášení se nepodařilo
@@ -180,9 +254,15 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     try storyboard.validate()
+    try nib.validate()
   }
   
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _IntroViewController.validate()
+      try _LoginViewController.validate()
+    }
+    
     struct _InitialViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "InitialViewController"
@@ -194,7 +274,7 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _IntroViewController: Rswift.NibResourceType {
+    struct _IntroViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "IntroViewController"
       
@@ -202,15 +282,27 @@ struct _R: Rswift.Validatable {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
       
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_home' is used in nib 'IntroViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
       fileprivate init() {}
     }
     
-    struct _LoginViewController: Rswift.NibResourceType {
+    struct _LoginViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "LoginViewController"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_lock' is used in nib 'LoginViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}

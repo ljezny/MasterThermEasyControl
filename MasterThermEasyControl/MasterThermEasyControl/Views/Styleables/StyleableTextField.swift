@@ -47,13 +47,11 @@ import UIKit
         case "primary":
             bottomLine.backgroundColor = UIColor.white.cgColor
             self.layer.addSublayer(bottomLine)
-            
             self.borderStyle = .none
             self.textAlignment = .center
             self.backgroundColor = UIColor.clear
-            if let text = self.placeholder {
-              /*  self.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedStringKey.foregroundColor: Theme.whiteColor, NSAttributedStringKey.font : Theme.getLightFont(size: Theme.normalFontSize)])*/
-            }
+            self.font = Theme.getRegularFont(size: 16)
+            
             break
         default:
             break

@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = mainViewController
             window.makeKeyAndVisible()
         }
+        UIFont.familyNames.forEach({ familyName in
+            let fontNames = UIFont.fontNames(forFamilyName: familyName)
+            print(familyName, fontNames)
+        })
         
         return true
     }

@@ -34,6 +34,7 @@ import UIKit
     func setStyle(style:String?) -> Void {
         switch style! {
         case "primary":
+            self.titleLabel?.font = Theme.getRegularFont(size: 16)
             self.setTitleColor(UIColor.white, for: .normal)
             self.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .disabled)
             self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
