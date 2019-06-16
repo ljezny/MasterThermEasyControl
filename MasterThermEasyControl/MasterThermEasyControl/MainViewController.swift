@@ -83,7 +83,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
                 self.presentLogin(direction: .reverse)
                 break
             case .expired:
-                //no op
+                self.relogin()
                 break
             }
         }
@@ -106,6 +106,10 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
             self.setViewControllers([firstVC], direction: .forward, animated: false, completion: nil)
         }
         
+        self.relogin()
+    }
+    
+    func relogin() {
         Session.shared.relogin { (result) in
             switch result {
             case .success:

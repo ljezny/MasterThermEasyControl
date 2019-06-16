@@ -77,6 +77,10 @@ class ApiManager: NSObject {
                         DispatchQueue.main.async {
                            completion(response,nil)
                         }
+                    } else {
+                        DispatchQueue.main.async {
+                            completion(nil,nil)
+                        }
                     }
                 }
             }

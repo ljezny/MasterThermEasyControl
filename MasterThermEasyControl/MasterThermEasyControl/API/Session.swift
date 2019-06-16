@@ -66,6 +66,8 @@ class Session {
                 completion(nil,.connectionError)
             } else if let dataResponse = dataResponse {
                 completion(dataResponse,.success)
+            } else {
+                completion(nil,.expired)
             }
         })
     }

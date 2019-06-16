@@ -59,6 +59,10 @@ import UIKit
             self.font = Theme.getLightFont(size: 48.0)
             self.textColor = UIColor.white
             break
+        case "mainvalue":
+            self.font = Theme.getRegularFont(size: 48.0)
+            self.textColor = UIColor.white
+            break
         case "subvalue":
             self.font = Theme.getLightFont(size: 20.0)
             self.textColor = UIColor.white

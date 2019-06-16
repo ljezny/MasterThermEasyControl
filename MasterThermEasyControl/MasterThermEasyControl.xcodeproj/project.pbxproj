@@ -73,6 +73,8 @@
 		56D70DCF22B6D14300F6E156 /* HotWaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */; };
 		56D70DD022B6D14300F6E156 /* TemperatureModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */; };
 		56D70DD122B6D74B00F6E156 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9922B5303900F6E156 /* Localizable.strings */; };
+		56D70DD422B6E65F00F6E156 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DD222B6E65F00F6E156 /* ProfileViewController.swift */; };
+		56D70DD522B6E65F00F6E156 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D70DD322B6E65F00F6E156 /* ProfileViewController.xib */; };
 		57E0CE1F2468A0177449F14C /* Pods_MasterThermEasyControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +154,8 @@
 		56D70DB222B6B6A300F6E156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D70DC222B6C3C600F6E156 /* MasterThermEasyControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasterThermEasyControl.entitlements; sourceTree = "<group>"; };
 		56D70DC322B6C3D600F6E156 /* MasterThermEasyControl.Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasterThermEasyControl.Today.entitlements; sourceTree = "<group>"; };
+		56D70DD222B6E65F00F6E156 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		56D70DD322B6E65F00F6E156 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		984AD930A9D79CB8B99970E9 /* Pods-MasterThermEasyControl.Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.Today.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl.Today/Pods-MasterThermEasyControl.Today.debug.xcconfig"; sourceTree = "<group>"; };
 		E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl.release.xcconfig"; sourceTree = "<group>"; };
 		F272EADFC22189E62E568538 /* Pods-MasterThermEasyControl.Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.Today.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl.Today/Pods-MasterThermEasyControl.Today.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				56170379229C78AA00629790 /* IntroViewController.xib */,
 				56D70D9022B503A200F6E156 /* InitialViewController.swift */,
 				56D70D9122B503A200F6E156 /* InitialViewController.xib */,
+				56D70DD222B6E65F00F6E156 /* ProfileViewController.swift */,
+				56D70DD322B6E65F00F6E156 /* ProfileViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 				56D70D9A22B5303900F6E156 /* Localizable.strings in Resources */,
 				56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */,
 				56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */,
+				56D70DD522B6E65F00F6E156 /* ProfileViewController.xib in Resources */,
 				56D70D9322B503A200F6E156 /* InitialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +603,7 @@
 				56B6CB1F2299CBFC00277DD7 /* R.generated.swift in Sources */,
 				5617037A229C78AA00629790 /* IntroViewController.swift in Sources */,
 				56170374229C76B300629790 /* StyleableImageView.swift in Sources */,
+				56D70DD422B6E65F00F6E156 /* ProfileViewController.swift in Sources */,
 				56D70D8D22B4F60A00F6E156 /* HotWaterModel.swift in Sources */,
 				565E0D4C22B6686900E434AD /* Theme.swift in Sources */,
 				56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */,

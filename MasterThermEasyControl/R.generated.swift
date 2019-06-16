@@ -69,7 +69,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `InitialViewController`.
     static let initialViewController = _R.nib._InitialViewController()
@@ -77,6 +77,8 @@ struct R: Rswift.Validatable {
     static let introViewController = _R.nib._IntroViewController()
     /// Nib `LoginViewController`.
     static let loginViewController = _R.nib._LoginViewController()
+    /// Nib `ProfileViewController`.
+    static let profileViewController = _R.nib._ProfileViewController()
     /// Nib `TemperatureViewController`.
     static let temperatureViewController = _R.nib._TemperatureViewController()
     
@@ -98,6 +100,12 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.loginViewController)
     }
     
+    /// `UINib(name: "ProfileViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.profileViewController) instead")
+    static func profileViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.profileViewController)
+    }
+    
     /// `UINib(name: "TemperatureViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.temperatureViewController) instead")
     static func temperatureViewController(_: Void = ()) -> UIKit.UINib {
@@ -114,6 +122,10 @@ struct R: Rswift.Validatable {
     
     static func loginViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.loginViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func profileViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.profileViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func temperatureViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -339,6 +351,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_lock' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _ProfileViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ProfileViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
       
       fileprivate init() {}
