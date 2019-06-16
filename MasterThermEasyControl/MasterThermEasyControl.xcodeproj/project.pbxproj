@@ -26,6 +26,9 @@
 		563A281822919E7C002A3708 /* DictionaryEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A281722919E7B002A3708 /* DictionaryEx.swift */; };
 		563A281A22919E92002A3708 /* CharsetEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A281922919E92002A3708 /* CharsetEx.swift */; };
 		563A281C22919ECE002A3708 /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A281B22919ECE002A3708 /* StringEx.swift */; };
+		565E0D4922B6682900E434AD /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 565E0D4722B6682900E434AD /* SF-Pro-Display-Medium.otf */; };
+		565E0D4A22B6682900E434AD /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */; };
+		565E0D4C22B6686900E434AD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E0D4B22B6686900E434AD /* Theme.swift */; };
 		56AC78752291A0C10025D128 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AC78742291A0C10025D128 /* LoginResponse.swift */; };
 		56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB142291EA6900277DD7 /* DataResponse.swift */; };
 		56B6CB182293347000277DD7 /* HeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB172293347000277DD7 /* HeatModel.swift */; };
@@ -68,6 +71,9 @@
 		563A281722919E7B002A3708 /* DictionaryEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryEx.swift; sourceTree = "<group>"; };
 		563A281922919E92002A3708 /* CharsetEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharsetEx.swift; sourceTree = "<group>"; };
 		563A281B22919ECE002A3708 /* StringEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEx.swift; sourceTree = "<group>"; };
+		565E0D4722B6682900E434AD /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
+		565E0D4B22B6686900E434AD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		56AC78742291A0C10025D128 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		56B6CB142291EA6900277DD7 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
 		56B6CB172293347000277DD7 /* HeatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatModel.swift; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 				563A281622919E69002A3708 /* Extensions */,
 				563A281322919B9C002A3708 /* API */,
 				5631560F228DC6A100C0B8D8 /* AppDelegate.swift */,
+				565E0D4722B6682900E434AD /* SF-Pro-Display-Medium.otf */,
+				565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */,
 				56315616228DC6A300C0B8D8 /* Assets.xcassets */,
 				56315618228DC6A300C0B8D8 /* LaunchScreen.storyboard */,
 				5631561B228DC6A300C0B8D8 /* Info.plist */,
@@ -209,6 +217,7 @@
 				5617036D229C71D300629790 /* Styleables */,
 				56B6CB212299D81B00277DD7 /* Knob.swift */,
 				56B6CB1B2299CA7400277DD7 /* GradientView.swift */,
+				565E0D4B22B6686900E434AD /* Theme.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,7 +317,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565E0D4922B6682900E434AD /* SF-Pro-Display-Medium.otf in Resources */,
 				5617036C229C6B0100629790 /* LoginViewController.xib in Resources */,
+				565E0D4A22B6682900E434AD /* SF-Pro-Display-Thin.otf in Resources */,
 				5617037B229C78AA00629790 /* IntroViewController.xib in Resources */,
 				5631561A228DC6A300C0B8D8 /* LaunchScreen.storyboard in Resources */,
 				56D70D9A22B5303900F6E156 /* Localizable.strings in Resources */,
@@ -411,6 +422,7 @@
 				5617037A229C78AA00629790 /* IntroViewController.swift in Sources */,
 				56170374229C76B300629790 /* StyleableImageView.swift in Sources */,
 				56D70D8D22B4F60A00F6E156 /* HotWaterModel.swift in Sources */,
+				565E0D4C22B6686900E434AD /* Theme.swift in Sources */,
 				56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */,
 				56D70D8F22B4F66100F6E156 /* TemperatureModelBase.swift in Sources */,
 				563A281A22919E92002A3708 /* CharsetEx.swift in Sources */,

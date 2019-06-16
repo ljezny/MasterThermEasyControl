@@ -48,7 +48,7 @@ import UIKit
             self.textColor = UIColor.white
             break
         case "body":
-            self.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
+            self.font = Theme.getL
             self.textColor = UIColor.white
             break
         case "subtitle":
