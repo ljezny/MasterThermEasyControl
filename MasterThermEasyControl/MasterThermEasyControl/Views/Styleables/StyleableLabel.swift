@@ -44,12 +44,11 @@ import UIKit
     func setStyle(style:String?) -> Void {
         switch style! {
         case "header":
-            self.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-            //self.font = Theme.getBoldFont(size: Theme.normalFontSize)
+            self.font = UIFont.systemFont(ofSize: 20, weight: .regular)
             self.textColor = UIColor.white
             break
         case "body":
-            //self.font = Theme.getLightFont(size: Theme.smallFontSize)
+            self.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
             self.textColor = UIColor.white
             break
         case "subtitle":

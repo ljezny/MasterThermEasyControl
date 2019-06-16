@@ -22,8 +22,7 @@ class TemperatureModelBase {
     static func createListFromData(response: DataResponse) -> [TemperatureModelBase] {
         var result = [TemperatureModelBase]()
         
-        result.append(HotWaterModel())
-        result.append(HotWaterModel())
+        result.append(HeatModel())
         result.append(HotWaterModel())
         
         result.forEach { (m) in
