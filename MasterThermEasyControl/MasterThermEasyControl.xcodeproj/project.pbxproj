@@ -44,7 +44,6 @@
 		56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */; };
 		56D70D9822B512DB00F6E156 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */; };
 		56D70D9A22B5303900F6E156 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9922B5303900F6E156 /* Localizable.strings */; };
-		56D70D9F22B532E700F6E156 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9E22B532E600F6E156 /* AlertUtils.swift */; };
 		56D70DA222B6848A00F6E156 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DA122B6848A00F6E156 /* BaseViewController.swift */; };
 		56D70DA422B684A200F6E156 /* PageBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DA322B684A200F6E156 /* PageBaseViewController.swift */; };
 		56D70DAB22B6B6A200F6E156 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D70DAA22B6B6A200F6E156 /* NotificationCenter.framework */; };
@@ -75,6 +74,7 @@
 		56D70DD122B6D74B00F6E156 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9922B5303900F6E156 /* Localizable.strings */; };
 		56D70DD422B6E65F00F6E156 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DD222B6E65F00F6E156 /* ProfileViewController.swift */; };
 		56D70DD522B6E65F00F6E156 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D70DD322B6E65F00F6E156 /* ProfileViewController.xib */; };
+		56D70DD722B8197900F6E156 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DD622B8197900F6E156 /* AlertUtils.swift */; };
 		57E0CE1F2468A0177449F14C /* Pods_MasterThermEasyControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,7 +144,6 @@
 		56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		56D70D9922B5303900F6E156 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		56D70D9E22B532E600F6E156 /* AlertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertUtils.swift; path = ../../../../fixedsmile.ios/fixedsmile/fixedsmile/AlertUtils.swift; sourceTree = "<group>"; };
 		56D70DA122B6848A00F6E156 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		56D70DA322B684A200F6E156 /* PageBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBaseViewController.swift; sourceTree = "<group>"; };
 		56D70DA922B6B6A200F6E156 /* MasterThermEasyControl.Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MasterThermEasyControl.Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +155,7 @@
 		56D70DC322B6C3D600F6E156 /* MasterThermEasyControl.Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasterThermEasyControl.Today.entitlements; sourceTree = "<group>"; };
 		56D70DD222B6E65F00F6E156 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		56D70DD322B6E65F00F6E156 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		56D70DD622B8197900F6E156 /* AlertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
 		984AD930A9D79CB8B99970E9 /* Pods-MasterThermEasyControl.Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.Today.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl.Today/Pods-MasterThermEasyControl.Today.debug.xcconfig"; sourceTree = "<group>"; };
 		E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl.release.xcconfig"; sourceTree = "<group>"; };
 		F272EADFC22189E62E568538 /* Pods-MasterThermEasyControl.Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.Today.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl.Today/Pods-MasterThermEasyControl.Today.release.xcconfig"; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 		56D70D9B22B530DA00F6E156 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				56D70D9E22B532E600F6E156 /* AlertUtils.swift */,
+				56D70DD622B8197900F6E156 /* AlertUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -606,6 +606,7 @@
 				56D70DD422B6E65F00F6E156 /* ProfileViewController.swift in Sources */,
 				56D70D8D22B4F60A00F6E156 /* HotWaterModel.swift in Sources */,
 				565E0D4C22B6686900E434AD /* Theme.swift in Sources */,
+				56D70DD722B8197900F6E156 /* AlertUtils.swift in Sources */,
 				56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */,
 				56D70D8F22B4F66100F6E156 /* TemperatureModelBase.swift in Sources */,
 				56D70DA422B684A200F6E156 /* PageBaseViewController.swift in Sources */,
@@ -618,7 +619,6 @@
 				563A281822919E7C002A3708 /* DictionaryEx.swift in Sources */,
 				56170376229C76B300629790 /* StyleableSwitch.swift in Sources */,
 				56170375229C76B300629790 /* StyleableLabel.swift in Sources */,
-				56D70D9F22B532E700F6E156 /* AlertUtils.swift in Sources */,
 				56B6CB222299D81B00277DD7 /* Knob.swift in Sources */,
 				56D70D9822B512DB00F6E156 /* KeychainPasswordItem.swift in Sources */,
 				56D70DA222B6848A00F6E156 /* BaseViewController.swift in Sources */,
