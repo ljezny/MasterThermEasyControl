@@ -87,4 +87,45 @@ class ApiManager: NSObject {
             task.resume()
         }
     }
+    
+    public func setData(moduleId:String,parameter:String, value:String, completion: @escaping (DataResponse?,Error?)->()) {
+        messageId += 1
+        
+        let urlString = URL(string: ApiManager.PARAMS_BASE_URL)
+        if let baseUrl = urlString {
+            let dataUrl = baseUrl.appendingPathComponent("ActiveVizualizationServlet")
+            var request = URLRequest(url: dataUrl)
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "POST"
+            let parameters: [String: Any] = [
+                "messageId": "\(messageId)",
+                "moduleId": moduleId,
+                "deviceId": "1", //I dont know where to get this value
+                "configFile":"varfile_mt1_config",
+                "errorResponse":"true",
+                "variableId":parameter,
+                "variableValue":value
+            ]
+            request.httpBody = parameters.percentEscaped().data(using: .utf8)
+            
+            let task = session.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        completion(nil,error)
+                    }
+                } else {
+                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8),let response = DataResponse.deserialize(from: responseString) {
+                        DispatchQueue.main.async {
+                            completion(response,nil)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            completion(nil,nil)
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
 }

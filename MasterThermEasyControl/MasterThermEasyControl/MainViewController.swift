@@ -65,6 +65,15 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
                             vc.mainViewController = self
                             self.controllers.append(vc)
                         })
+                        
+                        let heatPumpInfoVC = HeatPumpInfoViewController(nib: R.nib.heatPumpInfoViewController)
+                        heatPumpInfoVC.mainViewController = self
+                        self.controllers.append(heatPumpInfoVC)
+                        
+                        let profileVC = ProfileViewController(nib: R.nib.profileViewController)
+                        profileVC.mainViewController = self
+                        self.controllers.append(profileVC)
+                        
                         if let firstVC = self.controllers.first {
                             self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
                         }

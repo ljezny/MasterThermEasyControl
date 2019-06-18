@@ -69,8 +69,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
+    /// Nib `HeatPumpInfoViewController`.
+    static let heatPumpInfoViewController = _R.nib._HeatPumpInfoViewController()
     /// Nib `InitialViewController`.
     static let initialViewController = _R.nib._InitialViewController()
     /// Nib `IntroViewController`.
@@ -81,6 +83,12 @@ struct R: Rswift.Validatable {
     static let profileViewController = _R.nib._ProfileViewController()
     /// Nib `TemperatureViewController`.
     static let temperatureViewController = _R.nib._TemperatureViewController()
+    
+    /// `UINib(name: "HeatPumpInfoViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.heatPumpInfoViewController) instead")
+    static func heatPumpInfoViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.heatPumpInfoViewController)
+    }
     
     /// `UINib(name: "InitialViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.initialViewController) instead")
@@ -110,6 +118,10 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.temperatureViewController) instead")
     static func temperatureViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.temperatureViewController)
+    }
+    
+    static func heatPumpInfoViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.heatPumpInfoViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func initialViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -150,7 +162,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 18 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 25 localization keys.
     struct localizable {
       /// Value: Aktuální
       static let temperatureReal = Rswift.StringResource(key: "temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -162,22 +174,36 @@ struct R: Rswift.Validatable {
       static let loginEmailPlaceholder = Rswift.StringResource(key: "login.email.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Heslo
       static let loginPasswordPlaceholder = Rswift.StringResource(key: "login.password.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Jestliže již nechcete aplikaci nadále používat, prosím, odhlašte se a aplikace bezpečně vymaže Vaše přihlašovací údaje z klíčenky.
+      static let profileLogoutMessage = Rswift.StringResource(key: "profile.logout.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze a jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem nepokrývá funkcionalitu originální aplikace, ale naopak jsem chtěl zjednodušit ovládání tepelného čerpadla. Cílem je tedy jednoduše a pohodlněji ovládát vytápění a naopak nastavování teplotních křivek a složitějších parametrů dále neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem ladil a testoval na svém vlastním tepelném čerpadle žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
       static let introMessage = Rswift.StringResource(key: "intro.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Kontaktovat
+      static let profileContactButton = Rswift.StringResource(key: "profile.contact.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: MasterTherm Easy Control
       static let generalAppname = Rswift.StringResource(key: "general.appname", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Musíte mít instalovanou a správně nastavenout aplikaci Mail.
+      static let profileContactError = Rswift.StringResource(key: "profile.contact.error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: OK
       static let generalOk = Rswift.StringResource(key: "general.ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Odhlásit
+      static let profileLogoutButton = Rswift.StringResource(key: "profile.logout.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pokračovat
       static let introContinueButton = Rswift.StringResource(key: "intro.continue.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Pokud Vám v aplikaci nějaká funkce chybí nebo naopak nějaká chyba přebývá, můžete mne kontaktovat. Budu rád za zpětnou vazbu. Berte na vědomí, že se nejedná o komerční aplikaci, ale o výtvor ve volném čase. Proto se budu zabývat úpravami s malou prioritou. Rád Vám však odpovím.
+      static let profileContactMessage = Rswift.StringResource(key: "profile.contact.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Požadováno
       static let temperatureSet = Rswift.StringResource(key: "temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pro přihlášení použijte údaje, které jste obdrželi od firmy MasterTherm a které používáte pro přihlášení na webovém rozhraní nebo v originální aplikaci. Přihlašovací údaje aplikace uloží bezpečně do tzv. klíčenky a Vaše heslo bude posíláno bezpečně přes šifrované spojení. Vaše údaje aplikace dále nijak nezpracovává.
       static let loginMessage = Rswift.StringResource(key: "login.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Profil
+      static let profileTitle = Rswift.StringResource(key: "profile.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Přihlásit
       static let loginButton = Rswift.StringResource(key: "login.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Přihlášení se nepodařilo
       static let unauthorizedTitle = Rswift.StringResource(key: "unauthorized.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Tepelné čerpadlo
+      static let heatpumpTitle = Rswift.StringResource(key: "heatpump.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Teplá užitková voda
       static let hotwatermodelName = Rswift.StringResource(key: "hotwatermodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
@@ -214,9 +240,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("login.password.placeholder", bundle: R.hostingBundle, comment: "")
       }
       
+      /// Value: Jestliže již nechcete aplikaci nadále používat, prosím, odhlašte se a aplikace bezpečně vymaže Vaše přihlašovací údaje z klíčenky.
+      static func profileLogoutMessage(_: Void = ()) -> String {
+        return NSLocalizedString("profile.logout.message", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze a jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem nepokrývá funkcionalitu originální aplikace, ale naopak jsem chtěl zjednodušit ovládání tepelného čerpadla. Cílem je tedy jednoduše a pohodlněji ovládát vytápění a naopak nastavování teplotních křivek a složitějších parametrů dále neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem ladil a testoval na svém vlastním tepelném čerpadle žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
       static func introMessage(_: Void = ()) -> String {
         return NSLocalizedString("intro.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Kontaktovat
+      static func profileContactButton(_: Void = ()) -> String {
+        return NSLocalizedString("profile.contact.button", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: MasterTherm Easy Control
@@ -224,14 +260,29 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("general.appname", bundle: R.hostingBundle, comment: "")
       }
       
+      /// Value: Musíte mít instalovanou a správně nastavenout aplikaci Mail.
+      static func profileContactError(_: Void = ()) -> String {
+        return NSLocalizedString("profile.contact.error", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: OK
       static func generalOk(_: Void = ()) -> String {
         return NSLocalizedString("general.ok", bundle: R.hostingBundle, comment: "")
       }
       
+      /// Value: Odhlásit
+      static func profileLogoutButton(_: Void = ()) -> String {
+        return NSLocalizedString("profile.logout.button", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: Pokračovat
       static func introContinueButton(_: Void = ()) -> String {
         return NSLocalizedString("intro.continue.button", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Pokud Vám v aplikaci nějaká funkce chybí nebo naopak nějaká chyba přebývá, můžete mne kontaktovat. Budu rád za zpětnou vazbu. Berte na vědomí, že se nejedná o komerční aplikaci, ale o výtvor ve volném čase. Proto se budu zabývat úpravami s malou prioritou. Rád Vám však odpovím.
+      static func profileContactMessage(_: Void = ()) -> String {
+        return NSLocalizedString("profile.contact.message", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Požadováno
@@ -244,6 +295,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("login.message", bundle: R.hostingBundle, comment: "")
       }
       
+      /// Value: Profil
+      static func profileTitle(_: Void = ()) -> String {
+        return NSLocalizedString("profile.title", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: Přihlásit
       static func loginButton(_: Void = ()) -> String {
         return NSLocalizedString("login.button", bundle: R.hostingBundle, comment: "")
@@ -252,6 +308,11 @@ struct R: Rswift.Validatable {
       /// Value: Přihlášení se nepodařilo
       static func unauthorizedTitle(_: Void = ()) -> String {
         return NSLocalizedString("unauthorized.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Tepelné čerpadlo
+      static func heatpumpTitle(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.title", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Teplá užitková voda
@@ -309,6 +370,17 @@ struct _R: Rswift.Validatable {
       try _IntroViewController.validate()
       try _LoginViewController.validate()
       try _TemperatureViewController.validate()
+    }
+    
+    struct _HeatPumpInfoViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "HeatPumpInfoViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
     }
     
     struct _InitialViewController: Rswift.NibResourceType {

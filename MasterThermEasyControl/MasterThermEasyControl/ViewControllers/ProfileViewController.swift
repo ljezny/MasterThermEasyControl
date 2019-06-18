@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ProfileViewController: PageBaseViewController {
+class ProfileViewController: PageBaseViewController,MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,14 +18,21 @@ class ProfileViewController: PageBaseViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func contactAction(_ sender: Any) {
+        guard MFMailComposeViewController.canSendMail() else {
+            self.present(AlertUtils.createSimpleAlert(title: R.string.localizable.generalAppname(), message: R.string.localizable.profileContactError()), animated: true, completion: nil)
+            return
+        }
+        self.present(AlertUtils.configureMailComposeViewController(delegate: self, recipient: "ljezny@gmail.com", subject: R.string.localizable.generalAppname(), body: nil), animated: true)
     }
-    */
-
+    
+    @IBAction func logoutAction(_ sender: Any) {
+        Session.shared.clearCredentials()
+        self.mainViewController?.presentLogin(direction: UIPageViewController.NavigationDirection.reverse)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+      self.dismiss(animated: true, completion: nil)
+    }
+    
 }

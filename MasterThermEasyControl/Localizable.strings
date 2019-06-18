@@ -29,3 +29,11 @@
 
 "heatmodel.name" = "Domov";
 "hotwatermodel.name" = "Teplá užitková voda";
+
+"heatpump.title" = "Tepelné čerpadlo";
+"profile.title" = "Profil";
+"profile.contact.message" = "Pokud Vám v aplikaci nějaká funkce chybí nebo naopak nějaká chyba přebývá, můžete mne kontaktovat. Budu rád za zpětnou vazbu. Berte na vědomí, že se nejedná o komerční aplikaci, ale o výtvor ve volném čase. Proto se budu zabývat úpravami s malou prioritou. Rád Vám však odpovím.";
+"profile.contact.button" = "Kontaktovat";
+"profile.contact.error" = "Musíte mít instalovanou a správně nastavenout aplikaci Mail.";
+"profile.logout.message" = "Jestliže již nechcete aplikaci nadále používat, prosím, odhlašte se a aplikace bezpečně vymaže Vaše přihlašovací údaje z klíčenky.";
+"profile.logout.button" = "Odhlásit";"

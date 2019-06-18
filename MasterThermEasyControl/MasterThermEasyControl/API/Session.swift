@@ -39,8 +39,8 @@ class Session {
                     self.clearCredentials()
                     completion(.unauthorized)
                 } else {
-                    self.loginResponse = loginResponse
                     self.storeCredentials(user: user, password: password)
+                    self.loginResponse = loginResponse
                     completion(.success)
                 }
             }
@@ -72,8 +72,22 @@ class Session {
         })
     }
     
+    func setData(parameter:String, value:String, completion:@escaping (DataResponse?,ApiResult)->()) {
+        ApiManager.sharedInstance.setData(moduleId: loginResponse?.modules.first?.id ?? "", parameter: parameter,value: value, completion: { (dataResponse, error) in
+            if let _ = error {
+                completion(nil,.connectionError)
+            } else if let dataResponse = dataResponse {
+                completion(dataResponse,.success)
+            } else {
+                completion(nil,.expired)
+            }
+        })
+    }
+    
+    
     func storeCredentials(user: String, password:String) {
         clearCredentials()
+        loginResponse = nil
         UserDefaults.init(suiteName: Session.SHARED_APP_GROUP_KEY)?.set(user,forKey: Session.ACCOUNT_USER_DEFAULTS_KEY)
         let keychainPasswordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName, account: user,accessGroup: KeychainConfiguration.accessGroup)
         try? keychainPasswordItem.savePassword(password)

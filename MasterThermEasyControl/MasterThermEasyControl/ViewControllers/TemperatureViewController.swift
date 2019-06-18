@@ -58,15 +58,26 @@ class TemperatureViewController: PageBaseViewController {
                self.iconImage.image = UIImage.init(named: icon)
             }
             
+            var bounceValue = self.model?.setTemperature.value
+            self.model?.setTemperature.skip(first: 1).observeNext(with: {[weak self] (v) in
+                if bounceValue != v {
+                    bounceValue = v
+                    DispatchQueue.main.after(when: 0.5, block: {
+                        if bounceValue == v {
+                            self?.postValue()
+                        }
+                    })
+                }
+                
+            }).dispose(in: self.bag)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.knob.value.observeNext {[weak self] (v) in
+        self.knob.value.skip(first: 1).observeNext {[weak self] (v) in
             self?.updateGradient(v: v ?? 0.0)
-            self?.postValue()
         }.dispose(in: self.bag)
 
     }
@@ -78,5 +89,29 @@ class TemperatureViewController: PageBaseViewController {
     func postValue() {
         //api call
         //dont forget debounce
+        for updatableParam in model?.getUpdatedValues() ?? [String:String]() {
+            Session.shared.setData(parameter: updatableParam.key, value: updatableParam.value) { (dataResponse, result) in
+                switch result {
+                case .success:
+                    if dataResponse?.error.errorId ?? 0 != 0 {
+                        self.present(AlertUtils.createSimpleAlert(title: R.string.localizable.generalAppname(), message: dataResponse?.error.errorMessage), animated: true, completion: {
+                            
+                        })
+                    }
+                   // self.mainViewController?.presentMainApp() //reload data
+                    break
+                case .connectionError:
+                    self.present(AlertUtils.createNoInternetAlert(), animated: true)
+                    //TODO: some retry needed
+                    break
+                case .unauthorized:
+                    self.mainViewController?.presentLogin(direction: .reverse)
+                    break
+                case .expired:
+                    self.mainViewController?.relogin()
+                    break
+                }
+            }
+        }
     }
 }

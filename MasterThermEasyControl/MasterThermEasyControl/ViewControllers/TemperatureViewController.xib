@@ -39,10 +39,10 @@
                             <rect key="frame" x="87" y="16" width="240" height="786"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hGR-2o-Lgn">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="108.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iYy-Bi-vGI">
-                                            <rect key="frame" x="0.0" y="33.5" width="240" height="82.5"/>
+                                            <rect key="frame" x="0.0" y="26" width="240" height="56"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOMA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C9-Mg-3HG" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
                                                     <rect key="frame" x="91" y="0.0" width="58.5" height="24"/>
@@ -54,7 +54,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home" translatesAutoresizingMaskIntoConstraints="NO" id="YIg-Ya-TyL">
-                                                    <rect key="frame" x="98.5" y="40" width="43" height="42.5"/>
+                                                    <rect key="frame" x="112" y="40" width="16" height="16"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
@@ -62,10 +62,10 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BjV-oF-Knk">
-                                    <rect key="frame" x="0.0" y="150" width="240" height="479"/>
+                                    <rect key="frame" x="0.0" y="108.5" width="240" height="510"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4xE-T9-zAw">
-                                            <rect key="frame" x="0.0" y="107.5" width="240" height="264"/>
+                                            <rect key="frame" x="0.0" y="123" width="240" height="264"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B0E-lm-2Ri">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="264"/>
@@ -74,7 +74,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N3l-qU-Ccv">
-                                                                    <rect key="frame" x="45.5" y="76.5" width="149.5" height="86.5"/>
+                                                                    <rect key="frame" x="45.5" y="77" width="149.5" height="86.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF3-91-c0l" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="149.5" height="29"/>
@@ -136,10 +136,10 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="900" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zuh-TJ-T67">
-                                    <rect key="frame" x="0.0" y="629" width="240" height="157"/>
+                                    <rect key="frame" x="0.0" y="618.5" width="240" height="167.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tHP-3x-Sha">
-                                            <rect key="frame" x="0.0" y="35" width="240" height="86.5"/>
+                                            <rect key="frame" x="0.0" y="40.5" width="240" height="86.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDM-tE-F5H" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="29"/>
@@ -188,6 +188,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_home" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="ic_home" width="64" height="64"/>
     </resources>
 </document>

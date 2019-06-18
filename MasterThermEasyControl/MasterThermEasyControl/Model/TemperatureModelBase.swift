@@ -27,6 +27,11 @@ class TemperatureModelBase {
         return self
     }
     
+    func getUpdatedValues() -> [String:String] {
+        var result = [String:String]()
+        return result
+    }
+    
     static func createListFromData(response: DataResponse) -> [TemperatureModelBase] {
         var result = [TemperatureModelBase]()
         

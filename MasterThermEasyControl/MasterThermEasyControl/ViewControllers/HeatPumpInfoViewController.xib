@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeatPumpInfoViewController" customModule="MasterThermEasyControl" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgV-m5-ihH" customClass="GradientView" customModule="MasterThermEasyControl" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="hQE-bv-VYH"/>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlB-3l-604">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8gb-BJ-Ykf">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="339"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-4y-CPi">
+                                    <rect key="frame" x="87" y="0.0" width="240" height="339"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRy-Qd-Se0" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                            <rect key="frame" x="44" y="88" width="152" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="header"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="heatpump.title"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QwF-MY-9Um">
+                                            <rect key="frame" x="44" y="132" width="152" height="71.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJB-mz-R8a" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egx-Ws-pch" customClass="StyleableButton" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="39.5" width="152" height="32"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="intro.continue.button"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7jw-ag-nOU">
+                                            <rect key="frame" x="44" y="223.5" width="152" height="71.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fq-YC-vHX" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56B-FV-Qge" customClass="StyleableButton" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="39.5" width="152" height="32"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="intro.continue.button"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="480" id="ZRy-2F-7HU"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="44" left="44" bottom="44" right="44"/>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="8gb-BJ-Ykf" secondAttribute="trailing" id="DG9-cV-5P7"/>
+                        <constraint firstAttribute="bottom" secondItem="8gb-BJ-Ykf" secondAttribute="bottom" id="IgE-Qd-via"/>
+                        <constraint firstItem="8gb-BJ-Ykf" firstAttribute="top" secondItem="BlB-3l-604" secondAttribute="top" id="T50-li-YIa"/>
+                        <constraint firstItem="8gb-BJ-Ykf" firstAttribute="leading" secondItem="BlB-3l-604" secondAttribute="leading" id="clq-bC-fVD"/>
+                        <constraint firstItem="8gb-BJ-Ykf" firstAttribute="width" secondItem="BlB-3l-604" secondAttribute="width" id="p6A-h9-tng"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="gkH-GX-yXZ"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BlB-3l-604" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4ou-J6-mzV"/>
+                <constraint firstItem="kgV-m5-ihH" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5xs-Dk-djX"/>
+                <constraint firstItem="kgV-m5-ihH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BYr-F7-Gw7"/>
+                <constraint firstAttribute="bottom" secondItem="kgV-m5-ihH" secondAttribute="bottom" id="RCk-XI-sjS"/>
+                <constraint firstAttribute="bottom" secondItem="BlB-3l-604" secondAttribute="bottom" id="WPb-B7-HHE"/>
+                <constraint firstItem="kgV-m5-ihH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aVv-Rh-o2X"/>
+                <constraint firstItem="BlB-3l-604" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fx8-Y4-svz"/>
+                <constraint firstItem="BlB-3l-604" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xl6-Fq-z6z"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
