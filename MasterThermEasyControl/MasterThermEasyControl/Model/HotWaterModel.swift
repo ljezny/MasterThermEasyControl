@@ -22,6 +22,13 @@ class HotWaterModel:TemperatureModelBase {
         return NSLocalizedString("hotwatermodel.name", comment: "")
     }
     
+    override func getUpdatedValues() -> [String : String] {
+        var result = super.getUpdatedValues()
+        
+        result["A_\(129)"] = String(format: "%.1f", setTemperature.value ?? 0.0)
+        return result
+    }
+    
     override var icon: String? {
         return "ic_water"
     }

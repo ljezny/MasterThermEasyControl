@@ -29,6 +29,8 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     func presentLogin(direction: UIPageViewController.NavigationDirection) {
+        self.temperatureControllers.removeAll()
+        
         let loginViewController = LoginViewController(nib: R.nib.loginViewController)
         loginViewController.mainViewController = self
         

@@ -162,10 +162,16 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 25 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 31 localization keys.
     struct localizable {
       /// Value: Aktuální
       static let temperatureReal = Rswift.StringResource(key: "temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Aktuální požadovaná teplota topné vody. Řídící jednotka tuto hodnotu vypočítává na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.
+      static let heatpumpTemperatureSetHelp = Rswift.StringResource(key: "heatpump.temperature.set.help", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Aktuální teplota topné vody v hlavním topném okruhu měřená na vstupu do tepelného čerpadla.
+      static let heatpumpTemperatureRealHelp = Rswift.StringResource(key: "heatpump.temperature.real.help", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Aktuální venkovní teplota měřená tepelným čerpadlem. 
+      static let heatpumpTemperatureOutsideHelp = Rswift.StringResource(key: "heatpump.temperature.outside.help", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Chyba připojení
       static let connectionErrorTitle = Rswift.StringResource(key: "connection.error.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Domov
@@ -192,6 +198,8 @@ struct R: Rswift.Validatable {
       static let introContinueButton = Rswift.StringResource(key: "intro.continue.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pokud Vám v aplikaci nějaká funkce chybí nebo naopak nějaká chyba přebývá, můžete mne kontaktovat. Budu rád za zpětnou vazbu. Berte na vědomí, že se nejedná o komerční aplikaci, ale o výtvor ve volném čase. Proto se budu zabývat úpravami s malou prioritou. Rád Vám však odpovím.
       static let profileContactMessage = Rswift.StringResource(key: "profile.contact.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Požadovaná teplota topné vody
+      static let heatpumpTemperatureSet = Rswift.StringResource(key: "heatpump.temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Požadováno
       static let temperatureSet = Rswift.StringResource(key: "temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pro přihlášení použijte údaje, které jste obdrželi od firmy MasterTherm a které používáte pro přihlášení na webovém rozhraní nebo v originální aplikaci. Přihlašovací údaje aplikace uloží bezpečně do tzv. klíčenky a Vaše heslo bude posíláno bezpečně přes šifrované spojení. Vaše údaje aplikace dále nijak nezpracovává.
@@ -204,10 +212,14 @@ struct R: Rswift.Validatable {
       static let unauthorizedTitle = Rswift.StringResource(key: "unauthorized.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Tepelné čerpadlo
       static let heatpumpTitle = Rswift.StringResource(key: "heatpump.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Teplota topné vody
+      static let heatpumpTemperatureReal = Rswift.StringResource(key: "heatpump.temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Teplá užitková voda
       static let hotwatermodelName = Rswift.StringResource(key: "hotwatermodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
       static let unauthorizedMessage = Rswift.StringResource(key: "unauthorized.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Venkovní teplota
+      static let heatpumpTemperatureOutside = Rswift.StringResource(key: "heatpump.temperature.outside", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.
       static let connectionErrorMessage = Rswift.StringResource(key: "connection.error.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Zkusit znovu
@@ -218,6 +230,21 @@ struct R: Rswift.Validatable {
       /// Value: Aktuální
       static func temperatureReal(_: Void = ()) -> String {
         return NSLocalizedString("temperature.real", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Aktuální požadovaná teplota topné vody. Řídící jednotka tuto hodnotu vypočítává na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.
+      static func heatpumpTemperatureSetHelp(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.set.help", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Aktuální teplota topné vody v hlavním topném okruhu měřená na vstupu do tepelného čerpadla.
+      static func heatpumpTemperatureRealHelp(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.real.help", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Aktuální venkovní teplota měřená tepelným čerpadlem. 
+      static func heatpumpTemperatureOutsideHelp(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.outside.help", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Chyba připojení
@@ -285,6 +312,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("profile.contact.message", bundle: R.hostingBundle, comment: "")
       }
       
+      /// Value: Požadovaná teplota topné vody
+      static func heatpumpTemperatureSet(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.set", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: Požadováno
       static func temperatureSet(_: Void = ()) -> String {
         return NSLocalizedString("temperature.set", bundle: R.hostingBundle, comment: "")
@@ -315,6 +347,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("heatpump.title", bundle: R.hostingBundle, comment: "")
       }
       
+      /// Value: Teplota topné vody
+      static func heatpumpTemperatureReal(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.real", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: Teplá užitková voda
       static func hotwatermodelName(_: Void = ()) -> String {
         return NSLocalizedString("hotwatermodel.name", bundle: R.hostingBundle, comment: "")
@@ -323,6 +360,11 @@ struct R: Rswift.Validatable {
       /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
       static func unauthorizedMessage(_: Void = ()) -> String {
         return NSLocalizedString("unauthorized.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Venkovní teplota
+      static func heatpumpTemperatureOutside(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.outside", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.
@@ -367,17 +409,25 @@ struct _R: Rswift.Validatable {
   
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _HeatPumpInfoViewController.validate()
       try _IntroViewController.validate()
       try _LoginViewController.validate()
+      try _ProfileViewController.validate()
       try _TemperatureViewController.validate()
     }
     
-    struct _HeatPumpInfoViewController: Rswift.NibResourceType {
+    struct _HeatPumpInfoViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "HeatPumpInfoViewController"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_home' is used in nib 'HeatPumpInfoViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}
@@ -428,12 +478,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _ProfileViewController: Rswift.NibResourceType {
+    struct _ProfileViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "ProfileViewController"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_lock' is used in nib 'ProfileViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}

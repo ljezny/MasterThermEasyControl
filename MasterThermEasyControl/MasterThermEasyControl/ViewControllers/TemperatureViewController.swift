@@ -62,7 +62,7 @@ class TemperatureViewController: PageBaseViewController {
             self.model?.setTemperature.skip(first: 1).observeNext(with: {[weak self] (v) in
                 if bounceValue != v {
                     bounceValue = v
-                    DispatchQueue.main.after(when: 0.5, block: {
+                    DispatchQueue.main.after(when: 2.0, block: {
                         if bounceValue == v {
                             self?.postValue()
                         }
