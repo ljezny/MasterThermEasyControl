@@ -9,28 +9,13 @@
 import UIKit
 import Bond
 
-class TemperatureModelBase {
-    var name:String? {
-        return nil
-    }
-    
-    var icon:String? {
-        return nil
-    }
-    
+class TemperatureModelBase: ModelBase {
     let realTemperature = Observable<Double?>(nil)
     let setTemperature = Observable<Double?>(nil)
     let minSetTemperature = Observable<Double?>(nil)
     let maxSetTemperature = Observable<Double?>(nil)
     
-    func updateFromData(response: DataResponse) -> TemperatureModelBase {
-        return self
-    }
     
-    func getUpdatedValues() -> [String:String] {
-        var result = [String:String]()
-        return result
-    }
     
     static func createListFromData(response: DataResponse) -> [TemperatureModelBase] {
         var result = [TemperatureModelBase]()

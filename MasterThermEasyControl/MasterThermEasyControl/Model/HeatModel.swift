@@ -35,15 +35,13 @@ class HeatModel : TemperatureModelBase {
         return "ic_home"
     }
     
-    override func updateFromData(response: DataResponse) -> TemperatureModelBase {
+    override func updateFromData(response: DataResponse) {
         realTemperature.value = response.getAnalog(id: 211)
         if let newValue = response.getAnalog(id: 191), setTemperature.value != newValue {
             setTemperature.value = newValue
         }
         minSetTemperature.value = 10.0//response.getAnalog(id: 296)
         maxSetTemperature.value = 40.0//response.getAnalog(id: 297)
-        
-        return self
     }
     
     override func getUpdatedValues() -> [String : String] {

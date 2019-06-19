@@ -190,16 +190,12 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 33 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 32 localization keys.
     struct localizable {
       /// Value: Aktuální
+      static let heatpumpTemperatureReal = Rswift.StringResource(key: "heatpump.temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Aktuální
       static let temperatureReal = Rswift.StringResource(key: "temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Aktuální požadovaná teplota topné vody. Řídící jednotka tuto hodnotu vypočítává na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.
-      static let heatpumpTemperatureSetHelp = Rswift.StringResource(key: "heatpump.temperature.set.help", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Aktuální teplota topné vody v hlavním topném okruhu měřená na vstupu do tepelného čerpadla.
-      static let heatpumpTemperatureRealHelp = Rswift.StringResource(key: "heatpump.temperature.real.help", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Aktuální venkovní teplota měřená tepelným čerpadlem. 
-      static let heatpumpTemperatureOutsideHelp = Rswift.StringResource(key: "heatpump.temperature.outside.help", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Chyba připojení
       static let connectionErrorTitle = Rswift.StringResource(key: "connection.error.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Domov
@@ -230,7 +226,9 @@ struct R: Rswift.Validatable {
       static let introContinueButton = Rswift.StringResource(key: "intro.continue.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pokud Vám v aplikaci nějaká funkce chybí nebo naopak nějaká chyba přebývá, můžete mne kontaktovat. Budu rád za zpětnou vazbu. Berte na vědomí, že se nejedná o komerční aplikaci, ale o výtvor ve volném čase. Proto se budu zabývat úpravami s malou prioritou. Rád Vám však odpovím.
       static let profileContactMessage = Rswift.StringResource(key: "profile.contact.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Požadovaná teplota topné vody
+      /// Value: Požadovanou teplotu topné vody vypočítává řídící jednotka na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.
+      static let heatpumpTemperatureHelp = Rswift.StringResource(key: "heatpump.temperature.help", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Požadovaná
       static let heatpumpTemperatureSet = Rswift.StringResource(key: "heatpump.temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Požadováno
       static let temperatureSet = Rswift.StringResource(key: "temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -245,7 +243,7 @@ struct R: Rswift.Validatable {
       /// Value: Tepelné čerpadlo
       static let heatpumpTitle = Rswift.StringResource(key: "heatpump.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Teplota topné vody
-      static let heatpumpTemperatureReal = Rswift.StringResource(key: "heatpump.temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      static let heatpumpTemperature = Rswift.StringResource(key: "heatpump.temperature", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Teplá užitková voda
       static let hotwatermodelName = Rswift.StringResource(key: "hotwatermodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
@@ -260,23 +258,13 @@ struct R: Rswift.Validatable {
       static let generalCancel = Rswift.StringResource(key: "general.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       
       /// Value: Aktuální
+      static func heatpumpTemperatureReal(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.real", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Aktuální
       static func temperatureReal(_: Void = ()) -> String {
         return NSLocalizedString("temperature.real", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Aktuální požadovaná teplota topné vody. Řídící jednotka tuto hodnotu vypočítává na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.
-      static func heatpumpTemperatureSetHelp(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.set.help", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Aktuální teplota topné vody v hlavním topném okruhu měřená na vstupu do tepelného čerpadla.
-      static func heatpumpTemperatureRealHelp(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.real.help", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Aktuální venkovní teplota měřená tepelným čerpadlem. 
-      static func heatpumpTemperatureOutsideHelp(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.outside.help", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Chyba připojení
@@ -354,7 +342,12 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("profile.contact.message", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Požadovaná teplota topné vody
+      /// Value: Požadovanou teplotu topné vody vypočítává řídící jednotka na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.
+      static func heatpumpTemperatureHelp(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.help", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Požadovaná
       static func heatpumpTemperatureSet(_: Void = ()) -> String {
         return NSLocalizedString("heatpump.temperature.set", bundle: R.hostingBundle, comment: "")
       }
@@ -390,8 +383,8 @@ struct R: Rswift.Validatable {
       }
       
       /// Value: Teplota topné vody
-      static func heatpumpTemperatureReal(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.real", bundle: R.hostingBundle, comment: "")
+      static func heatpumpTemperature(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Teplá užitková voda

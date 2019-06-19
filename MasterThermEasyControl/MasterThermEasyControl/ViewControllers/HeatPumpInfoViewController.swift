@@ -10,21 +10,42 @@ import UIKit
 
 class HeatPumpInfoViewController: PageBaseViewController {
 
+    @IBOutlet weak var outsideTempLabel: StyleableLabel!
+    
+    @IBOutlet weak var setTempLabel: StyleableLabel!
+    @IBOutlet weak var realTempLabel: StyleableLabel!
+    
+    var model: HeatPumpModel? = nil {
+        didSet {
+            //setup bindings
+            let _ = self.view
+            
+            model?.outsideTemperature.map({ (d) -> String? in
+                if let d = d {
+                    return String(format: "%.1f °C", d)
+                }
+                return "--,- °C"
+            }).bind(to: outsideTempLabel.reactive.text).dispose(in: self.bag)
+            model?.requestedHeatWaterTemperature.map({ (d) -> String? in
+                if let d = d {
+                    return String(format: "%.1f °C", d)
+                }
+                return "--,- °C"
+            }).bind(to: setTempLabel.reactive.text).dispose(in: self.bag)
+            model?.realHeatWaterTemperature.map({ (d) -> String? in
+                if let d = d {
+                    return String(format: "%.1f °C", d)
+                }
+                return "--,- °C"
+            }).bind(to: realTempLabel.reactive.text).dispose(in: self.bag)
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

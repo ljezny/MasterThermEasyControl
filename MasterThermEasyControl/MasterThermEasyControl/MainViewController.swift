@@ -11,12 +11,6 @@ import UIKit
 class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     var controllers = [PageBaseViewController]()
-    /*IntroViewController(nib: R.nib.introViewController),
-        LoginViewController(nib: R.nib.loginViewController),
-        TemperatureViewController(nib: R.nib.temperatureViewController),
-        TemperatureViewController(nib: R.nib.temperatureViewController),
-        TemperatureViewController(nib: R.nib.temperatureViewController),
-        TemperatureViewController(nib: R.nib.temperatureViewController)] as [UIViewController]*/
     
     var temperatureControllers = [TemperatureViewController]()
     
@@ -41,7 +35,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         self.controllers.append(introViewController)
         self.controllers.append(loginViewController)
         if let firstVC = controllers.first {
-            self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+            self.setViewControllers([firstVC], direction: direction, animated: true, completion: nil)
         }
     }
     
@@ -69,6 +63,9 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
                         })
                         
                         let heatPumpInfoVC = HeatPumpInfoViewController(nib: R.nib.heatPumpInfoViewController)
+                        let heatPumpModel = HeatPumpModel()
+                        heatPumpModel.updateFromData(response: dataResponse)
+                        heatPumpInfoVC.model = heatPumpModel
                         heatPumpInfoVC.mainViewController = self
                         self.controllers.append(heatPumpInfoVC)
                         

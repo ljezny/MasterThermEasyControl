@@ -35,8 +35,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     switch result {
                     case .success:
                         if let response = response {
-                            let heatModel = HeatModel().updateFromData(response: response)
-                            let hotWaterModel = HotWaterModel().updateFromData(response: response)
+                            let heatModel = HeatModel()
+                            heatModel.updateFromData(response: response)
+                            let hotWaterModel = HotWaterModel()
+                            hotWaterModel.updateFromData(response: response)
                             
                             heatModel.setTemperature.map({ (d) -> String? in
                                 if let d = d {

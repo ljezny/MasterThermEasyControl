@@ -33,12 +33,11 @@
 "hotwatermodel.name" = "Teplá užitková voda";
 
 "heatpump.title" = "Tepelné čerpadlo";
-"heatpump.temperature.set" = "Požadovaná teplota topné vody";
-"heatpump.temperature.set.help" = "Aktuální požadovaná teplota topné vody. Řídící jednotka tuto hodnotu vypočítává na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.";
-"heatpump.temperature.real" = "Teplota topné vody";
-"heatpump.temperature.real.help" = "Aktuální teplota topné vody v hlavním topném okruhu měřená na vstupu do tepelného čerpadla.";
+"heatpump.temperature" = "Teplota topné vody";
+"heatpump.temperature.help" = "Požadovanou teplotu topné vody vypočítává řídící jednotka na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.";
+"heatpump.temperature.real" = "Aktuální";
+"heatpump.temperature.set" = "Požadovaná";
 "heatpump.temperature.outside" = "Venkovní teplota";
-"heatpump.temperature.outside.help" = "Aktuální venkovní teplota měřená tepelným čerpadlem. ";
 
 "profile.title" = "Profil";
 "profile.contact.message" = "Pokud Vám v aplikaci nějaká funkce chybí nebo naopak nějaká chyba přebývá, můžete mne kontaktovat. Budu rád za zpětnou vazbu. Berte na vědomí, že se nejedná o komerční aplikaci, ale o výtvor ve volném čase. Proto se budu zabývat úpravami s malou prioritou. Rád Vám však odpovím.";
