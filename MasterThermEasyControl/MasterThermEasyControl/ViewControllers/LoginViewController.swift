@@ -17,7 +17,7 @@ class LoginViewController: PageBaseViewController {
     @IBOutlet weak var loginButton: StyleableButton!
     
     let login = Observable<String?>("ljezny@gmail.com")
-    let password = Observable<String?>("ba2300514")
+    let password = Observable<String?>("ba2200514")
     
     override func viewDidLoad() {
         super.viewDidLoad()

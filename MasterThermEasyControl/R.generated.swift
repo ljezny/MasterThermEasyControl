@@ -42,28 +42,56 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
   struct image {
     /// Image `ic_home`.
     static let ic_home = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_home")
-    /// Image `ic_lock`.
-    static let ic_lock = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_lock")
+    /// Image `ic_pump`.
+    static let ic_pump = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_pump")
+    /// Image `ic_user`.
+    static let ic_user = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_user")
     /// Image `ic_water`.
     static let ic_water = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_water")
+    /// Image `photo_jezny`.
+    static let photo_jezny = Rswift.ImageResource(bundle: R.hostingBundle, name: "photo_jezny")
+    /// Image `photo_palka`.
+    static let photo_palka = Rswift.ImageResource(bundle: R.hostingBundle, name: "photo_palka")
+    /// Image `splash_logo`.
+    static let splash_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "splash_logo")
     
     /// `UIImage(named: "ic_home", bundle: ..., traitCollection: ...)`
     static func ic_home(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_home, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic_lock", bundle: ..., traitCollection: ...)`
-    static func ic_lock(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ic_lock, compatibleWith: traitCollection)
+    /// `UIImage(named: "ic_pump", bundle: ..., traitCollection: ...)`
+    static func ic_pump(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_pump, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_user", bundle: ..., traitCollection: ...)`
+    static func ic_user(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_user, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic_water", bundle: ..., traitCollection: ...)`
     static func ic_water(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_water, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "photo_jezny", bundle: ..., traitCollection: ...)`
+    static func photo_jezny(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_jezny, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "photo_palka", bundle: ..., traitCollection: ...)`
+    static func photo_palka(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_palka, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "splash_logo", bundle: ..., traitCollection: ...)`
+    static func splash_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.splash_logo, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -162,7 +190,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 31 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 33 localization keys.
     struct localizable {
       /// Value: Aktuální
       static let temperatureReal = Rswift.StringResource(key: "temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -182,10 +210,14 @@ struct R: Rswift.Validatable {
       static let loginPasswordPlaceholder = Rswift.StringResource(key: "login.password.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Jestliže již nechcete aplikaci nadále používat, prosím, odhlašte se a aplikace bezpečně vymaže Vaše přihlašovací údaje z klíčenky.
       static let profileLogoutMessage = Rswift.StringResource(key: "profile.logout.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Jiří Pálka
+      static let generalNamePalka = Rswift.StringResource(key: "general.name.palka", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze a jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem nepokrývá funkcionalitu originální aplikace, ale naopak jsem chtěl zjednodušit ovládání tepelného čerpadla. Cílem je tedy jednoduše a pohodlněji ovládát vytápění a naopak nastavování teplotních křivek a složitějších parametrů dále neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem ladil a testoval na svém vlastním tepelném čerpadle žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
       static let introMessage = Rswift.StringResource(key: "intro.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Kontaktovat
       static let profileContactButton = Rswift.StringResource(key: "profile.contact.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Lukáš Jezný
+      static let generalNameJezny = Rswift.StringResource(key: "general.name.jezny", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: MasterTherm Easy Control
       static let generalAppname = Rswift.StringResource(key: "general.appname", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Musíte mít instalovanou a správně nastavenout aplikaci Mail.
@@ -272,6 +304,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("profile.logout.message", bundle: R.hostingBundle, comment: "")
       }
       
+      /// Value: Jiří Pálka
+      static func generalNamePalka(_: Void = ()) -> String {
+        return NSLocalizedString("general.name.palka", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze a jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem nepokrývá funkcionalitu originální aplikace, ale naopak jsem chtěl zjednodušit ovládání tepelného čerpadla. Cílem je tedy jednoduše a pohodlněji ovládát vytápění a naopak nastavování teplotních křivek a složitějších parametrů dále neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem ladil a testoval na svém vlastním tepelném čerpadle žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
       static func introMessage(_: Void = ()) -> String {
         return NSLocalizedString("intro.message", bundle: R.hostingBundle, comment: "")
@@ -280,6 +317,11 @@ struct R: Rswift.Validatable {
       /// Value: Kontaktovat
       static func profileContactButton(_: Void = ()) -> String {
         return NSLocalizedString("profile.contact.button", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Lukáš Jezný
+      static func generalNameJezny(_: Void = ()) -> String {
+        return NSLocalizedString("general.name.jezny", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: MasterTherm Easy Control
@@ -410,6 +452,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _HeatPumpInfoViewController.validate()
+      try _InitialViewController.validate()
       try _IntroViewController.validate()
       try _LoginViewController.validate()
       try _ProfileViewController.validate()
@@ -425,7 +468,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "ic_home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_home' is used in nib 'HeatPumpInfoViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_pump", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_pump' is used in nib 'HeatPumpInfoViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -433,12 +476,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _InitialViewController: Rswift.NibResourceType {
+    struct _InitialViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "InitialViewController"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "splash_logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'splash_logo' is used in nib 'InitialViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}
@@ -453,7 +502,8 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "ic_home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_home' is used in nib 'IntroViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "photo_jezny", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'photo_jezny' is used in nib 'IntroViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "photo_palka", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'photo_palka' is used in nib 'IntroViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -470,7 +520,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "ic_lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_lock' is used in nib 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_user' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -487,7 +537,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "ic_lock", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_lock' is used in nib 'ProfileViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_user' is used in nib 'ProfileViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

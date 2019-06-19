@@ -10,6 +10,8 @@
 "general.ok" = "OK";
 "general.cancel" = "Zrušit";
 "general.retry" = "Zkusit znovu";
+"general.name.jezny" = "Lukáš Jezný";
+"general.name.palka" = "Jiří Pálka";
 
 "connection.error.title" = "Chyba připojení";
 "connection.error.message" = "Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.";

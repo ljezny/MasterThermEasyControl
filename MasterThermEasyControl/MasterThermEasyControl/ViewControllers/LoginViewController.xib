@@ -32,20 +32,20 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nCK-lL-gHU">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="268"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IDz-65-dut">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="268"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3kv-Hn-M0Z">
-                                            <rect key="frame" x="65.5" y="0.0" width="283" height="298"/>
+                                            <rect key="frame" x="135" y="0.0" width="144.5" height="268"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lock" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-ex-jUo">
-                                                    <rect key="frame" x="44" y="44" width="195" height="42.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_user" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-ex-jUo">
+                                                    <rect key="frame" x="44" y="44" width="56.5" height="42"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qy-mR-EdU" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                    <rect key="frame" x="44" y="98.5" width="195" height="19.5"/>
+                                                    <rect key="frame" x="44" y="98" width="56.5" height="0.0"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFN-s7-al2" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                    <rect key="frame" x="44" y="130" width="195" height="34"/>
+                                                    <rect key="frame" x="44" y="110" width="56.5" height="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -65,7 +65,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgO-EU-oqC" customClass="StyleableTextField" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                    <rect key="frame" x="44" y="176" width="195" height="34"/>
+                                                    <rect key="frame" x="44" y="152" width="56.5" height="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -75,7 +75,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0f-ay-D8N" customClass="StyleableButton" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                    <rect key="frame" x="44" y="222" width="195" height="32"/>
+                                                    <rect key="frame" x="44" y="194" width="56.5" height="30"/>
                                                     <state key="normal" title="Login"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="style" value="primary"/>
@@ -119,6 +119,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_lock" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="ic_user" width="36.5" height="42"/>
     </resources>
 </document>

@@ -39,13 +39,17 @@
                             <rect key="frame" x="87" y="16" width="240" height="786"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hGR-2o-Lgn">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="108.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="116.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iYy-Bi-vGI">
-                                            <rect key="frame" x="0.0" y="26" width="240" height="56"/>
+                                            <rect key="frame" x="0.0" y="32" width="240" height="52.5"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home" translatesAutoresizingMaskIntoConstraints="NO" id="YIg-Ya-TyL">
+                                                    <rect key="frame" x="112" y="0.0" width="16" height="16"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOMA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C9-Mg-3HG" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                    <rect key="frame" x="91" y="0.0" width="58.5" height="24"/>
+                                                    <rect key="frame" x="95" y="32" width="50.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -53,31 +57,27 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="style" value="header"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home" translatesAutoresizingMaskIntoConstraints="NO" id="YIg-Ya-TyL">
-                                                    <rect key="frame" x="112" y="40" width="16" height="16"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </imageView>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BjV-oF-Knk">
-                                    <rect key="frame" x="0.0" y="108.5" width="240" height="510"/>
+                                    <rect key="frame" x="0.0" y="116.5" width="240" height="578.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4xE-T9-zAw">
-                                            <rect key="frame" x="0.0" y="123" width="240" height="264"/>
+                                            <rect key="frame" x="0.0" y="159" width="240" height="260.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B0E-lm-2Ri">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="264"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="260.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImN-Oz-lf2" customClass="Knob" customModule="MasterThermEasyControl" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N3l-qU-Ccv">
-                                                                    <rect key="frame" x="45.5" y="77" width="149.5" height="86.5"/>
+                                                                    <rect key="frame" x="58.5" y="99.5" width="123" height="41"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF3-91-c0l" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="149.5" height="29"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="123" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaR-kW-O58" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="29" width="149.5" height="57.5"/>
+                                                                            <rect key="frame" x="0.0" y="20.5" width="123" height="20.5"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -107,10 +107,10 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="W54-9B-ATo">
-                                                            <rect key="frame" x="0.0" y="240" width="240" height="24"/>
+                                                            <rect key="frame" x="0.0" y="240" width="240" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukR-d9-84X" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-Ks-RZD" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                                    <rect key="frame" x="120" y="0.0" width="120" height="24"/>
+                                                                    <rect key="frame" x="120" y="0.0" width="120" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -136,13 +136,13 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="900" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zuh-TJ-T67">
-                                    <rect key="frame" x="0.0" y="618.5" width="240" height="167.5"/>
+                                    <rect key="frame" x="0.0" y="695" width="240" height="91"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tHP-3x-Sha">
-                                            <rect key="frame" x="0.0" y="40.5" width="240" height="86.5"/>
+                                            <rect key="frame" x="0.0" y="25" width="240" height="41"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDM-tE-F5H" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="29"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -152,7 +152,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-fA-H88" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="29" width="240" height="57.5"/>
+                                                    <rect key="frame" x="0.0" y="20.5" width="240" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -188,6 +188,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_home" width="64" height="64"/>
+        <image name="ic_home" width="53.5" height="44"/>
     </resources>
 </document>
