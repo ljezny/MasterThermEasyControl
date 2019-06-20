@@ -42,26 +42,33 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
     /// Image `ic_home`.
     static let ic_home = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_home")
+    /// Image `ic_outside`.
+    static let ic_outside = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_outside")
     /// Image `ic_pump`.
     static let ic_pump = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_pump")
     /// Image `ic_user`.
     static let ic_user = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_user")
     /// Image `ic_water`.
     static let ic_water = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_water")
-    /// Image `photo_jezny`.
-    static let photo_jezny = Rswift.ImageResource(bundle: R.hostingBundle, name: "photo_jezny")
-    /// Image `photo_palka`.
-    static let photo_palka = Rswift.ImageResource(bundle: R.hostingBundle, name: "photo_palka")
+    /// Image `jezny`.
+    static let jezny = Rswift.ImageResource(bundle: R.hostingBundle, name: "jezny")
+    /// Image `palka`.
+    static let palka = Rswift.ImageResource(bundle: R.hostingBundle, name: "palka")
     /// Image `splash_logo`.
     static let splash_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "splash_logo")
     
     /// `UIImage(named: "ic_home", bundle: ..., traitCollection: ...)`
     static func ic_home(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_home, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_outside", bundle: ..., traitCollection: ...)`
+    static func ic_outside(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_outside, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic_pump", bundle: ..., traitCollection: ...)`
@@ -79,14 +86,14 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.ic_water, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "photo_jezny", bundle: ..., traitCollection: ...)`
-    static func photo_jezny(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.photo_jezny, compatibleWith: traitCollection)
+    /// `UIImage(named: "jezny", bundle: ..., traitCollection: ...)`
+    static func jezny(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.jezny, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "photo_palka", bundle: ..., traitCollection: ...)`
-    static func photo_palka(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.photo_palka, compatibleWith: traitCollection)
+    /// `UIImage(named: "palka", bundle: ..., traitCollection: ...)`
+    static func palka(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.palka, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "splash_logo", bundle: ..., traitCollection: ...)`
@@ -495,8 +502,8 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "photo_jezny", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'photo_jezny' is used in nib 'IntroViewController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "photo_palka", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'photo_palka' is used in nib 'IntroViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "jezny", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'jezny' is used in nib 'IntroViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "palka", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'palka' is used in nib 'IntroViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

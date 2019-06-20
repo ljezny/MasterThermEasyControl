@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "photo_palka.png",
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "outside.png"
     },
     {
       "scale" : "2x",
-      "idiom" : "universal",
-      "filename" : "photo_palka@2x.png"
+      "filename" : "outside@2x.png",
+      "idiom" : "universal"
     },
     {
-      "filename" : "photo_palka@3x.png",
+      "filename" : "outside@3x.png",
       "scale" : "3x",
       "idiom" : "universal"
     }

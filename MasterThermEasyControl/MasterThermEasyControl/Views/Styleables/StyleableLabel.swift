@@ -22,12 +22,6 @@ import UIKit
         }
     }
     
-    @IBInspectable var circularCornerRadius: Bool = false {
-        didSet{
-            updateCornerRadius()
-        }
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -59,28 +53,24 @@ import UIKit
             self.font = Theme.getLightFont(size: 48.0)
             self.textColor = UIColor.white
             break
+        case "mainvalue":
+            self.font = Theme.getRegularFont(size: 32.0)
+            self.textColor = UIColor.white
+            break
         case "value":
             self.font = Theme.getLightFont(size: 24.0)
             self.textColor = UIColor.white
             break
         case "subvalue":
-            self.font = Theme.getLightFont(size: 20.0)
+            self.font = Theme.getLightFont(size: 16.0)
             self.textColor = UIColor.white
             break
         default:
             break
         }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        updateCornerRadius()
-    }
-    
-    func updateCornerRadius() {
-        if self.circularCornerRadius == true {
-            self.layer.cornerRadius = min(self.bounds.width,self.bounds.height) / 2.0
-        }
+        
+        //self.layer.borderColor = UIColor.white.cgColor
+        //self.layer.borderWidth = 0.5
     }
     
     override func drawText(in rect: CGRect) {
