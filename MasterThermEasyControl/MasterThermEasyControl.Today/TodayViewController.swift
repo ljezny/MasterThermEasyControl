@@ -32,7 +32,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         Session.shared.relogin { (result) in
             switch result {
             case .success:
-                Session.shared.loadData(completion: { (response, result) in
+                Session.shared.loadData(completion: { (response,module, result) in
                     switch result {
                     case .success:
                         if let response = response {

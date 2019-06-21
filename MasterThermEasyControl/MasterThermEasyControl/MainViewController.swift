@@ -46,7 +46,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     func presentMainApp() {
-        Session.shared.loadData { (dataResponse, result) in
+        Session.shared.loadData { (dataResponse,module, result) in
             switch result {
             case .success:
                 if let dataResponse = dataResponse {
@@ -114,9 +114,6 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
             self.setViewControllers([firstVC], direction: .forward, animated: false, completion: nil)
         }
         
-        DispatchQueue.main.after(when: 2.0) {
-            self.relogin()
-        }
         
         showReview()
     }

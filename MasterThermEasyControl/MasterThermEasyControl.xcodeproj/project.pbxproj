@@ -84,6 +84,8 @@
 		56D70DDE22BABA0F00F6E156 /* ModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DDC22BAB90C00F6E156 /* ModelBase.swift */; };
 		56D70DE022BABA4600F6E156 /* HeatPumpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DDF22BABA4600F6E156 /* HeatPumpModel.swift */; };
 		56D70DE122BABA4600F6E156 /* HeatPumpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DDF22BABA4600F6E156 /* HeatPumpModel.swift */; };
+		56D70DE322BD45A200F6E156 /* ModuleInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DE222BD45A200F6E156 /* ModuleInfoResponse.swift */; };
+		56D70DE422BD45A200F6E156 /* ModuleInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DE222BD45A200F6E156 /* ModuleInfoResponse.swift */; };
 		57E0CE1F2468A0177449F14C /* Pods_MasterThermEasyControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +173,7 @@
 		56D70DD922B81A7300F6E156 /* HeatPumpInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeatPumpInfoViewController.xib; sourceTree = "<group>"; };
 		56D70DDC22BAB90C00F6E156 /* ModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBase.swift; sourceTree = "<group>"; };
 		56D70DDF22BABA4600F6E156 /* HeatPumpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatPumpModel.swift; sourceTree = "<group>"; };
+		56D70DE222BD45A200F6E156 /* ModuleInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleInfoResponse.swift; sourceTree = "<group>"; };
 		984AD930A9D79CB8B99970E9 /* Pods-MasterThermEasyControl.Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.Today.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl.Today/Pods-MasterThermEasyControl.Today.debug.xcconfig"; sourceTree = "<group>"; };
 		E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl.release.xcconfig"; sourceTree = "<group>"; };
 		F272EADFC22189E62E568538 /* Pods-MasterThermEasyControl.Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.Today.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl.Today/Pods-MasterThermEasyControl.Today.release.xcconfig"; sourceTree = "<group>"; };
@@ -298,6 +301,7 @@
 			children = (
 				56AC78742291A0C10025D128 /* LoginResponse.swift */,
 				56B6CB142291EA6900277DD7 /* DataResponse.swift */,
+				56D70DE222BD45A200F6E156 /* ModuleInfoResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -617,6 +621,7 @@
 			files = (
 				568B069B22BCEC5B00CCE6AC /* NumberFormatUtils.swift in Sources */,
 				563A281522919BB5002A3708 /* ApiManager.swift in Sources */,
+				56D70DE322BD45A200F6E156 /* ModuleInfoResponse.swift in Sources */,
 				56170373229C76B300629790 /* StyleableButton.swift in Sources */,
 				56B6CB182293347000277DD7 /* HeatModel.swift in Sources */,
 				56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */,
@@ -662,6 +667,7 @@
 				56D70DC922B6CBA100F6E156 /* DictionaryEx.swift in Sources */,
 				56D70DBF22B6B73000F6E156 /* StyleableTextField.swift in Sources */,
 				56D70DCB22B6CBA100F6E156 /* StringEx.swift in Sources */,
+				56D70DE422BD45A200F6E156 /* ModuleInfoResponse.swift in Sources */,
 				56D70DDE22BABA0F00F6E156 /* ModelBase.swift in Sources */,
 				56D70DC522B6CB5800F6E156 /* ApiManager.swift in Sources */,
 				56D70DC022B6C29800F6E156 /* Theme.swift in Sources */,

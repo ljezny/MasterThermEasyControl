@@ -60,16 +60,25 @@ class Session {
         }
     }
     
-    func loadData(completion:@escaping (DataResponse?,ApiResult)->()) {
-        ApiManager.sharedInstance.getData(moduleId: loginResponse?.modules.first?.id ?? "", completion: { (dataResponse, error) in
+    func loadData(completion:@escaping (DataResponse?,ModuleInfoResponse?, ApiResult)->()) {
+        ApiManager.sharedInstance.getModuleInfo(moduleId: loginResponse?.modules.first?.id ?? "", completion: { (dataResponse, error) in
             if let _ = error {
-                completion(nil,.connectionError)
-            } else if let dataResponse = dataResponse {
-                completion(dataResponse,.success)
+                completion(nil,nil,.connectionError)
+            } else if let moduleResponse = dataResponse {
+                ApiManager.sharedInstance.getData(moduleId: self.loginResponse?.modules.first?.id ?? "", completion: { (dataResponse, error) in
+                    if let _ = error {
+                        completion(nil,nil,.connectionError)
+                    } else if let dataResponse = dataResponse {
+                        completion(dataResponse,moduleResponse,.success)
+                    } else {
+                        completion(nil,nil,.expired)
+                    }
+                })
             } else {
-                completion(nil,.expired)
+                completion(nil,nil,.expired)
             }
         })
+        
     }
     
     func setData(parameter:String, value:String, completion:@escaping (DataResponse?,ApiResult)->()) {

@@ -88,6 +88,40 @@ class ApiManager: NSObject {
         }
     }
     
+    public func getModuleInfo(moduleId:String, completion: @escaping (ModuleInfoResponse?,Error?)->()) {
+        let urlString = URL(string: ApiManager.BASE_URL)
+        if let baseUrl = urlString {
+            let dataUrl = baseUrl.appendingPathComponent("get_pumpinfo/get_pumpinfo.php")
+            var request = URLRequest(url: dataUrl)
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "POST"
+            let parameters: [String: Any] = [
+                "moduleid": moduleId,
+                "unitid" : "1"
+            ]
+            request.httpBody = parameters.percentEscaped().data(using: .utf8)
+            
+            let task = session.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        completion(nil,error)
+                    }
+                } else {
+                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8),let response = ModuleInfoResponse.deserialize(from: responseString) {
+                        DispatchQueue.main.async {
+                            completion(response,nil)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            completion(nil,nil)
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+    
     public func setData(moduleId:String,parameter:String, value:String, completion: @escaping (DataResponse?,Error?)->()) {
         messageId += 1
         
