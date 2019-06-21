@@ -32,13 +32,13 @@ import UIKit
         }
     }
     
-    /*override var placeholder: String? {
+    override var placeholder: String? {
         didSet {
             if let text = self.placeholder {
-                self.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedStringKey.foregroundColor: Theme.grayColor, NSAttributedStringKey.font : Theme.getLightFont(size: Theme.normalFontSize)])
+                self.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font : Theme.getLightFont(size: 16)])
             }
         }
-    }*/
+    }
     
     let bottomLine = CALayer()
     
@@ -51,7 +51,7 @@ import UIKit
             self.textAlignment = .center
             self.backgroundColor = UIColor.clear
             self.font = Theme.getRegularFont(size: 16)
-            
+            self.tintColor = UIColor.white
             break
         default:
             break
