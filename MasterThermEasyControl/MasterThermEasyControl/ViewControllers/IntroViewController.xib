@@ -32,14 +32,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zFF-ii-NAf">
-                                    <rect key="frame" x="149" y="0.0" width="116" height="330"/>
+                                    <rect key="frame" x="98.5" y="0.0" width="217.5" height="330"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jezny" translatesAutoresizingMaskIntoConstraints="NO" id="V6R-Vu-SEG">
-                                            <rect key="frame" x="32" y="32" width="52" height="16"/>
+                                            <rect key="frame" x="32" y="32" width="153.5" height="16"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH6-Bj-U1h" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="32" y="68" width="52" height="20.5"/>
+                                            <rect key="frame" x="32" y="68" width="153.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -49,21 +49,21 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5s-Ce-g0a" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="32" y="108.5" width="52" height="20.5"/>
+                                            <rect key="frame" x="32" y="108.5" width="153.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="intro.message"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="intro.message.jezny"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="palka" translatesAutoresizingMaskIntoConstraints="NO" id="aKY-yw-pgU">
-                                            <rect key="frame" x="32" y="149" width="52" height="16"/>
+                                            <rect key="frame" x="32" y="149" width="153.5" height="16"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDj-vR-e7y" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="32" y="185" width="52" height="20.5"/>
+                                            <rect key="frame" x="32" y="185" width="153.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -73,17 +73,17 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBS-dG-Fy5" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="32" y="225.5" width="52" height="20.5"/>
+                                            <rect key="frame" x="32" y="225.5" width="153.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="intro.message"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="intro.message.palka"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qB-2R-XNj" customClass="StyleableButton" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="32" y="266" width="52" height="32"/>
+                                            <rect key="frame" x="32" y="266" width="153.5" height="32"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <state key="normal" title="Button"/>
                                             <userDefinedRuntimeAttributes>

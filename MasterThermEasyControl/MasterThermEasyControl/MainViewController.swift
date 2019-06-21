@@ -114,7 +114,11 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
             self.setViewControllers([firstVC], direction: .forward, animated: false, completion: nil)
         }
         
-        self.relogin()
+        DispatchQueue.main.after(when: 2.0) {
+            self.relogin()
+        }
+        
+        showReview()
     }
     
     func relogin() {

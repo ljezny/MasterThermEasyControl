@@ -21,22 +21,13 @@ class HeatPumpInfoViewController: PageBaseViewController {
             let _ = self.view
             
             model?.outsideTemperature.map({ (d) -> String? in
-                if let d = d {
-                    return String(format: "%.1f °C", d)
-                }
-                return "--,- °C"
+                return NumberFormatUtils.formatTemperature(value: d)
             }).bind(to: outsideTempLabel.reactive.text).dispose(in: self.bag)
             model?.requestedHeatWaterTemperature.map({ (d) -> String? in
-                if let d = d {
-                    return String(format: "%.1f °C", d)
-                }
-                return "--,- °C"
+               return NumberFormatUtils.formatTemperature(value: d)
             }).bind(to: setTempLabel.reactive.text).dispose(in: self.bag)
             model?.realHeatWaterTemperature.map({ (d) -> String? in
-                if let d = d {
-                    return String(format: "%.1f °C", d)
-                }
-                return "--,- °C"
+                return NumberFormatUtils.formatTemperature(value: d)
             }).bind(to: realTempLabel.reactive.text).dispose(in: self.bag)
             
         }

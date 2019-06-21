@@ -30,6 +30,9 @@
 		565E0D4922B6682900E434AD /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 565E0D4722B6682900E434AD /* SF-Pro-Display-Medium.otf */; };
 		565E0D4A22B6682900E434AD /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */; };
 		565E0D4C22B6686900E434AD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E0D4B22B6686900E434AD /* Theme.swift */; };
+		568B069B22BCEC5B00CCE6AC /* NumberFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */; };
+		568B069C22BCEDF800CCE6AC /* NumberFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */; };
+		568B069E22BCFB5200CCE6AC /* AppReviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069D22BCFB5200CCE6AC /* AppReviewer.swift */; };
 		56AC78752291A0C10025D128 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AC78742291A0C10025D128 /* LoginResponse.swift */; };
 		56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB142291EA6900277DD7 /* DataResponse.swift */; };
 		56B6CB182293347000277DD7 /* HeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB172293347000277DD7 /* HeatModel.swift */; };
@@ -136,6 +139,8 @@
 		565E0D4722B6682900E434AD /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		565E0D4B22B6686900E434AD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatUtils.swift; sourceTree = "<group>"; };
+		568B069D22BCFB5200CCE6AC /* AppReviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewer.swift; sourceTree = "<group>"; };
 		56AC78742291A0C10025D128 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		56B6CB142291EA6900277DD7 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
 		56B6CB172293347000277DD7 /* HeatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatModel.swift; sourceTree = "<group>"; };
@@ -333,6 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				56D70DD622B8197900F6E156 /* AlertUtils.swift */,
+				568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */,
+				568B069D22BCFB5200CCE6AC /* AppReviewer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -580,6 +587,7 @@
 				"${SRCROOT}/../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
@@ -590,6 +598,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
@@ -606,11 +615,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				568B069B22BCEC5B00CCE6AC /* NumberFormatUtils.swift in Sources */,
 				563A281522919BB5002A3708 /* ApiManager.swift in Sources */,
 				56170373229C76B300629790 /* StyleableButton.swift in Sources */,
 				56B6CB182293347000277DD7 /* HeatModel.swift in Sources */,
 				56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */,
 				56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */,
+				568B069E22BCFB5200CCE6AC /* AppReviewer.swift in Sources */,
 				5617036B229C6B0100629790 /* LoginViewController.swift in Sources */,
 				56315622228DC74200C0B8D8 /* MainViewController.swift in Sources */,
 				56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */,
@@ -659,6 +670,7 @@
 				56D70DCD22B6CBB000F6E156 /* KeychainPasswordItem.swift in Sources */,
 				56D70DBB22B6B73000F6E156 /* StyleableButton.swift in Sources */,
 				56D70DBC22B6B73000F6E156 /* StyleableImageView.swift in Sources */,
+				568B069C22BCEDF800CCE6AC /* NumberFormatUtils.swift in Sources */,
 				56D70DBE22B6B73000F6E156 /* StyleableSwitch.swift in Sources */,
 				56D70DE122BABA4600F6E156 /* HeatPumpModel.swift in Sources */,
 				56D70DCC22B6CBB000F6E156 /* KeychainConfiguration.swift in Sources */,

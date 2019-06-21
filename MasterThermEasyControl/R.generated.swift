@@ -42,8 +42,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
+    /// Image `ic_heatwater`.
+    static let ic_heatwater = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_heatwater")
     /// Image `ic_home`.
     static let ic_home = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_home")
     /// Image `ic_outside`.
@@ -60,6 +62,11 @@ struct R: Rswift.Validatable {
     static let palka = Rswift.ImageResource(bundle: R.hostingBundle, name: "palka")
     /// Image `splash_logo`.
     static let splash_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "splash_logo")
+    
+    /// `UIImage(named: "ic_heatwater", bundle: ..., traitCollection: ...)`
+    static func ic_heatwater(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_heatwater, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "ic_home", bundle: ..., traitCollection: ...)`
     static func ic_home(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -197,7 +204,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 32 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 33 localization keys.
     struct localizable {
       /// Value: Aktuální
       static let heatpumpTemperatureReal = Rswift.StringResource(key: "heatpump.temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -215,8 +222,10 @@ struct R: Rswift.Validatable {
       static let profileLogoutMessage = Rswift.StringResource(key: "profile.logout.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Jiří Pálka
       static let generalNamePalka = Rswift.StringResource(key: "general.name.palka", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze a jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem nepokrývá funkcionalitu originální aplikace, ale naopak jsem chtěl zjednodušit ovládání tepelného čerpadla. Cílem je tedy jednoduše a pohodlněji ovládát vytápění a naopak nastavování teplotních křivek a složitějších parametrů dále neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem ladil a testoval na svém vlastním tepelném čerpadle žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
-      static let introMessage = Rswift.StringResource(key: "intro.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Jmenuji se Jiří Pálka a jsem grafickým designérem na volné noze. Pro aplikaci Easy Control jsem kompletně navrhl design a dohlížel nad jeho správným použitím. Snad se Vám aplikace bude líbit a jednoduše používat.
+      static let introMessagePalka = Rswift.StringResource(key: "intro.message.palka", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze. Jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem sice nepokrývá funkcionalitu původní aplikace, ale naopak jsem chtěl se snažil zjednodušit ovládání tepelného čerpadla. Nastavování teplotních křivek a složitějších parametrů zatím neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby. V plánu je aplikace pro hodinky.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem zkoušel a testoval na svém vlastním tepelném čerpadle a žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
+      static let introMessageJezny = Rswift.StringResource(key: "intro.message.jezny", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Kontaktovat
       static let profileContactButton = Rswift.StringResource(key: "profile.contact.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Lukáš Jezný
@@ -304,9 +313,14 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("general.name.palka", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze a jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem nepokrývá funkcionalitu originální aplikace, ale naopak jsem chtěl zjednodušit ovládání tepelného čerpadla. Cílem je tedy jednoduše a pohodlněji ovládát vytápění a naopak nastavování teplotních křivek a složitějších parametrů dále neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem ladil a testoval na svém vlastním tepelném čerpadle žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
-      static func introMessage(_: Void = ()) -> String {
-        return NSLocalizedString("intro.message", bundle: R.hostingBundle, comment: "")
+      /// Value: Jmenuji se Jiří Pálka a jsem grafickým designérem na volné noze. Pro aplikaci Easy Control jsem kompletně navrhl design a dohlížel nad jeho správným použitím. Snad se Vám aplikace bude líbit a jednoduše používat.
+      static func introMessagePalka(_: Void = ()) -> String {
+        return NSLocalizedString("intro.message.palka", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze. Jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem sice nepokrývá funkcionalitu původní aplikace, ale naopak jsem chtěl se snažil zjednodušit ovládání tepelného čerpadla. Nastavování teplotních křivek a složitějších parametrů zatím neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby. V plánu je aplikace pro hodinky.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem zkoušel a testoval na svém vlastním tepelném čerpadle a žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
+      static func introMessageJezny(_: Void = ()) -> String {
+        return NSLocalizedString("intro.message.jezny", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Kontaktovat

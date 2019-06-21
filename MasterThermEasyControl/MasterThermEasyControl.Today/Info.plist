@@ -44,6 +44,11 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widget-extension</string>
 	</dict>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>cs</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Pro-Display-Thin.otf</string>

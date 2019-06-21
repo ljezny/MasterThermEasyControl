@@ -25,28 +25,16 @@ class TemperatureViewController: PageBaseViewController {
             let _ = self.view
             
             model?.setTemperature.map({ (d) -> String? in
-                if let d = d {
-                    return String(format: "%.1f °C", d)
-                }
-                return "--,- °C"
+                return NumberFormatUtils.formatTemperature(value: d)
             }).bind(to: setTemperatureLabel.reactive.text).dispose(in: self.bag)
             model?.realTemperature.map({ (d) -> String? in
-                if let d = d {
-                    return String(format: "%.1f °C", d)
-                }
-                return "--,- °C"
+                return NumberFormatUtils.formatTemperature(value: d)
             }).bind(to: realTemperatureLabel.reactive.text).dispose(in: self.bag)
             model?.minSetTemperature.map({ (d) -> String? in
-                if let d = d {
-                    return String(format: "%.0f °C", d)
-                }
-                return "-- °C"
+                return NumberFormatUtils.formatTemperature(value: d)
             }).bind(to: minSetTemperatureLabel.reactive.text).dispose(in: self.bag)
             model?.maxSetTemperature.map({ (d) -> String? in
-                if let d = d {
-                    return String(format: "%.0f °C", d)
-                }
-                return "-- °C"
+                return NumberFormatUtils.formatTemperature(value: d)
             }).bind(to: maxSetTemperatureLabel.reactive.text).dispose(in: self.bag)
             self.knob.minimumValue = model?.minSetTemperature.value ?? 0.0
             self.knob.maximumValue = model?.maxSetTemperature.value ?? 1.0

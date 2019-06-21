@@ -16,6 +16,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var roomSetTemperatureLabel: StyleableLabel!
     @IBOutlet weak var waterRealTemperatureLabel: StyleableLabel!
     @IBOutlet weak var outsideTempLabel: StyleableLabel!
+    @IBOutlet weak var heatWaterLabel: StyleableLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,30 +45,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                             heatPumpModel.updateFromData(response: response)
                             
                             heatModel.setTemperature.map({ (d) -> String? in
-                                if let d = d {
-                                    return String(format: "%.1f °C", d)
-                                }
-                                return "--,- °C"
+                                return NumberFormatUtils.formatTemperature(value: d)
                             }).bind(to: self.roomSetTemperatureLabel.reactive.text).dispose(in: self.bag)
                             heatModel.realTemperature.map({ (d) -> String? in
-                                if let d = d {
-                                    return String(format: "%.1f °C", d)
-                                }
-                                return "--,- °C"
+                                return NumberFormatUtils.formatTemperature(value: d)
                             }).bind(to: self.roomRealTemperatureLabel.reactive.text).dispose(in: self.bag)
                             
                             hotWaterModel.realTemperature.map({ (d) -> String? in
-                                if let d = d {
-                                    return String(format: "%.1f °C", d)
-                                }
-                                return "--,- °C"
+                                return NumberFormatUtils.formatTemperature(value: d)
                             }).bind(to: self.waterRealTemperatureLabel.reactive.text).dispose(in: self.bag)
                             heatPumpModel.outsideTemperature.map({ (d) -> String? in
-                                if let d = d {
-                                    return String(format: "%.1f °C", d)
-                                }
-                                return "--,- °C"
+                                return NumberFormatUtils.formatTemperature(value: d)
                             }).bind(to: self.outsideTempLabel.reactive.text).dispose(in: self.bag)
+                            heatPumpModel.realHeatWaterTemperature.map({ (d) -> String? in
+                                return NumberFormatUtils.formatTemperature(value: d)
+                            }).bind(to: self.heatWaterLabel.reactive.text).dispose(in: self.bag)
                             
                             self.updateGradient(v: heatModel.realTemperature.value ?? 0.0, min: heatModel.minSetTemperature.value ?? 0.0, max: heatModel.maxSetTemperature.value ?? 1.0)
                         }
