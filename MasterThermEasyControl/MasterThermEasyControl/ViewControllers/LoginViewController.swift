@@ -32,6 +32,8 @@ class LoginViewController: PageBaseViewController {
     }
 
     @IBAction func loginButton(_ sender: Any) {
+        loginTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
         if let user = login.value, let password = password.value {
             Session.shared.login(user: user, password: password) { (result) in
                 switch result {

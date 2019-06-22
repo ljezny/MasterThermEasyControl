@@ -63,7 +63,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
                         })
                         
                         let heatPumpInfoVC = HeatPumpInfoViewController(nib: R.nib.heatPumpInfoViewController)
-                        let heatPumpModel = HeatPumpModel()
+                        let heatPumpModel = HeatPumpModel(moduleInfo: Session.shared.loginResponse?.modules.first?.module_name)
                         heatPumpModel.updateFromData(response: dataResponse)
                         heatPumpInfoVC.model = heatPumpModel
                         heatPumpInfoVC.mainViewController = self

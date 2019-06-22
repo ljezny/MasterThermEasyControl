@@ -41,7 +41,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                             let hotWaterModel = HotWaterModel()
                             hotWaterModel.updateFromData(response: response)
                             
-                            let heatPumpModel = HeatPumpModel()
+                            let heatPumpModel = HeatPumpModel(moduleInfo: Session.shared.loginResponse?.modules.first?.module_name)
                             heatPumpModel.updateFromData(response: response)
                             
                             heatModel?.setTemperature.map({ (d) -> String? in

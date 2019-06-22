@@ -24,7 +24,7 @@ class Session {
     
     let apiManager = ApiManager()
     
-    private var loginResponse: LoginResponse? = nil
+    var loginResponse: LoginResponse? = nil
     
     private init() {
         

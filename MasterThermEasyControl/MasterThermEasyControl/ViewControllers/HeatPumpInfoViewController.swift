@@ -14,6 +14,8 @@ class HeatPumpInfoViewController: PageBaseViewController {
     
     @IBOutlet weak var setTempLabel: StyleableLabel!
     @IBOutlet weak var realTempLabel: StyleableLabel!
+    @IBOutlet weak var ownerLabel: StyleableLabel!
+    @IBOutlet weak var companyLabel: StyleableLabel!
     
     var model: HeatPumpModel? = nil {
         didSet {
@@ -29,7 +31,8 @@ class HeatPumpInfoViewController: PageBaseViewController {
             model?.realHeatWaterTemperature.map({ (d) -> String? in
                 return NumberFormatUtils.formatTemperature(value: d)
             }).bind(to: realTempLabel.reactive.text).dispose(in: self.bag)
-            
+            model?.owner.bind(to: ownerLabel.reactive.text).dispose(in: self.bag)
+            model?.company.bind(to: companyLabel.reactive.text).dispose(in: self.bag)
         }
     }
     
