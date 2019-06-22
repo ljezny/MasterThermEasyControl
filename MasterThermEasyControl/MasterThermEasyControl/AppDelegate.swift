@@ -8,6 +8,8 @@
 
 import UIKit
 import FBSDKCoreKit
+import CocoaLumberjack
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,14 +17,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let mainViewController = MainViewController()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    var fileLoger: DDFileLogger?
+    
+    var logFileDataArray: [NSData] {
+        get {
+            let logFilePaths = fileLoger!.logFileManager.sortedLogFilePaths
+            var logFileDataArray = [NSData]()
+            for logFilePath in logFilePaths ?? [] {
+                let fileURL = NSURL(fileURLWithPath: logFilePath)
+                if let logFileData = try? NSData(contentsOf: fileURL as URL, options: NSData.ReadingOptions.mappedIfSafe) {
+                    // Insert at front to reverse the order, so that oldest logs appear first.
+                    logFileDataArray.insert(logFileData, at: 0)
+                }
+            }
+            return logFileDataArray
+        }
+    }
+
+    private func initLogger() -> DDFileLogger {
         
-        //UIView.appearance().tintColor = UIColor.orange
+        DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+        DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
+        
+        let logger: DDFileLogger = DDFileLogger() // File Logger
+        logger.rollingFrequency = TimeInterval(60*60*24)  // 24 hours
+        logger.logFileManager.maximumNumberOfLogFiles = 3
+        DDLog.add(logger)
+        
+        return logger
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)
-        
+       
+        self.fileLoger = self.initLogger()
         
         if let window = self.window{
             window.rootViewController = mainViewController
@@ -36,6 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         incrementAppRuns()
+        
+        DDLogInfo("MasterTherm Easy Control app started.")
         
         return true
     }

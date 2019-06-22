@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import GZIP
 
 class ProfileViewController: PageBaseViewController,MFMailComposeViewControllerDelegate {
 
@@ -19,11 +20,28 @@ class ProfileViewController: PageBaseViewController,MFMailComposeViewControllerD
 
 
     @IBAction func contactAction(_ sender: Any) {
-        guard MFMailComposeViewController.canSendMail() else {
-            self.present(AlertUtils.createSimpleAlert(title: R.string.localizable.generalAppname(), message: R.string.localizable.profileContactError()), animated: true, completion: nil)
-            return
+        if MFMailComposeViewController.canSendMail() {
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self
+            
+            // Configure the fields of the interface.
+            composeVC.setToRecipients(["ljezny@gmail.com" ])
+            composeVC.setSubject("MasterTherm Easy Control feedback")
+            composeVC.setMessageBody(getExportLogBody(), isHTML: false)
+            
+            let attachmentData = NSMutableData()
+            for logFileData in (UIApplication.shared.delegate as! AppDelegate).logFileDataArray {
+                attachmentData.append(logFileData as Data)
+            }
+            
+            if let data = attachmentData.gzippedData(withCompressionLevel: 1.0) {
+                composeVC.addAttachmentData(data, mimeType: "application/gzip ", fileName: "diagnostic.zip")
+            } else {
+                composeVC.addAttachmentData(attachmentData as Data, mimeType: "text/plain", fileName: "diagnostic.log")
+            }
+            
+            self.present(composeVC, animated: true, completion: nil)
         }
-        self.present(AlertUtils.configureMailComposeViewController(delegate: self, recipient: "ljezny@gmail.com", subject: R.string.localizable.generalAppname(), body: nil), animated: true)
     }
     
     @IBAction func logoutAction(_ sender: Any) {
@@ -31,8 +49,21 @@ class ProfileViewController: PageBaseViewController,MFMailComposeViewControllerD
         self.mainViewController?.presentLogin(direction: UIPageViewController.NavigationDirection.reverse)
     }
     
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-      self.dismiss(animated: true, completion: nil)
+    
+    var mailComposerVC:MFMailComposeViewController?
+    
+    func getExportLogBody() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        
+        return "\(NSLocalizedString("settings.describe.problem", comment: ""))\n\nName: \(UIDevice.current.name), Version: \(UIDevice.current.systemVersion), Model: \(UIDevice.current.model), Time: \(dateFormatter.string(from: Date())), AppVersion:\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] ?? ""),\(Bundle.main.infoDictionary!["CFBundleVersion"] ?? "")\n"
     }
+    
+    @objc(mailComposeController:didFinishWithResult:error:)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import HandyJSON
+import CocoaLumberjack
 
 class ApiManager: NSObject {
     static let sharedInstance = ApiManager()
@@ -32,18 +33,21 @@ class ApiManager: NSObject {
                 "upwd" : password.sha1()
             ]
             request.httpBody = parameters.percentEscaped().data(using: .utf8)
-            
+            DDLogDebug("login request started.")
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let error = error {
+                    DDLogError("login request error: \(error)")
                     DispatchQueue.main.async {
                         completion(nil,error)
                     }
                 } else {
-                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8),let response = LoginResponse.deserialize(from: responseString) {
-                        DispatchQueue.main.async {
-                            completion(response,nil)
+                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8) {
+                        DDLogDebug("login response: \(responseString)")
+                        if let response = LoginResponse.deserialize(from: responseString) {
+                            DispatchQueue.main.async {
+                                completion(response,nil)
+                            }
                         }
-                        
                     }
                 }
             }
@@ -66,16 +70,19 @@ class ApiManager: NSObject {
                 "fullRange" : "true"
             ]
             request.httpBody = parameters.percentEscaped().data(using: .utf8)
-            
+            DDLogDebug("get data request started: \(parameters.percentEscaped())")
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     DispatchQueue.main.async {
                         completion(nil,error)
                     }
                 } else {
-                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8),let response = DataResponse.deserialize(from: responseString) {
-                        DispatchQueue.main.async {
-                           completion(response,nil)
+                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8) {
+                        DDLogDebug("get data response: \(responseString)")
+                        if let response = DataResponse.deserialize(from: responseString) {
+                            DispatchQueue.main.async {
+                               completion(response,nil)
+                            }
                         }
                     } else {
                         DispatchQueue.main.async {
@@ -100,16 +107,19 @@ class ApiManager: NSObject {
                 "unitid" : "1"
             ]
             request.httpBody = parameters.percentEscaped().data(using: .utf8)
-            
+            DDLogDebug("get module request started: \(parameters.percentEscaped())")
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     DispatchQueue.main.async {
                         completion(nil,error)
                     }
                 } else {
-                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8),let response = ModuleInfoResponse.deserialize(from: responseString) {
-                        DispatchQueue.main.async {
-                            completion(response,nil)
+                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8) {
+                        DDLogDebug("get module info response: \(responseString)")
+                        if let response = ModuleInfoResponse.deserialize(from: responseString) {
+                            DispatchQueue.main.async {
+                                completion(response,nil)
+                            }
                         }
                     } else {
                         DispatchQueue.main.async {
@@ -141,16 +151,19 @@ class ApiManager: NSObject {
                 "variableValue":value
             ]
             request.httpBody = parameters.percentEscaped().data(using: .utf8)
-            
+            DDLogDebug("set data request started: \(parameters.percentEscaped())")
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     DispatchQueue.main.async {
                         completion(nil,error)
                     }
                 } else {
-                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8),let response = DataResponse.deserialize(from: responseString) {
-                        DispatchQueue.main.async {
-                            completion(response,nil)
+                    if let responseData = data,let responseString = String.init(data: responseData, encoding: .utf8) {
+                        DDLogDebug("set data response: \(responseString)")
+                        if let response = DataResponse.deserialize(from: responseString) {
+                            DispatchQueue.main.async {
+                                completion(response,nil)
+                            }
                         }
                     } else {
                         DispatchQueue.main.async {
