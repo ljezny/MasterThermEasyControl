@@ -14,6 +14,7 @@ class HotWaterModel:TemperatureModelBase {
         setTemperature.value = response.getAnalog(id: 129)
         minSetTemperature.value = response.getAnalog(id: 296)
         maxSetTemperature.value = response.getAnalog(id: 297)
+        isEnabled.value = true
     }
     
     override var name: String? {
