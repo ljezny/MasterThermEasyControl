@@ -49,9 +49,9 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         Session.shared.loadData { (dataResponse,module, result) in
             switch result {
             case .success:
-                if let dataResponse = dataResponse {
+                if let dataResponse = dataResponse, let module = module {
                     if self.temperatureControllers.isEmpty {
-                        TemperatureModelBase.createListFromData(response: dataResponse).forEach({ (m) in
+                        TemperatureModelBase.createListFromData(response: dataResponse, moduleResponse: module).forEach({ (m) in
                             let vc = TemperatureViewController(nib: R.nib.temperatureViewController)
                             vc.model = m
                             self.temperatureControllers.append(vc)

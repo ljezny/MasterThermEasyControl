@@ -35,19 +35,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 Session.shared.loadData(completion: { (response,module, result) in
                     switch result {
                     case .success:
-                        if let response = response {
-                            let heatModel = HeatModel()
-                            heatModel.updateFromData(response: response)
+                        if let response = response, let module = module {
+                            let heatModel = HeatModel.createListFromData(response: response, moduleResponse: module).first
+                            
                             let hotWaterModel = HotWaterModel()
                             hotWaterModel.updateFromData(response: response)
                             
                             let heatPumpModel = HeatPumpModel()
                             heatPumpModel.updateFromData(response: response)
                             
-                            heatModel.setTemperature.map({ (d) -> String? in
+                            heatModel?.setTemperature.map({ (d) -> String? in
                                 return NumberFormatUtils.formatTemperature(value: d)
                             }).bind(to: self.roomSetTemperatureLabel.reactive.text).dispose(in: self.bag)
-                            heatModel.realTemperature.map({ (d) -> String? in
+                            heatModel?.realTemperature.map({ (d) -> String? in
                                 return NumberFormatUtils.formatTemperature(value: d)
                             }).bind(to: self.roomRealTemperatureLabel.reactive.text).dispose(in: self.bag)
                             
@@ -61,7 +61,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                                 return NumberFormatUtils.formatTemperature(value: d)
                             }).bind(to: self.heatWaterLabel.reactive.text).dispose(in: self.bag)
                             
-                            self.updateGradient(v: heatModel.realTemperature.value ?? 0.0, min: heatModel.minSetTemperature.value ?? 0.0, max: heatModel.maxSetTemperature.value ?? 1.0)
+                            self.updateGradient(v: heatModel?.realTemperature.value ?? 0.0, min: heatModel?.minSetTemperature.value ?? 0.0, max: heatModel?.maxSetTemperature.value ?? 1.0)
                         }
                         completionHandler(NCUpdateResult.newData)
                         break
