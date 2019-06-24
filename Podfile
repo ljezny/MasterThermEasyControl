@@ -11,7 +11,6 @@ target 'MasterThermEasyControl' do
   pod 'HandyJSON', '~> 5.0.0'
   pod 'Bond'
   pod 'R.swift'
-  pod 'FBSDKCoreKit'
   pod 'CocoaLumberjack/Swift'
   pod 'GZIP', '1.2.2'
 end

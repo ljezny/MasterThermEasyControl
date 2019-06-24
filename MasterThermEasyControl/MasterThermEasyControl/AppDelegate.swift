@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FBSDKCoreKit
 import CocoaLumberjack
 
 @UIApplicationMain
@@ -62,8 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let fontNames = UIFont.fontNames(forFamilyName: familyName)
             print(familyName, fontNames)
         })
-        
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         incrementAppRuns()
         

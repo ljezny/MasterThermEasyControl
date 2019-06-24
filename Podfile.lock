@@ -6,12 +6,6 @@ PODS:
   - CocoaLumberjack/Swift (3.5.3):
     - CocoaLumberjack/Core
   - Differ (1.4.1)
-  - FBSDKCoreKit (5.0.2):
-    - FBSDKCoreKit/Basics (= 5.0.2)
-    - FBSDKCoreKit/Core (= 5.0.2)
-  - FBSDKCoreKit/Basics (5.0.2)
-  - FBSDKCoreKit/Core (5.0.2):
-    - FBSDKCoreKit/Basics
   - GZIP (1.2.2)
   - HandyJSON (5.0.0)
   - R.swift (5.0.3):
@@ -22,7 +16,6 @@ PODS:
 DEPENDENCIES:
   - Bond
   - CocoaLumberjack/Swift
-  - FBSDKCoreKit
   - GZIP (= 1.2.2)
   - HandyJSON (~> 5.0.0)
   - R.swift
@@ -32,7 +25,6 @@ SPEC REPOS:
     - Bond
     - CocoaLumberjack
     - Differ
-    - FBSDKCoreKit
     - GZIP
     - HandyJSON
     - R.swift
@@ -43,13 +35,12 @@ SPEC CHECKSUMS:
   Bond: 6abbc33a4cf88e65a0f8b1ba8276ac34584ad897
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   Differ: ca4350872e32a1aeedf3d9e2d9e47127833bfa9c
-  FBSDKCoreKit: 3e41c402eb64ea7799c71833ff9e5690f27b9c42
   GZIP: 12374d285e3b5d46cfcd480700fcfc7e16caf4f1
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   ReactiveKit: 7634cc10d9fb8791f9a87bf60c283fb420db3184
 
-PODFILE CHECKSUM: d86278809c75ec6ba7b5c67bda01b66bfd015d6d
+PODFILE CHECKSUM: 4c2611878e265a2999ea3d90bc5a5026d13ce80a
 
 COCOAPODS: 1.7.2
