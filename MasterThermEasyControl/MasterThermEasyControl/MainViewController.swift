@@ -84,7 +84,9 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
                 }
                 break
             case .connectionError:
-                self.present(AlertUtils.createNoInternetAlert(), animated: true)
+                self.present(AlertUtils.createNoInternetAlert(completion: {
+                    self.presentMainApp() //retry
+                }), animated: true)
                 //TODO: some retry needed
                 break
             case .unauthorized:
@@ -125,8 +127,12 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
                 self.presentMainApp()
                 break
             case .connectionError:
-                self.present(AlertUtils.createNoInternetAlert(), animated: true)
-                //TODO: some retry needed
+                self.present(AlertUtils.createNoInternetAlert(completion: {
+                    DispatchQueue.main.after(when: 2.0, block: {
+                        self.relogin() // retry
+                    })
+                    
+                }), animated: true)
                 break
             case .unauthorized:
                 self.presentLogin(direction: .forward)

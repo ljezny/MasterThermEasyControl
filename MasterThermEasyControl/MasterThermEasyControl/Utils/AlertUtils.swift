@@ -27,21 +27,23 @@ class AlertUtils{
         return alert
     }
     
-    static func createSimpleAlert(title:String, message:String?) -> UIAlertController{
+    static func createSimpleAlert(title:String, message:String?, completion:(()->())? ) -> UIAlertController{
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: R.string.localizable.generalOk(), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: R.string.localizable.generalOk(), style: .default, handler: {alert in
+            completion?()
+        }))
         
         return alert
     }
     
-    static func createNoInternetAlert() -> UIAlertController{
-        return AlertUtils.createSimpleAlert(title: R.string.localizable.unauthorizedTitle(), message: R.string.localizable.unauthorizedMessage())
+    static func createNoInternetAlert(completion: @escaping ()->()) -> UIAlertController{
+        return AlertUtils.createSimpleAlert(title: R.string.localizable.connectionErrorTitle(), message: R.string.localizable.connectionErrorMessage(), completion: completion)
     }
     
-    static func createInvalidPasswordAlert() -> UIAlertController{
-        return AlertUtils.createSimpleAlert(title: R.string.localizable.connectionErrorTitle(), message: R.string.localizable.connectionErrorMessage())
+    static func createInvalidPasswordAlert(completion: @escaping ()->()) -> UIAlertController{
+        return AlertUtils.createSimpleAlert(title: R.string.localizable.unauthorizedTitle(), message: R.string.localizable.unauthorizedMessage(), completion: completion)
     }
     
     static func configureMailComposeViewController(delegate:MFMailComposeViewControllerDelegate, recipient:String, subject:String, body:String?) -> MFMailComposeViewController{

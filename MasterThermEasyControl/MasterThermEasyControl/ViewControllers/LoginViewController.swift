@@ -42,10 +42,14 @@ class LoginViewController: PageBaseViewController {
                     self.mainViewController?.presentMainApp()
                     break
                 case .unauthorized:
-                    self.present(AlertUtils.createNoInternetAlert(), animated: true)
+                    self.present(AlertUtils.createNoInternetAlert(completion: {
+                        //do nothing
+                    }), animated: true)
                     break
                 case .connectionError:
-                    self.present(AlertUtils.createInvalidPasswordAlert(), animated: true)
+                    self.present(AlertUtils.createInvalidPasswordAlert(completion: {
+                        //do nothing, user will try to login
+                    }), animated: true)
                     break
                 case .expired:
                     //not showing

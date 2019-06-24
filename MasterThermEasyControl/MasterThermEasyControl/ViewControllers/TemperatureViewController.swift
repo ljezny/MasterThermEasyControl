@@ -82,14 +82,18 @@ class TemperatureViewController: PageBaseViewController {
                 switch result {
                 case .success:
                     if dataResponse?.error.errorId ?? 0 != 0 {
-                        self.present(AlertUtils.createSimpleAlert(title: R.string.localizable.generalAppname(), message: dataResponse?.error.errorMessage), animated: true, completion: {
+                        self.present(AlertUtils.createSimpleAlert(title: R.string.localizable.generalAppname(), message: dataResponse?.error.errorMessage, completion: {
+                            //do nothing, user has to change value again
+                        }), animated: true, completion: {
                             
                         })
                     }
                    // self.mainViewController?.presentMainApp() //reload data
                     break
                 case .connectionError:
-                    self.present(AlertUtils.createNoInternetAlert(), animated: true)
+                    self.present(AlertUtils.createNoInternetAlert(completion: {
+                        self.postValue() //retry
+                    }), animated: true)
                     //TODO: some retry needed
                     break
                 case .unauthorized:
