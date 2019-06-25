@@ -57,7 +57,7 @@ class ProfileViewController: PageBaseViewController,MFMailComposeViewControllerD
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         
-        return "\(NSLocalizedString("settings.describe.problem", comment: ""))\n\nName: \(UIDevice.current.name), Version: \(UIDevice.current.systemVersion), Model: \(UIDevice.current.model), Time: \(dateFormatter.string(from: Date())), AppVersion:\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] ?? ""),\(Bundle.main.infoDictionary!["CFBundleVersion"] ?? "")\n"
+        return "\(NSLocalizedString("profile.describe.problem", comment: ""))\n\n\n\nName: \(UIDevice.current.name), Version: \(UIDevice.current.systemVersion), Model: \(UIDevice.current.model), Time: \(dateFormatter.string(from: Date())), AppVersion:\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] ?? ""),\(Bundle.main.infoDictionary!["CFBundleVersion"] ?? "")\n"
     }
     
     @objc(mailComposeController:didFinishWithResult:error:)

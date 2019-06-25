@@ -47,3 +47,5 @@
 "profile.contact.error" = "Musíte mít instalovanou a správně nastavenout aplikaci Mail.";
 "profile.logout.message" = "Jestliže již nechcete aplikaci nadále používat, prosím, odhlašte se a aplikace bezpečně vymaže Vaše přihlašovací údaje z klíčenky.";
 "profile.logout.button" = "Odhlásit";"
+
+"profile.describe.problem" = "Dobrý den\nV aplikaci mi chybí ...";
