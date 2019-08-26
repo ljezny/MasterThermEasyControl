@@ -204,7 +204,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 33 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 34 localization keys.
     struct localizable {
       /// Value: Aktuální
       static let heatpumpTemperatureReal = Rswift.StringResource(key: "heatpump.temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -268,6 +268,8 @@ struct R: Rswift.Validatable {
       static let heatpumpTemperatureOutside = Rswift.StringResource(key: "heatpump.temperature.outside", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.
       static let connectionErrorMessage = Rswift.StringResource(key: "connection.error.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Zdravím, v aplikaci mi chybí:
+      static let profileDescribeProblem = Rswift.StringResource(key: "profile.describe.problem", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Zkusit znovu
       static let generalRetry = Rswift.StringResource(key: "general.retry", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Zrušit
@@ -426,6 +428,11 @@ struct R: Rswift.Validatable {
       /// Value: Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.
       static func connectionErrorMessage(_: Void = ()) -> String {
         return NSLocalizedString("connection.error.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Zdravím, v aplikaci mi chybí:
+      static func profileDescribeProblem(_: Void = ()) -> String {
+        return NSLocalizedString("profile.describe.problem", bundle: R.hostingBundle, comment: "")
       }
       
       /// Value: Zkusit znovu
