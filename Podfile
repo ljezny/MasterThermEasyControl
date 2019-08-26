@@ -13,6 +13,7 @@ target 'MasterThermEasyControl' do
   pod 'R.swift'
   pod 'CocoaLumberjack/Swift'
   pod 'GZIP', '1.2.2'
+  pod 'AppCenter'
 end
 
 target 'MasterThermEasyControl.Today' do
