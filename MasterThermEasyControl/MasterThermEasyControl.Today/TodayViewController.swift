@@ -12,11 +12,11 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet weak var gradientView: GradientView!
-    @IBOutlet weak var roomRealTemperatureLabel: StyleableLabel!
-    @IBOutlet weak var roomSetTemperatureLabel: StyleableLabel!
-    @IBOutlet weak var waterRealTemperatureLabel: StyleableLabel!
-    @IBOutlet weak var outsideTempLabel: StyleableLabel!
-    @IBOutlet weak var heatWaterLabel: StyleableLabel!
+    @IBOutlet weak var roomRealTemperatureLabel: UILabel!
+    @IBOutlet weak var roomSetTemperatureLabel: UILabel!
+    @IBOutlet weak var waterRealTemperatureLabel: UILabel!
+    @IBOutlet weak var outsideTempLabel: UILabel!
+    @IBOutlet weak var heatWaterLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

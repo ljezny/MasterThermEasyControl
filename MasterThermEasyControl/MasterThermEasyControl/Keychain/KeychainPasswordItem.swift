@@ -98,7 +98,6 @@ struct KeychainPasswordItem {
             
             // Throw an error if an unexpected status was returned.
             guard status == noErr else {
-                print(SecCopyErrorMessageString(status, nil))
                 throw KeychainError.unhandledError(status: status)
                 
             }

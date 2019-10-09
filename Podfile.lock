@@ -1,11 +1,11 @@
 PODS:
-  - AppCenter (2.3.0):
-    - AppCenter/Analytics (= 2.3.0)
-    - AppCenter/Crashes (= 2.3.0)
-  - AppCenter/Analytics (2.3.0):
+  - AppCenter (2.4.0):
+    - AppCenter/Analytics (= 2.4.0)
+    - AppCenter/Crashes (= 2.4.0)
+  - AppCenter/Analytics (2.4.0):
     - AppCenter/Core
-  - AppCenter/Core (2.3.0)
-  - AppCenter/Crashes (2.3.0):
+  - AppCenter/Core (2.4.0)
+  - AppCenter/Crashes (2.4.0):
     - AppCenter/Core
   - Bond (7.5.0):
     - Differ (~> 1.3)
@@ -30,8 +30,7 @@ DEPENDENCIES:
   - R.swift
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - AppCenter
+  https://github.com/CocoaPods/Specs.git:
     - Bond
     - CocoaLumberjack
     - Differ
@@ -40,9 +39,11 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - ReactiveKit
+  trunk:
+    - AppCenter
 
 SPEC CHECKSUMS:
-  AppCenter: 9784d2fc998c9bd0b8fbaf4fb9ed69526d12ce1a
+  AppCenter: 49a9ffe114c00e2bf5374aeda816d47eabf1978a
   Bond: 6abbc33a4cf88e65a0f8b1ba8276ac34584ad897
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   Differ: ca4350872e32a1aeedf3d9e2d9e47127833bfa9c
@@ -54,4 +55,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 63c38887e704a090fd7dbec83a2b607d17f0632c
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.3
