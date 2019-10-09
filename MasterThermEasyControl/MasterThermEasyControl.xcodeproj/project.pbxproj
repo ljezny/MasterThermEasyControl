@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		43349EAEF319198A2181A68B /* Pods_MasterThermEasyControl_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055168DB7882FD99037CBE4F /* Pods_MasterThermEasyControl_Today.framework */; };
+		560DCB05234E2A0D00B15ACB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 560DCB08234E2A0D00B15ACB /* Localizable.strings */; };
+		560DCB06234E2A0D00B15ACB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 560DCB08234E2A0D00B15ACB /* Localizable.strings */; };
 		5617036B229C6B0100629790 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170369229C6B0100629790 /* LoginViewController.swift */; };
 		5617036C229C6B0100629790 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5617036A229C6B0100629790 /* LoginViewController.xib */; };
 		56170373229C76B300629790 /* StyleableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170370229C723500629790 /* StyleableButton.swift */; };
@@ -46,7 +48,6 @@
 		56D70D9322B503A200F6E156 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9122B503A200F6E156 /* InitialViewController.xib */; };
 		56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */; };
 		56D70D9822B512DB00F6E156 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */; };
-		56D70D9A22B5303900F6E156 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9922B5303900F6E156 /* Localizable.strings */; };
 		56D70DA222B6848A00F6E156 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DA122B6848A00F6E156 /* BaseViewController.swift */; };
 		56D70DA422B684A200F6E156 /* PageBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DA322B684A200F6E156 /* PageBaseViewController.swift */; };
 		56D70DAB22B6B6A200F6E156 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D70DAA22B6B6A200F6E156 /* NotificationCenter.framework */; };
@@ -74,7 +75,6 @@
 		56D70DCE22B6D14300F6E156 /* HeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB172293347000277DD7 /* HeatModel.swift */; };
 		56D70DCF22B6D14300F6E156 /* HotWaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */; };
 		56D70DD022B6D14300F6E156 /* TemperatureModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */; };
-		56D70DD122B6D74B00F6E156 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9922B5303900F6E156 /* Localizable.strings */; };
 		56D70DD422B6E65F00F6E156 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DD222B6E65F00F6E156 /* ProfileViewController.swift */; };
 		56D70DD522B6E65F00F6E156 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D70DD322B6E65F00F6E156 /* ProfileViewController.xib */; };
 		56D70DD722B8197900F6E156 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DD622B8197900F6E156 /* AlertUtils.swift */; };
@@ -117,6 +117,8 @@
 		055168DB7882FD99037CBE4F /* Pods_MasterThermEasyControl_Today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterThermEasyControl_Today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB2AABB870DBD7713726A5D /* Pods-MasterThermEasyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterThermEasyControl.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MasterThermEasyControl/Pods-MasterThermEasyControl.debug.xcconfig"; sourceTree = "<group>"; };
 		1F2215B3C338FAFE9EED577D /* Pods_MasterThermEasyControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterThermEasyControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		560DCB07234E2A0D00B15ACB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		560DCB09234E2A6000B15ACB /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		56170369229C6B0100629790 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5617036A229C6B0100629790 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		5617036E229C723500629790 /* StyleableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableLabel.swift; sourceTree = "<group>"; };
@@ -156,7 +158,6 @@
 		56D70D9122B503A200F6E156 /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 		56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
-		56D70D9922B5303900F6E156 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		56D70DA122B6848A00F6E156 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		56D70DA322B684A200F6E156 /* PageBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBaseViewController.swift; sourceTree = "<group>"; };
 		56D70DA922B6B6A200F6E156 /* MasterThermEasyControl.Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MasterThermEasyControl.Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,7 +236,7 @@
 		56315603228DC6A100C0B8D8 = {
 			isa = PBXGroup;
 			children = (
-				56D70D9922B5303900F6E156 /* Localizable.strings */,
+				560DCB08234E2A0D00B15ACB /* Localizable.strings */,
 				56B6CB1E2299CBFC00277DD7 /* R.generated.swift */,
 				5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */,
 				56D70DAC22B6B6A200F6E156 /* MasterThermEasyControl.Today */,
@@ -473,6 +474,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = 56315603228DC6A100C0B8D8;
 			productRefGroup = 5631560D228DC6A100C0B8D8 /* Products */;
@@ -495,7 +497,7 @@
 				565E0D4A22B6682900E434AD /* SF-Pro-Display-Thin.otf in Resources */,
 				5617037B229C78AA00629790 /* IntroViewController.xib in Resources */,
 				5631561A228DC6A300C0B8D8 /* LaunchScreen.storyboard in Resources */,
-				56D70D9A22B5303900F6E156 /* Localizable.strings in Resources */,
+				560DCB05234E2A0D00B15ACB /* Localizable.strings in Resources */,
 				56D70DDB22B81A7300F6E156 /* HeatPumpInfoViewController.xib in Resources */,
 				56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */,
 				56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */,
@@ -509,7 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56D70DC122B6C2A700F6E156 /* SF-Pro-Display-Thin.otf in Resources */,
-				56D70DD122B6D74B00F6E156 /* Localizable.strings in Resources */,
+				560DCB06234E2A0D00B15ACB /* Localizable.strings in Resources */,
 				56D70DC422B6C5FD00F6E156 /* Assets.xcassets in Resources */,
 				56D70DB122B6B6A300F6E156 /* MainInterface.storyboard in Resources */,
 			);
@@ -687,6 +689,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		560DCB08234E2A0D00B15ACB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				560DCB07234E2A0D00B15ACB /* en */,
+				560DCB09234E2A6000B15ACB /* cs */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		56315618228DC6A300C0B8D8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -710,6 +721,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -771,6 +783,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

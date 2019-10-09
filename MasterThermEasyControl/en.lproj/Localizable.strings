@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  MasterThermEasyControl
+
+  Created by Lukas Jezny on 15/06/2019.
+  Copyright © 2019 Lukas Jezny. All rights reserved.
+*/
+
+"general.appname" = "MasterTherm Easy Control";
+"general.ok" = "OK";
+"general.cancel" = "Cancel";
+"general.retry" = "Try again";
+"general.name.jezny" = "Lukáš Jezný";
+"general.name.palka" = "Jiří Pálka";
+
+"connection.error.title" = "Connection failed";
+"connection.error.message" = "Looks like you don't have an Internet connection. Please check the connection and try again.";
+"unauthorized.title" = "Login failed";
+"unauthorized.message" = "Your credentials are incorrect. Please try again.";
+
+"intro.message.jezny" = "My name is Lukáš Jezný and I am the creator of MasterTherm Easy Control and thank you for downloading it. I have been developing freelance mobile applications for several years. I also own a MasterTherm heat pump on my home. The official application for controlling this pump did not suit my design and usage and therefore I tried to publish my own solution for controlling this pump. I do not plan to set temperature curves and more complex parameters yet. In my free time, I work on development and new features and add them as needed. A watch app is planned.\n\nI'll be happy to hear any comments you make about using the app and report any issues. Contact form is available after login.\n\nPumps with FW version higher than 11 are currently supported. Multiple circuits are supported, but this is not thoroughly tested because I own a single circuit pump. I would also like to support the solar and swimming pool in the application, so if you have a solar or swimming pool, please contact us. I tried and tested the application on my own heat pump and I did not cause any defects. If you still have concerns, please use the original app. The application is entirely up to you.";
+"intro.message.palka" = "My name is Jiří Pálka and I am a freelance graphic designer. For Easy Control I have completely designed the UI and supervised its proper use. I hope you will like the application and ease of use.";
+
+"intro.continue.button" = "Continue";
+
+"login.message" = "To log in, use the credentials provided from MasterTherm which you use to log in on the web interface or the original mobile app. We store the credentials securely in keychain and your password will be sent securely via an encrypted connection. The app does not process your data any further.";
+"login.button" = "Login";
+"login.email.placeholder" = "E-mail";
+"login.password.placeholder" = "Password";
+
+"temperature.set" = "Required";
+"temperature.real" = "Current";
+
+"heatmodel.name" = "Home";
+"hotwatermodel.name" = "Hot water";
+
+"heatpump.title" = "Heat pump";
+"heatpump.temperature" = "Heat water temperature";
+"heatpump.temperature.help" = "The required heating water temperature is calculated by the control unit on the basis of an equithermal curve - the current outdoor temperature and the thermal inertia of the building.";
+"heatpump.temperature.real" = "Required";
+"heatpump.temperature.set" = "Current";
+"heatpump.temperature.outside" = "Outdoor temperature";
+
+"profile.title" = "Profile";
+
+"profile.describe.problem" = "Greetings, app is great but i am missing ...";
+"profile.contact.message" = "If you miss a feature in the app or there is a bug, you can contact me. I will be glad for feedback. Please note that this is not a commercial application, but a hobby one.";
+"profile.contact.button" = "Contact";
+"profile.contact.error" = "You must have Mail installed and set up correctly.";
+"profile.logout.message" = "If you no longer wish to use the application, please log out and the application will safely delete your login information from the keychain.";
+"profile.logout.button" = "Logout";"

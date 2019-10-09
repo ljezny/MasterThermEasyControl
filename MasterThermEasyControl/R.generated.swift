@@ -206,243 +206,379 @@ struct R: Rswift.Validatable {
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 34 localization keys.
     struct localizable {
-      /// Value: Aktuální
-      static let heatpumpTemperatureReal = Rswift.StringResource(key: "heatpump.temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Aktuální
-      static let temperatureReal = Rswift.StringResource(key: "temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Chyba připojení
-      static let connectionErrorTitle = Rswift.StringResource(key: "connection.error.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Domov
-      static let heatmodelName = Rswift.StringResource(key: "heatmodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: E-mail
-      static let loginEmailPlaceholder = Rswift.StringResource(key: "login.email.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Heslo
-      static let loginPasswordPlaceholder = Rswift.StringResource(key: "login.password.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Jestliže již nechcete aplikaci nadále používat, prosím, odhlašte se a aplikace bezpečně vymaže Vaše přihlašovací údaje z klíčenky.
-      static let profileLogoutMessage = Rswift.StringResource(key: "profile.logout.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Jiří Pálka
-      static let generalNamePalka = Rswift.StringResource(key: "general.name.palka", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Jmenuji se Jiří Pálka a jsem grafickým designérem na volné noze. Pro aplikaci Easy Control jsem kompletně navrhl design a dohlížel nad jeho správným použitím. Snad se Vám aplikace bude líbit a jednoduše používat.
-      static let introMessagePalka = Rswift.StringResource(key: "intro.message.palka", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze. Jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem sice nepokrývá funkcionalitu původní aplikace, ale naopak jsem chtěl se snažil zjednodušit ovládání tepelného čerpadla. Nastavování teplotních křivek a složitějších parametrů zatím neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby. V plánu je aplikace pro hodinky.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Aktuálně jsou podporována čerpadla s verzí FW vyšší než 11. Podporováno je i více okruhů, ale toto není důkladně testováno, protože jsem vlastníkem čerpadla s jedním okruhem. Soláry a bazén bych rád také do aplikace podpořil, proto pokud solár nebo bazén máte, prosím, ozvěte se.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem zkoušel a testoval na svém vlastním tepelném čerpadle a žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
-      static let introMessageJezny = Rswift.StringResource(key: "intro.message.jezny", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Kontaktovat
-      static let profileContactButton = Rswift.StringResource(key: "profile.contact.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Lukáš Jezný
-      static let generalNameJezny = Rswift.StringResource(key: "general.name.jezny", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: MasterTherm Easy Control
-      static let generalAppname = Rswift.StringResource(key: "general.appname", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Musíte mít instalovanou a správně nastavenout aplikaci Mail.
-      static let profileContactError = Rswift.StringResource(key: "profile.contact.error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: OK
-      static let generalOk = Rswift.StringResource(key: "general.ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Odhlásit
-      static let profileLogoutButton = Rswift.StringResource(key: "profile.logout.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Pokračovat
-      static let introContinueButton = Rswift.StringResource(key: "intro.continue.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Pokud Vám v aplikaci nějaká funkce chybí nebo naopak nějaká chyba přebývá, můžete mne kontaktovat. Budu rád za zpětnou vazbu. Berte na vědomí, že se nejedná o komerční aplikaci, ale o výtvor ve volném čase. Proto se budu zabývat úpravami s malou prioritou. Rád Vám však odpovím.
-      static let profileContactMessage = Rswift.StringResource(key: "profile.contact.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Požadovanou teplotu topné vody vypočítává řídící jednotka na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.
-      static let heatpumpTemperatureHelp = Rswift.StringResource(key: "heatpump.temperature.help", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Požadovaná
-      static let heatpumpTemperatureSet = Rswift.StringResource(key: "heatpump.temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Požadováno
-      static let temperatureSet = Rswift.StringResource(key: "temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Pro přihlášení použijte údaje, které jste obdrželi od firmy MasterTherm a které používáte pro přihlášení na webovém rozhraní nebo v originální aplikaci. Přihlašovací údaje aplikace uloží bezpečně do tzv. klíčenky a Vaše heslo bude posíláno bezpečně přes šifrované spojení. Vaše údaje aplikace dále nijak nezpracovává.
-      static let loginMessage = Rswift.StringResource(key: "login.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Profil
-      static let profileTitle = Rswift.StringResource(key: "profile.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Přihlásit
-      static let loginButton = Rswift.StringResource(key: "login.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Přihlášení se nepodařilo
-      static let unauthorizedTitle = Rswift.StringResource(key: "unauthorized.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Tepelné čerpadlo
-      static let heatpumpTitle = Rswift.StringResource(key: "heatpump.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Teplota topné vody
-      static let heatpumpTemperature = Rswift.StringResource(key: "heatpump.temperature", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Teplá užitková voda
-      static let hotwatermodelName = Rswift.StringResource(key: "hotwatermodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
-      static let unauthorizedMessage = Rswift.StringResource(key: "unauthorized.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Venkovní teplota
-      static let heatpumpTemperatureOutside = Rswift.StringResource(key: "heatpump.temperature.outside", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.
-      static let connectionErrorMessage = Rswift.StringResource(key: "connection.error.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Zdravím, v aplikaci mi chybí:
-      static let profileDescribeProblem = Rswift.StringResource(key: "profile.describe.problem", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Zkusit znovu
-      static let generalRetry = Rswift.StringResource(key: "general.retry", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Zrušit
-      static let generalCancel = Rswift.StringResource(key: "general.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// en translation: Cancel
+      /// 
+      /// Locales: en, cs
+      static let generalCancel = Rswift.StringResource(key: "general.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Connection failed
+      /// 
+      /// Locales: en, cs
+      static let connectionErrorTitle = Rswift.StringResource(key: "connection.error.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Contact
+      /// 
+      /// Locales: en, cs
+      static let profileContactButton = Rswift.StringResource(key: "profile.contact.button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Continue
+      /// 
+      /// Locales: en, cs
+      static let introContinueButton = Rswift.StringResource(key: "intro.continue.button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Current
+      /// 
+      /// Locales: en, cs
+      static let heatpumpTemperatureSet = Rswift.StringResource(key: "heatpump.temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Current
+      /// 
+      /// Locales: en, cs
+      static let temperatureReal = Rswift.StringResource(key: "temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: E-mail
+      /// 
+      /// Locales: en, cs
+      static let loginEmailPlaceholder = Rswift.StringResource(key: "login.email.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Greetings, app is great but i am missing ...
+      /// 
+      /// Locales: en, cs
+      static let profileDescribeProblem = Rswift.StringResource(key: "profile.describe.problem", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Heat pump
+      /// 
+      /// Locales: en, cs
+      static let heatpumpTitle = Rswift.StringResource(key: "heatpump.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Heat water temperature
+      /// 
+      /// Locales: en, cs
+      static let heatpumpTemperature = Rswift.StringResource(key: "heatpump.temperature", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Home
+      /// 
+      /// Locales: en, cs
+      static let heatmodelName = Rswift.StringResource(key: "heatmodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Hot water
+      /// 
+      /// Locales: en, cs
+      static let hotwatermodelName = Rswift.StringResource(key: "hotwatermodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: If you miss a feature in the app or there is a bug, you can contact me. I will be glad for feedback. Please note that this is not a commercial application, but a hobby one.
+      /// 
+      /// Locales: en, cs
+      static let profileContactMessage = Rswift.StringResource(key: "profile.contact.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: If you no longer wish to use the application, please log out and the application will safely delete your login information from the keychain.
+      /// 
+      /// Locales: en, cs
+      static let profileLogoutMessage = Rswift.StringResource(key: "profile.logout.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Jiří Pálka
+      /// 
+      /// Locales: en, cs
+      static let generalNamePalka = Rswift.StringResource(key: "general.name.palka", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Login
+      /// 
+      /// Locales: en, cs
+      static let loginButton = Rswift.StringResource(key: "login.button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Login failed
+      /// 
+      /// Locales: en, cs
+      static let unauthorizedTitle = Rswift.StringResource(key: "unauthorized.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Logout
+      /// 
+      /// Locales: en, cs
+      static let profileLogoutButton = Rswift.StringResource(key: "profile.logout.button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Looks like you don't have an Internet connection. Please check the connection and try again.
+      /// 
+      /// Locales: en, cs
+      static let connectionErrorMessage = Rswift.StringResource(key: "connection.error.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Lukáš Jezný
+      /// 
+      /// Locales: en, cs
+      static let generalNameJezny = Rswift.StringResource(key: "general.name.jezny", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: MasterTherm Easy Control
+      /// 
+      /// Locales: en, cs
+      static let generalAppname = Rswift.StringResource(key: "general.appname", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: My name is Jiří Pálka and I am a freelance graphic designer. For Easy Control I have completely designed the UI and supervised its proper use. I hope you will like the application and ease of use.
+      /// 
+      /// Locales: en, cs
+      static let introMessagePalka = Rswift.StringResource(key: "intro.message.palka", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: My name is Lukáš Jezný and I am the creator of MasterTherm Easy Control and thank you for downloading it. I have been developing freelance mobile applications for several years. I also own a MasterTherm heat pump on my home. The official application for controlling this pump did not suit my design and usage and therefore I tried to publish my own solution for controlling this pump. I do not plan to set temperature curves and more complex parameters yet. In my free time, I work on development and new features and add them as needed. A watch app is planned.  I'll be happy to hear any comments you make about using the app and report any issues. Contact form is available after login.  Pumps with FW version higher than 11 are currently supported. Multiple circuits are supported, but this is not thoroughly tested because I own a single circuit pump. I would also like to support the solar and swimming pool in the application, so if you have a solar or swimming pool, please contact us. I tried and tested the application on my own heat pump and I did not cause any defects. If you still have concerns, please use the original app. The application is entirely up to you.
+      /// 
+      /// Locales: en, cs
+      static let introMessageJezny = Rswift.StringResource(key: "intro.message.jezny", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: OK
+      /// 
+      /// Locales: en, cs
+      static let generalOk = Rswift.StringResource(key: "general.ok", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Outdoor temperature
+      /// 
+      /// Locales: en, cs
+      static let heatpumpTemperatureOutside = Rswift.StringResource(key: "heatpump.temperature.outside", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Password
+      /// 
+      /// Locales: en, cs
+      static let loginPasswordPlaceholder = Rswift.StringResource(key: "login.password.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Profile
+      /// 
+      /// Locales: en, cs
+      static let profileTitle = Rswift.StringResource(key: "profile.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Required
+      /// 
+      /// Locales: en, cs
+      static let heatpumpTemperatureReal = Rswift.StringResource(key: "heatpump.temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Required
+      /// 
+      /// Locales: en, cs
+      static let temperatureSet = Rswift.StringResource(key: "temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: The required heating water temperature is calculated by the control unit on the basis of an equithermal curve - the current outdoor temperature and the thermal inertia of the building.
+      /// 
+      /// Locales: en, cs
+      static let heatpumpTemperatureHelp = Rswift.StringResource(key: "heatpump.temperature.help", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: To log in, use the credentials provided from MasterTherm which you use to log in on the web interface or the original mobile app. We store the credentials securely in keychain and your password will be sent securely via an encrypted connection. The app does not process your data any further.
+      /// 
+      /// Locales: en, cs
+      static let loginMessage = Rswift.StringResource(key: "login.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Try again
+      /// 
+      /// Locales: en, cs
+      static let generalRetry = Rswift.StringResource(key: "general.retry", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: You must have Mail installed and set up correctly.
+      /// 
+      /// Locales: en, cs
+      static let profileContactError = Rswift.StringResource(key: "profile.contact.error", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
+      /// en translation: Your credentials are incorrect. Please try again.
+      /// 
+      /// Locales: en, cs
+      static let unauthorizedMessage = Rswift.StringResource(key: "unauthorized.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       
-      /// Value: Aktuální
-      static func heatpumpTemperatureReal(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.real", bundle: R.hostingBundle, comment: "")
+      /// en translation: Cancel
+      /// 
+      /// Locales: en, cs
+      static func generalCancel(_: Void = ()) -> String {
+        return NSLocalizedString("general.cancel", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Aktuální
-      static func temperatureReal(_: Void = ()) -> String {
-        return NSLocalizedString("temperature.real", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Chyba připojení
+      /// en translation: Connection failed
+      /// 
+      /// Locales: en, cs
       static func connectionErrorTitle(_: Void = ()) -> String {
         return NSLocalizedString("connection.error.title", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Domov
-      static func heatmodelName(_: Void = ()) -> String {
-        return NSLocalizedString("heatmodel.name", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: E-mail
-      static func loginEmailPlaceholder(_: Void = ()) -> String {
-        return NSLocalizedString("login.email.placeholder", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Heslo
-      static func loginPasswordPlaceholder(_: Void = ()) -> String {
-        return NSLocalizedString("login.password.placeholder", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Jestliže již nechcete aplikaci nadále používat, prosím, odhlašte se a aplikace bezpečně vymaže Vaše přihlašovací údaje z klíčenky.
-      static func profileLogoutMessage(_: Void = ()) -> String {
-        return NSLocalizedString("profile.logout.message", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Jiří Pálka
-      static func generalNamePalka(_: Void = ()) -> String {
-        return NSLocalizedString("general.name.palka", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Jmenuji se Jiří Pálka a jsem grafickým designérem na volné noze. Pro aplikaci Easy Control jsem kompletně navrhl design a dohlížel nad jeho správným použitím. Snad se Vám aplikace bude líbit a jednoduše používat.
-      static func introMessagePalka(_: Void = ()) -> String {
-        return NSLocalizedString("intro.message.palka", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Jmenuji se Lukáš Jezný a jsem tvůrcem MasterTherm Easy Control a děkuji za její stažení. Již několik let se věnuji vývoji mobilních aplikací na volné noze. Jsem také majitelem tepelného čerpadla firmy MasterTherm na svém domě. Oficiální aplikace k ovladání tohoto čerpadla mi svým designem i použitím nevyhovovala a proto jsem zkusil publikovat vlastní řešení pro ovládání tohoto čerpadla.  Aplikace svým rozsahem sice nepokrývá funkcionalitu původní aplikace, ale naopak jsem chtěl se snažil zjednodušit ovládání tepelného čerpadla. Nastavování teplotních křivek a složitějších parametrů zatím neplánuji. Ve volném čase pracuji na vývoji a nových funkcí a budu je přidávat až podle potřeby. V plánu je aplikace pro hodinky.  Budu rád za každou připomínku k použití aplikace a za nahlášení případných problémů. Kontaktní formulář je dostupný po přihlášení.  Aktuálně jsou podporována čerpadla s verzí FW vyšší než 11. Podporováno je i více okruhů, ale toto není důkladně testováno, protože jsem vlastníkem čerpadla s jedním okruhem. Soláry a bazén bych rád také do aplikace podpořil, proto pokud solár nebo bazén máte, prosím, ozvěte se.  Používání této aplikace je na vlastní riziko a za případné vady či poškození na tepelném čerpadle neručím. Aplikaci jsem zkoušel a testoval na svém vlastním tepelném čerpadle a žádné vady jsem nezpůsobil. Pokud i přes to máte obavy, prosím, používejte originální aplikaci. Použití aplikace je zcela na Vás.
-      static func introMessageJezny(_: Void = ()) -> String {
-        return NSLocalizedString("intro.message.jezny", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Kontaktovat
+      /// en translation: Contact
+      /// 
+      /// Locales: en, cs
       static func profileContactButton(_: Void = ()) -> String {
         return NSLocalizedString("profile.contact.button", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Lukáš Jezný
-      static func generalNameJezny(_: Void = ()) -> String {
-        return NSLocalizedString("general.name.jezny", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: MasterTherm Easy Control
-      static func generalAppname(_: Void = ()) -> String {
-        return NSLocalizedString("general.appname", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Musíte mít instalovanou a správně nastavenout aplikaci Mail.
-      static func profileContactError(_: Void = ()) -> String {
-        return NSLocalizedString("profile.contact.error", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: OK
-      static func generalOk(_: Void = ()) -> String {
-        return NSLocalizedString("general.ok", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Odhlásit
-      static func profileLogoutButton(_: Void = ()) -> String {
-        return NSLocalizedString("profile.logout.button", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Pokračovat
+      /// en translation: Continue
+      /// 
+      /// Locales: en, cs
       static func introContinueButton(_: Void = ()) -> String {
         return NSLocalizedString("intro.continue.button", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Pokud Vám v aplikaci nějaká funkce chybí nebo naopak nějaká chyba přebývá, můžete mne kontaktovat. Budu rád za zpětnou vazbu. Berte na vědomí, že se nejedná o komerční aplikaci, ale o výtvor ve volném čase. Proto se budu zabývat úpravami s malou prioritou. Rád Vám však odpovím.
-      static func profileContactMessage(_: Void = ()) -> String {
-        return NSLocalizedString("profile.contact.message", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Požadovanou teplotu topné vody vypočítává řídící jednotka na základě ekvitermní křivky - aktuální venkovní teploty a tepelné setrvačnosti objektu.
-      static func heatpumpTemperatureHelp(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.help", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Požadovaná
+      /// en translation: Current
+      /// 
+      /// Locales: en, cs
       static func heatpumpTemperatureSet(_: Void = ()) -> String {
         return NSLocalizedString("heatpump.temperature.set", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Požadováno
-      static func temperatureSet(_: Void = ()) -> String {
-        return NSLocalizedString("temperature.set", bundle: R.hostingBundle, comment: "")
+      /// en translation: Current
+      /// 
+      /// Locales: en, cs
+      static func temperatureReal(_: Void = ()) -> String {
+        return NSLocalizedString("temperature.real", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Pro přihlášení použijte údaje, které jste obdrželi od firmy MasterTherm a které používáte pro přihlášení na webovém rozhraní nebo v originální aplikaci. Přihlašovací údaje aplikace uloží bezpečně do tzv. klíčenky a Vaše heslo bude posíláno bezpečně přes šifrované spojení. Vaše údaje aplikace dále nijak nezpracovává.
-      static func loginMessage(_: Void = ()) -> String {
-        return NSLocalizedString("login.message", bundle: R.hostingBundle, comment: "")
+      /// en translation: E-mail
+      /// 
+      /// Locales: en, cs
+      static func loginEmailPlaceholder(_: Void = ()) -> String {
+        return NSLocalizedString("login.email.placeholder", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Profil
-      static func profileTitle(_: Void = ()) -> String {
-        return NSLocalizedString("profile.title", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Přihlásit
-      static func loginButton(_: Void = ()) -> String {
-        return NSLocalizedString("login.button", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Přihlášení se nepodařilo
-      static func unauthorizedTitle(_: Void = ()) -> String {
-        return NSLocalizedString("unauthorized.title", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Tepelné čerpadlo
-      static func heatpumpTitle(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.title", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Teplota topné vody
-      static func heatpumpTemperature(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Teplá užitková voda
-      static func hotwatermodelName(_: Void = ()) -> String {
-        return NSLocalizedString("hotwatermodel.name", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Vaše přihlašovací údaje jsou nesprávné. Prosím, zkontrolujte je a zkuste se přihlásit znovu.
-      static func unauthorizedMessage(_: Void = ()) -> String {
-        return NSLocalizedString("unauthorized.message", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Venkovní teplota
-      static func heatpumpTemperatureOutside(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.outside", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Vypadá to, že nemáte dostupné internetové připojení. Prosím, zkontrolujte připojení a zkuste akci znovu.
-      static func connectionErrorMessage(_: Void = ()) -> String {
-        return NSLocalizedString("connection.error.message", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Value: Zdravím, v aplikaci mi chybí:
+      /// en translation: Greetings, app is great but i am missing ...
+      /// 
+      /// Locales: en, cs
       static func profileDescribeProblem(_: Void = ()) -> String {
         return NSLocalizedString("profile.describe.problem", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Zkusit znovu
+      /// en translation: Heat pump
+      /// 
+      /// Locales: en, cs
+      static func heatpumpTitle(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Heat water temperature
+      /// 
+      /// Locales: en, cs
+      static func heatpumpTemperature(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Home
+      /// 
+      /// Locales: en, cs
+      static func heatmodelName(_: Void = ()) -> String {
+        return NSLocalizedString("heatmodel.name", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Hot water
+      /// 
+      /// Locales: en, cs
+      static func hotwatermodelName(_: Void = ()) -> String {
+        return NSLocalizedString("hotwatermodel.name", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: If you miss a feature in the app or there is a bug, you can contact me. I will be glad for feedback. Please note that this is not a commercial application, but a hobby one.
+      /// 
+      /// Locales: en, cs
+      static func profileContactMessage(_: Void = ()) -> String {
+        return NSLocalizedString("profile.contact.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: If you no longer wish to use the application, please log out and the application will safely delete your login information from the keychain.
+      /// 
+      /// Locales: en, cs
+      static func profileLogoutMessage(_: Void = ()) -> String {
+        return NSLocalizedString("profile.logout.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Jiří Pálka
+      /// 
+      /// Locales: en, cs
+      static func generalNamePalka(_: Void = ()) -> String {
+        return NSLocalizedString("general.name.palka", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Login
+      /// 
+      /// Locales: en, cs
+      static func loginButton(_: Void = ()) -> String {
+        return NSLocalizedString("login.button", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Login failed
+      /// 
+      /// Locales: en, cs
+      static func unauthorizedTitle(_: Void = ()) -> String {
+        return NSLocalizedString("unauthorized.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Logout
+      /// 
+      /// Locales: en, cs
+      static func profileLogoutButton(_: Void = ()) -> String {
+        return NSLocalizedString("profile.logout.button", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Looks like you don't have an Internet connection. Please check the connection and try again.
+      /// 
+      /// Locales: en, cs
+      static func connectionErrorMessage(_: Void = ()) -> String {
+        return NSLocalizedString("connection.error.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Lukáš Jezný
+      /// 
+      /// Locales: en, cs
+      static func generalNameJezny(_: Void = ()) -> String {
+        return NSLocalizedString("general.name.jezny", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: MasterTherm Easy Control
+      /// 
+      /// Locales: en, cs
+      static func generalAppname(_: Void = ()) -> String {
+        return NSLocalizedString("general.appname", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: My name is Jiří Pálka and I am a freelance graphic designer. For Easy Control I have completely designed the UI and supervised its proper use. I hope you will like the application and ease of use.
+      /// 
+      /// Locales: en, cs
+      static func introMessagePalka(_: Void = ()) -> String {
+        return NSLocalizedString("intro.message.palka", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: My name is Lukáš Jezný and I am the creator of MasterTherm Easy Control and thank you for downloading it. I have been developing freelance mobile applications for several years. I also own a MasterTherm heat pump on my home. The official application for controlling this pump did not suit my design and usage and therefore I tried to publish my own solution for controlling this pump. I do not plan to set temperature curves and more complex parameters yet. In my free time, I work on development and new features and add them as needed. A watch app is planned.  I'll be happy to hear any comments you make about using the app and report any issues. Contact form is available after login.  Pumps with FW version higher than 11 are currently supported. Multiple circuits are supported, but this is not thoroughly tested because I own a single circuit pump. I would also like to support the solar and swimming pool in the application, so if you have a solar or swimming pool, please contact us. I tried and tested the application on my own heat pump and I did not cause any defects. If you still have concerns, please use the original app. The application is entirely up to you.
+      /// 
+      /// Locales: en, cs
+      static func introMessageJezny(_: Void = ()) -> String {
+        return NSLocalizedString("intro.message.jezny", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: OK
+      /// 
+      /// Locales: en, cs
+      static func generalOk(_: Void = ()) -> String {
+        return NSLocalizedString("general.ok", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Outdoor temperature
+      /// 
+      /// Locales: en, cs
+      static func heatpumpTemperatureOutside(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.outside", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Password
+      /// 
+      /// Locales: en, cs
+      static func loginPasswordPlaceholder(_: Void = ()) -> String {
+        return NSLocalizedString("login.password.placeholder", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Profile
+      /// 
+      /// Locales: en, cs
+      static func profileTitle(_: Void = ()) -> String {
+        return NSLocalizedString("profile.title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Required
+      /// 
+      /// Locales: en, cs
+      static func heatpumpTemperatureReal(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.real", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Required
+      /// 
+      /// Locales: en, cs
+      static func temperatureSet(_: Void = ()) -> String {
+        return NSLocalizedString("temperature.set", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: The required heating water temperature is calculated by the control unit on the basis of an equithermal curve - the current outdoor temperature and the thermal inertia of the building.
+      /// 
+      /// Locales: en, cs
+      static func heatpumpTemperatureHelp(_: Void = ()) -> String {
+        return NSLocalizedString("heatpump.temperature.help", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: To log in, use the credentials provided from MasterTherm which you use to log in on the web interface or the original mobile app. We store the credentials securely in keychain and your password will be sent securely via an encrypted connection. The app does not process your data any further.
+      /// 
+      /// Locales: en, cs
+      static func loginMessage(_: Void = ()) -> String {
+        return NSLocalizedString("login.message", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Try again
+      /// 
+      /// Locales: en, cs
       static func generalRetry(_: Void = ()) -> String {
         return NSLocalizedString("general.retry", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: Zrušit
-      static func generalCancel(_: Void = ()) -> String {
-        return NSLocalizedString("general.cancel", bundle: R.hostingBundle, comment: "")
+      /// en translation: You must have Mail installed and set up correctly.
+      /// 
+      /// Locales: en, cs
+      static func profileContactError(_: Void = ()) -> String {
+        return NSLocalizedString("profile.contact.error", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Your credentials are incorrect. Please try again.
+      /// 
+      /// Locales: en, cs
+      static func unauthorizedMessage(_: Void = ()) -> String {
+        return NSLocalizedString("unauthorized.message", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}
