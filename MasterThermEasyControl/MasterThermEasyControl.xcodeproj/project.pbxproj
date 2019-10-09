@@ -889,6 +889,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl.Today/MasterThermEasyControl.Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 42NG6AU5AL;
 				INFOPLIST_FILE = MasterThermEasyControl.Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -901,7 +902,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ljezny.MasterThermEasyControl.MasterThermEasyControl-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -913,6 +914,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl.Today/MasterThermEasyControl.Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 42NG6AU5AL;
 				INFOPLIST_FILE = MasterThermEasyControl.Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -925,7 +927,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ljezny.MasterThermEasyControl.MasterThermEasyControl-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
