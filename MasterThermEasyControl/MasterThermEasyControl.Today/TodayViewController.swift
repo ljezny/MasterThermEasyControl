@@ -20,7 +20,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -29,6 +28,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
+        roomRealTemperatureLabel.attributedText = NSAttributedString(string: "--,- °C", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        roomSetTemperatureLabel.attributedText = NSAttributedString(string: "--,- °C", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        waterRealTemperatureLabel.attributedText = NSAttributedString(string: "--,- °C", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        outsideTempLabel.attributedText = NSAttributedString(string: "--,- °C", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        heatWaterLabel.attributedText = NSAttributedString(string: "--,- °C", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        
         Session.shared.relogin { (result) in
             switch result {
             case .success:
@@ -44,22 +49,22 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                             let heatPumpModel = HeatPumpModel(moduleInfo: Session.shared.loginResponse?.modules.first?.module_name)
                             heatPumpModel.updateFromData(response: response)
                             
-                            heatModel?.setTemperature.map({ (d) -> String? in
-                                return NumberFormatUtils.formatTemperature(value: d)
-                            }).bind(to: self.roomSetTemperatureLabel.reactive.text).dispose(in: self.bag)
-                            heatModel?.realTemperature.map({ (d) -> String? in
-                                return NumberFormatUtils.formatTemperature(value: d)
-                            }).bind(to: self.roomRealTemperatureLabel.reactive.text).dispose(in: self.bag)
+                            heatModel?.setTemperature.map({ (d) -> NSAttributedString? in
+                                NSAttributedString(string: NumberFormatUtils.formatTemperature(value: d), attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+                            }).bind(to: self.roomSetTemperatureLabel.reactive.attributedText).dispose(in: self.bag)
+                            heatModel?.realTemperature.map({ (d) -> NSAttributedString? in
+                                NSAttributedString(string: NumberFormatUtils.formatTemperature(value: d), attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+                            }).bind(to: self.roomRealTemperatureLabel.reactive.attributedText).dispose(in: self.bag)
                             
-                            hotWaterModel.realTemperature.map({ (d) -> String? in
-                                return NumberFormatUtils.formatTemperature(value: d)
-                            }).bind(to: self.waterRealTemperatureLabel.reactive.text).dispose(in: self.bag)
-                            heatPumpModel.outsideTemperature.map({ (d) -> String? in
-                                return NumberFormatUtils.formatTemperature(value: d)
-                            }).bind(to: self.outsideTempLabel.reactive.text).dispose(in: self.bag)
-                            heatPumpModel.realHeatWaterTemperature.map({ (d) -> String? in
-                                return NumberFormatUtils.formatTemperature(value: d)
-                            }).bind(to: self.heatWaterLabel.reactive.text).dispose(in: self.bag)
+                            hotWaterModel.realTemperature.map({ (d) -> NSAttributedString? in
+                                NSAttributedString(string: NumberFormatUtils.formatTemperature(value: d), attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+                            }).bind(to: self.waterRealTemperatureLabel.reactive.attributedText).dispose(in: self.bag)
+                            heatPumpModel.outsideTemperature.map({ (d) -> NSAttributedString? in
+                                NSAttributedString(string: NumberFormatUtils.formatTemperature(value: d), attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+                            }).bind(to: self.outsideTempLabel.reactive.attributedText).dispose(in: self.bag)
+                            heatPumpModel.realHeatWaterTemperature.map({ (d) -> NSAttributedString? in
+                                NSAttributedString(string: NumberFormatUtils.formatTemperature(value: d), attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+                            }).bind(to: self.heatWaterLabel.reactive.attributedText).dispose(in: self.bag)
                             
                             self.updateGradient(v: heatModel?.realTemperature.value ?? 0.0, min: heatModel?.minSetTemperature.value ?? 0.0, max: heatModel?.maxSetTemperature.value ?? 1.0)
                         }
