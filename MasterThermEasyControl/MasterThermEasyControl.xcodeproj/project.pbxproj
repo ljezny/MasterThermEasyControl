@@ -839,7 +839,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1EB2AABB870DBD7713726A5D /* Pods-MasterThermEasyControl.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl/MasterThermEasyControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -862,7 +861,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl/MasterThermEasyControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -889,7 +887,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42NG6AU5AL;
 				INFOPLIST_FILE = MasterThermEasyControl.Today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -913,7 +911,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42NG6AU5AL;
 				INFOPLIST_FILE = MasterThermEasyControl.Today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
