@@ -111,7 +111,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
     /// Nib `HeatPumpInfoViewController`.
     static let heatPumpInfoViewController = _R.nib._HeatPumpInfoViewController()
@@ -121,8 +121,12 @@ struct R: Rswift.Validatable {
     static let introViewController = _R.nib._IntroViewController()
     /// Nib `LoginViewController`.
     static let loginViewController = _R.nib._LoginViewController()
+    /// Nib `MainViewController`.
+    static let mainViewController = _R.nib._MainViewController()
     /// Nib `ProfileViewController`.
     static let profileViewController = _R.nib._ProfileViewController()
+    /// Nib `TemperatureCollectionViewCell`.
+    static let temperatureCollectionViewCell = _R.nib._TemperatureCollectionViewCell()
     /// Nib `TemperatureViewController`.
     static let temperatureViewController = _R.nib._TemperatureViewController()
     
@@ -150,10 +154,22 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.loginViewController)
     }
     
+    /// `UINib(name: "MainViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.mainViewController) instead")
+    static func mainViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.mainViewController)
+    }
+    
     /// `UINib(name: "ProfileViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.profileViewController) instead")
     static func profileViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.profileViewController)
+    }
+    
+    /// `UINib(name: "TemperatureCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.temperatureCollectionViewCell) instead")
+    static func temperatureCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.temperatureCollectionViewCell)
     }
     
     /// `UINib(name: "TemperatureViewController", in: bundle)`
@@ -178,13 +194,29 @@ struct R: Rswift.Validatable {
       return R.nib.loginViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
+    static func mainViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.mainViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
     static func profileViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.profileViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func temperatureCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TemperatureCollectionViewCell? {
+      return R.nib.temperatureCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TemperatureCollectionViewCell
     }
     
     static func temperatureViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.temperatureViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `TemperatureCollectionViewCell`.
+    static let temperatureCollectionViewCell: Rswift.ReuseIdentifier<TemperatureCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "TemperatureCollectionViewCell")
     
     fileprivate init() {}
   }
@@ -613,6 +645,7 @@ struct _R: Rswift.Validatable {
       try _IntroViewController.validate()
       try _LoginViewController.validate()
       try _ProfileViewController.validate()
+      try _TemperatureCollectionViewCell.validate()
       try _TemperatureViewController.validate()
     }
     
@@ -685,6 +718,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _MainViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MainViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _ProfileViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "ProfileViewController"
@@ -695,6 +739,26 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "ic_user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_user' is used in nib 'ProfileViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _TemperatureCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = TemperatureCollectionViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "TemperatureCollectionViewCell"
+      let name = "TemperatureCollectionViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TemperatureCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TemperatureCollectionViewCell
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_home' is used in nib 'TemperatureCollectionViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

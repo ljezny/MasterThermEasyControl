@@ -19,6 +19,8 @@ class LoginViewController: PageBaseViewController {
     let login = Observable<String?>("")
     let password = Observable<String?>("")
     
+    var loginCompletion: (()->())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,19 +37,19 @@ class LoginViewController: PageBaseViewController {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         if let user = login.value, let password = password.value {
-            Session.shared.login(user: user, password: password) { (result) in
+            Session.shared.login(user: user, password: password) {[weak self] (result) in
                 switch result {
                 case .success:
                     //change view controllers
-                    self.mainViewController?.presentMainApp()
+                    self?.loginCompletion?()
                     break
                 case .unauthorized:
-                    self.present(AlertUtils.createNoInternetAlert(completion: {
+                    self?.present(AlertUtils.createNoInternetAlert(completion: {
                         //do nothing
                     }), animated: true)
                     break
                 case .connectionError:
-                    self.present(AlertUtils.createInvalidPasswordAlert(completion: {
+                    self?.present(AlertUtils.createInvalidPasswordAlert(completion: {
                         //do nothing, user will try to login
                     }), animated: true)
                     break

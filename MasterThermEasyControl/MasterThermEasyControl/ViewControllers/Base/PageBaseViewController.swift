@@ -10,7 +10,7 @@ import UIKit
 
 class PageBaseViewController: BaseViewController {
     
-    weak var mainViewController:MainViewController? = nil
+    weak var mainViewController:OldMainViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

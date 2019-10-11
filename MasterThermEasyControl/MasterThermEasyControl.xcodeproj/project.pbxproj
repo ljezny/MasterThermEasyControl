@@ -22,7 +22,7 @@
 		56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5631560F228DC6A100C0B8D8 /* AppDelegate.swift */; };
 		56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56315616228DC6A300C0B8D8 /* Assets.xcassets */; };
 		5631561A228DC6A300C0B8D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56315618228DC6A300C0B8D8 /* LaunchScreen.storyboard */; };
-		56315622228DC74200C0B8D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56315621228DC74200C0B8D8 /* MainViewController.swift */; };
+		56315622228DC74200C0B8D8 /* OldMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56315621228DC74200C0B8D8 /* OldMainViewController.swift */; };
 		56315625228DC79D00C0B8D8 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56315623228DC79D00C0B8D8 /* TemperatureViewController.swift */; };
 		56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56315624228DC79D00C0B8D8 /* TemperatureViewController.xib */; };
 		563A281522919BB5002A3708 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A281422919BB5002A3708 /* ApiManager.swift */; };
@@ -32,6 +32,11 @@
 		565E0D4922B6682900E434AD /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 565E0D4722B6682900E434AD /* SF-Pro-Display-Medium.otf */; };
 		565E0D4A22B6682900E434AD /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */; };
 		565E0D4C22B6686900E434AD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E0D4B22B6686900E434AD /* Theme.swift */; };
+		568205B22350D99300351245 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568205B02350D99300351245 /* MainViewController.swift */; };
+		568205B32350D99300351245 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568205B12350D99300351245 /* MainViewController.xib */; };
+		568205B72350DE5F00351245 /* TemperatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568205B52350DE5F00351245 /* TemperatureCollectionViewCell.swift */; };
+		568205B82350DE5F00351245 /* TemperatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568205B62350DE5F00351245 /* TemperatureCollectionViewCell.xib */; };
+		568205BA2350DE9E00351245 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568205B92350DE9E00351245 /* CardView.swift */; };
 		568B069B22BCEC5B00CCE6AC /* NumberFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */; };
 		568B069C22BCEDF800CCE6AC /* NumberFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */; };
 		568B069E22BCFB5200CCE6AC /* AppReviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069D22BCFB5200CCE6AC /* AppReviewer.swift */; };
@@ -133,7 +138,7 @@
 		56315616228DC6A300C0B8D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56315619228DC6A300C0B8D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5631561B228DC6A300C0B8D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56315621228DC74200C0B8D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		56315621228DC74200C0B8D8 /* OldMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMainViewController.swift; sourceTree = "<group>"; };
 		56315623228DC79D00C0B8D8 /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		56315624228DC79D00C0B8D8 /* TemperatureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperatureViewController.xib; sourceTree = "<group>"; };
 		563A281422919BB5002A3708 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -143,6 +148,11 @@
 		565E0D4722B6682900E434AD /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		565E0D4B22B6686900E434AD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		568205B02350D99300351245 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		568205B12350D99300351245 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		568205B52350DE5F00351245 /* TemperatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCollectionViewCell.swift; sourceTree = "<group>"; };
+		568205B62350DE5F00351245 /* TemperatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperatureCollectionViewCell.xib; sourceTree = "<group>"; };
+		568205B92350DE9E00351245 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatUtils.swift; sourceTree = "<group>"; };
 		568B069D22BCFB5200CCE6AC /* AppReviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewer.swift; sourceTree = "<group>"; };
 		56AC78742291A0C10025D128 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -258,6 +268,7 @@
 		5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */ = {
 			isa = PBXGroup;
 			children = (
+				568205B42350DE0F00351245 /* ViewCells */,
 				56D70DC222B6C3C600F6E156 /* MasterThermEasyControl.entitlements */,
 				56D70D9B22B530DA00F6E156 /* Utils */,
 				56D70D9422B512B300F6E156 /* Keychain */,
@@ -272,7 +283,9 @@
 				56315616228DC6A300C0B8D8 /* Assets.xcassets */,
 				56315618228DC6A300C0B8D8 /* LaunchScreen.storyboard */,
 				5631561B228DC6A300C0B8D8 /* Info.plist */,
-				56315621228DC74200C0B8D8 /* MainViewController.swift */,
+				56315621228DC74200C0B8D8 /* OldMainViewController.swift */,
+				568205B02350D99300351245 /* MainViewController.swift */,
+				568205B12350D99300351245 /* MainViewController.xib */,
 			);
 			path = MasterThermEasyControl;
 			sourceTree = "<group>";
@@ -295,6 +308,15 @@
 				563A281B22919ECE002A3708 /* StringEx.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		568205B42350DE0F00351245 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				568205B52350DE5F00351245 /* TemperatureCollectionViewCell.swift */,
+				568205B62350DE5F00351245 /* TemperatureCollectionViewCell.xib */,
+			);
+			path = ViewCells;
 			sourceTree = "<group>";
 		};
 		56AC78732291A08D0025D128 /* Model */ = {
@@ -326,6 +348,7 @@
 				56B6CB212299D81B00277DD7 /* Knob.swift */,
 				56B6CB1B2299CA7400277DD7 /* GradientView.swift */,
 				565E0D4B22B6686900E434AD /* Theme.swift */,
+				568205B92350DE9E00351245 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -499,8 +522,10 @@
 				5631561A228DC6A300C0B8D8 /* LaunchScreen.storyboard in Resources */,
 				560DCB05234E2A0D00B15ACB /* Localizable.strings in Resources */,
 				56D70DDB22B81A7300F6E156 /* HeatPumpInfoViewController.xib in Resources */,
+				568205B32350D99300351245 /* MainViewController.xib in Resources */,
 				56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */,
 				56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */,
+				568205B82350DE5F00351245 /* TemperatureCollectionViewCell.xib in Resources */,
 				56D70DD522B6E65F00F6E156 /* ProfileViewController.xib in Resources */,
 				56D70D9322B503A200F6E156 /* InitialViewController.xib in Resources */,
 			);
@@ -611,14 +636,16 @@
 				56D70DE322BD45A200F6E156 /* ModuleInfoResponse.swift in Sources */,
 				56170373229C76B300629790 /* StyleableButton.swift in Sources */,
 				56B6CB182293347000277DD7 /* HeatModel.swift in Sources */,
+				568205B22350D99300351245 /* MainViewController.swift in Sources */,
 				56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */,
 				56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */,
 				568B069E22BCFB5200CCE6AC /* AppReviewer.swift in Sources */,
 				5617036B229C6B0100629790 /* LoginViewController.swift in Sources */,
-				56315622228DC74200C0B8D8 /* MainViewController.swift in Sources */,
+				56315622228DC74200C0B8D8 /* OldMainViewController.swift in Sources */,
 				56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */,
 				563A281C22919ECE002A3708 /* StringEx.swift in Sources */,
 				56B6CB1F2299CBFC00277DD7 /* R.generated.swift in Sources */,
+				568205BA2350DE9E00351245 /* CardView.swift in Sources */,
 				5617037A229C78AA00629790 /* IntroViewController.swift in Sources */,
 				56D70DE022BABA4600F6E156 /* HeatPumpModel.swift in Sources */,
 				56170374229C76B300629790 /* StyleableImageView.swift in Sources */,
@@ -635,6 +662,7 @@
 				56D70D9222B503A200F6E156 /* InitialViewController.swift in Sources */,
 				56B6CB1A2293386D00277DD7 /* Session.swift in Sources */,
 				56170377229C76B300629790 /* StyleableTextField.swift in Sources */,
+				568205B72350DE5F00351245 /* TemperatureCollectionViewCell.swift in Sources */,
 				56315625228DC79D00C0B8D8 /* TemperatureViewController.swift in Sources */,
 				56AC78752291A0C10025D128 /* LoginResponse.swift in Sources */,
 				563A281822919E7C002A3708 /* DictionaryEx.swift in Sources */,

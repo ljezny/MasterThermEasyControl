@@ -30,7 +30,8 @@ DEPENDENCIES:
   - R.swift
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - AppCenter
     - Bond
     - CocoaLumberjack
     - Differ
@@ -39,8 +40,6 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - ReactiveKit
-  trunk:
-    - AppCenter
 
 SPEC CHECKSUMS:
   AppCenter: 49a9ffe114c00e2bf5374aeda816d47eabf1978a
@@ -53,6 +52,6 @@ SPEC CHECKSUMS:
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   ReactiveKit: 7634cc10d9fb8791f9a87bf60c283fb420db3184
 
-PODFILE CHECKSUM: 63c38887e704a090fd7dbec83a2b607d17f0632c
+PODFILE CHECKSUM: ba78e825767e3df2cb2d0ba7b074662f8b519cea
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.7.2

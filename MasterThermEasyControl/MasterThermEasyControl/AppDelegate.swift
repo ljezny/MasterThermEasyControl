@@ -37,10 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func initLogger() -> DDFileLogger {
-        
         DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
-        DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
-        
+         
         let logger: DDFileLogger = DDFileLogger() // File Logger
         logger.rollingFrequency = TimeInterval(60*60*24)  // 24 hours
         logger.logFileManager.maximumNumberOfLogFiles = 3
