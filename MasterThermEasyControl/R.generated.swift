@@ -623,6 +623,7 @@ struct _R: Rswift.Validatable {
       try _HeatPumpInfoViewController.validate()
       try _InitialViewController.validate()
       try _LoginViewController.validate()
+      try _OutdoorTemperatureViewController.validate()
       try _TemperatureViewController.validate()
     }
     
@@ -690,12 +691,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _OutdoorTemperatureViewController: Rswift.NibResourceType {
+    struct _OutdoorTemperatureViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "OutdoorTemperatureViewController"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_outside", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_outside' is used in nib 'OutdoorTemperatureViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}

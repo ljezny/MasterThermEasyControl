@@ -32,11 +32,11 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-4y-CPi">
                             <rect key="frame" x="32.5" y="32" width="349" height="754"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="v36-Ge-CTc">
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v36-Ge-CTc">
                                     <rect key="frame" x="0.0" y="0.0" width="349" height="48"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="y8l-FR-LvF">
-                                            <rect key="frame" x="0.0" y="0.0" width="181.5" height="48"/>
+                                            <rect key="frame" x="84" y="0.0" width="181.5" height="48"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pump" translatesAutoresizingMaskIntoConstraints="NO" id="ZTR-4z-s0A">
                                                     <rect key="frame" x="0.0" y="0.0" width="41" height="48"/>
@@ -59,11 +59,11 @@
                                         </stackView>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PyJ-n5-jQJ">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PyJ-n5-jQJ">
                                     <rect key="frame" x="0.0" y="72" width="349" height="19.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocw-eG-JxG" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="328.5" height="19.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocw-eG-JxG" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="174.5" height="19.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -71,8 +71,8 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="style" value="subvalue"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKe-Rq-5kZ" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                            <rect key="frame" x="328.5" y="0.0" width="20.5" height="19.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKe-Rq-5kZ" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                            <rect key="frame" x="174.5" y="0.0" width="174.5" height="19.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

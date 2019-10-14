@@ -23,36 +23,43 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hle-vS-hEd">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Hle-vS-hEd">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOj-SD-8De" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                            <rect key="frame" x="24" y="68" width="183" height="770"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="caption"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="heatpump.temperature.outside"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Wi-0h-uvs">
+                            <rect key="frame" x="27" y="68" width="360" height="48"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6ZB-3J-FL1">
+                                    <rect key="frame" x="0.0" y="0.0" width="360" height="48"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_outside" translatesAutoresizingMaskIntoConstraints="NO" id="MqM-Fy-vyK">
+                                            <rect key="frame" x="0.0" y="0.0" width="107" height="48"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="4Yd-o6-ozT"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ICy-vT-QFb" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                                            <rect key="frame" x="123" y="0.0" width="237" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="header"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="heatpump.temperature.outside"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- °C" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ja-f0-Ttu" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                            <rect key="frame" x="207" y="68" width="183" height="770"/>
+                            <rect key="frame" x="187.5" y="140" width="39" height="698"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="style" value="hugevalue"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUG-lx-Xhj" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                            <rect key="frame" x="390" y="68" width="0.0" height="770"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="heatpump.temperature.outside.help"/>
                             </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
@@ -74,4 +81,7 @@
             <point key="canvasLocation" x="139" y="98"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_outside" width="53.5" height="44"/>
+    </resources>
 </document>
