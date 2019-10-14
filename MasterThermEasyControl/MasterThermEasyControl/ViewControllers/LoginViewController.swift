@@ -9,7 +9,7 @@
 import UIKit
 import Bond
 
-class LoginViewController: PageBaseViewController {
+class LoginViewController: BaseViewController {
 
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var loginTextField: StyleableTextField!
@@ -21,8 +21,18 @@ class LoginViewController: PageBaseViewController {
     
     var loginCompletion: (()->())?
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.modalPresentationStyle = .fullScreen
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         gradientView.progress.value = 0.7
         

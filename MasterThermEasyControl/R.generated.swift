@@ -111,22 +111,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `HeatPumpInfoViewController`.
     static let heatPumpInfoViewController = _R.nib._HeatPumpInfoViewController()
     /// Nib `InitialViewController`.
     static let initialViewController = _R.nib._InitialViewController()
-    /// Nib `IntroViewController`.
-    static let introViewController = _R.nib._IntroViewController()
     /// Nib `LoginViewController`.
     static let loginViewController = _R.nib._LoginViewController()
     /// Nib `MainViewController`.
     static let mainViewController = _R.nib._MainViewController()
+    /// Nib `OutdoorTemperatureViewController`.
+    static let outdoorTemperatureViewController = _R.nib._OutdoorTemperatureViewController()
     /// Nib `ProfileViewController`.
     static let profileViewController = _R.nib._ProfileViewController()
-    /// Nib `TemperatureCollectionViewCell`.
-    static let temperatureCollectionViewCell = _R.nib._TemperatureCollectionViewCell()
     /// Nib `TemperatureViewController`.
     static let temperatureViewController = _R.nib._TemperatureViewController()
     
@@ -142,12 +140,6 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.initialViewController)
     }
     
-    /// `UINib(name: "IntroViewController", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.introViewController) instead")
-    static func introViewController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.introViewController)
-    }
-    
     /// `UINib(name: "LoginViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.loginViewController) instead")
     static func loginViewController(_: Void = ()) -> UIKit.UINib {
@@ -160,16 +152,16 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.mainViewController)
     }
     
+    /// `UINib(name: "OutdoorTemperatureViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.outdoorTemperatureViewController) instead")
+    static func outdoorTemperatureViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.outdoorTemperatureViewController)
+    }
+    
     /// `UINib(name: "ProfileViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.profileViewController) instead")
     static func profileViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.profileViewController)
-    }
-    
-    /// `UINib(name: "TemperatureCollectionViewCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.temperatureCollectionViewCell) instead")
-    static func temperatureCollectionViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.temperatureCollectionViewCell)
     }
     
     /// `UINib(name: "TemperatureViewController", in: bundle)`
@@ -178,16 +170,12 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.temperatureViewController)
     }
     
-    static func heatPumpInfoViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.heatPumpInfoViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func heatPumpInfoViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
+      return R.nib.heatPumpInfoViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
     }
     
     static func initialViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.initialViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-    }
-    
-    static func introViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.introViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func loginViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -198,25 +186,17 @@ struct R: Rswift.Validatable {
       return R.nib.mainViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
-    static func profileViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.profileViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func outdoorTemperatureViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
+      return R.nib.outdoorTemperatureViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
     }
     
-    static func temperatureCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TemperatureCollectionViewCell? {
-      return R.nib.temperatureCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TemperatureCollectionViewCell
+    static func profileViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
+      return R.nib.profileViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
     }
     
-    static func temperatureViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.temperatureViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func temperatureViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
+      return R.nib.temperatureViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
     }
-    
-    fileprivate init() {}
-  }
-  
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
-  struct reuseIdentifier {
-    /// Reuse identifier `TemperatureCollectionViewCell`.
-    static let temperatureCollectionViewCell: Rswift.ReuseIdentifier<TemperatureCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "TemperatureCollectionViewCell")
     
     fileprivate init() {}
   }
@@ -642,10 +622,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try _HeatPumpInfoViewController.validate()
       try _InitialViewController.validate()
-      try _IntroViewController.validate()
       try _LoginViewController.validate()
-      try _ProfileViewController.validate()
-      try _TemperatureCollectionViewCell.validate()
       try _TemperatureViewController.validate()
     }
     
@@ -653,8 +630,8 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "HeatPumpInfoViewController"
       
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
       }
       
       static func validate() throws {
@@ -683,24 +660,6 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _IntroViewController: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "IntroViewController"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "jezny", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'jezny' is used in nib 'IntroViewController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "palka", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'palka' is used in nib 'IntroViewController', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
-      }
-      
-      fileprivate init() {}
-    }
-    
     struct _LoginViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "LoginViewController"
@@ -711,6 +670,8 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "ic_user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_user' is used in nib 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "jezny", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'jezny' is used in nib 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "palka", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'palka' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -729,38 +690,23 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _ProfileViewController: Rswift.NibResourceType, Rswift.Validatable {
+    struct _OutdoorTemperatureViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let name = "ProfileViewController"
+      let name = "OutdoorTemperatureViewController"
       
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "ic_user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_user' is used in nib 'ProfileViewController', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
       }
       
       fileprivate init() {}
     }
     
-    struct _TemperatureCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
-      typealias ReusableType = TemperatureCollectionViewCell
-      
+    struct _ProfileViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let identifier = "TemperatureCollectionViewCell"
-      let name = "TemperatureCollectionViewCell"
+      let name = "ProfileViewController"
       
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TemperatureCollectionViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TemperatureCollectionViewCell
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "ic_home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_home' is used in nib 'TemperatureCollectionViewCell', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
       }
       
       fileprivate init() {}
@@ -770,8 +716,8 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "TemperatureViewController"
       
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
       }
       
       static func validate() throws {

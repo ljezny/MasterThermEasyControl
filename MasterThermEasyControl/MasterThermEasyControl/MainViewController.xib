@@ -9,7 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="MasterThermEasyControl" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="wNL-ow-gdb" id="VrP-9Y-gLU"/>
+                <outlet property="bottomStack" destination="65z-fE-NOc" id="yPZ-7x-jbg"/>
+                <outlet property="contentStack" destination="bri-DT-BQu" id="Ycg-at-cV5"/>
+                <outlet property="headerStack" destination="xVf-8w-fAb" id="B96-m8-eNs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,23 +20,42 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wNL-ow-gdb">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJA-1I-0Og">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="24" minimumInteritemSpacing="24" id="oMS-lb-jyR">
-                        <size key="itemSize" width="340" height="200"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="24" minY="24" maxX="24" maxY="24"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="wJq-Xj-NGZ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="668"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="xVf-8w-fAb">
+                                    <rect key="frame" x="24" y="68" width="366" height="128"/>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="bri-DT-BQu">
+                                    <rect key="frame" x="24" y="220" width="366" height="200"/>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="65z-fE-NOc">
+                                    <rect key="frame" x="24" y="444" width="366" height="200"/>
+                                </stackView>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="24" left="24" bottom="24" right="24"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="wJq-Xj-NGZ" firstAttribute="width" secondItem="fJA-1I-0Og" secondAttribute="width" id="JBu-5F-l73"/>
+                        <constraint firstItem="wJq-Xj-NGZ" firstAttribute="leading" secondItem="3hF-f7-sbM" secondAttribute="leading" id="LIY-L9-WAY"/>
+                        <constraint firstItem="3hF-f7-sbM" firstAttribute="bottom" secondItem="wJq-Xj-NGZ" secondAttribute="bottom" id="To2-FZ-cU8"/>
+                        <constraint firstItem="wJq-Xj-NGZ" firstAttribute="top" secondItem="3hF-f7-sbM" secondAttribute="top" id="bId-Pe-rN4"/>
+                        <constraint firstItem="wJq-Xj-NGZ" firstAttribute="trailing" secondItem="3hF-f7-sbM" secondAttribute="trailing" constant="414" id="c2S-pd-LMT"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="3hF-f7-sbM"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="RA3-a0-6Fs"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wNL-ow-gdb" secondAttribute="trailing" id="7er-4p-wgu"/>
-                <constraint firstItem="wNL-ow-gdb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AEi-qv-y81"/>
-                <constraint firstItem="wNL-ow-gdb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="BUO-9k-zgb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wNL-ow-gdb" secondAttribute="bottom" id="oJV-Rb-gFk"/>
+                <constraint firstAttribute="bottom" secondItem="fJA-1I-0Og" secondAttribute="bottom" id="Rej-xK-8bC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fJA-1I-0Og" secondAttribute="trailing" id="efH-2s-FzE"/>
+                <constraint firstItem="fJA-1I-0Og" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="l70-8Y-VGl"/>
+                <constraint firstItem="fJA-1I-0Og" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sag-qz-diT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="104"/>

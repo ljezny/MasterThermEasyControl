@@ -87,6 +87,11 @@ class Knob: UIControl {
     super.init(coder: aDecoder)
     commonInit()
   }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        renderer.updateBounds(self.bounds)
+    }
 
   private func commonInit() {
     renderer.updateBounds(bounds)

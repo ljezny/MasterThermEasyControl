@@ -17,12 +17,9 @@
 		56170375229C76B300629790 /* StyleableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617036E229C723500629790 /* StyleableLabel.swift */; };
 		56170376229C76B300629790 /* StyleableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170372229C723500629790 /* StyleableSwitch.swift */; };
 		56170377229C76B300629790 /* StyleableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170371229C723500629790 /* StyleableTextField.swift */; };
-		5617037A229C78AA00629790 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170378229C78AA00629790 /* IntroViewController.swift */; };
-		5617037B229C78AA00629790 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56170379229C78AA00629790 /* IntroViewController.xib */; };
 		56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5631560F228DC6A100C0B8D8 /* AppDelegate.swift */; };
 		56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56315616228DC6A300C0B8D8 /* Assets.xcassets */; };
 		5631561A228DC6A300C0B8D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56315618228DC6A300C0B8D8 /* LaunchScreen.storyboard */; };
-		56315622228DC74200C0B8D8 /* OldMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56315621228DC74200C0B8D8 /* OldMainViewController.swift */; };
 		56315625228DC79D00C0B8D8 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56315623228DC79D00C0B8D8 /* TemperatureViewController.swift */; };
 		56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56315624228DC79D00C0B8D8 /* TemperatureViewController.xib */; };
 		563A281522919BB5002A3708 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A281422919BB5002A3708 /* ApiManager.swift */; };
@@ -32,11 +29,14 @@
 		565E0D4922B6682900E434AD /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 565E0D4722B6682900E434AD /* SF-Pro-Display-Medium.otf */; };
 		565E0D4A22B6682900E434AD /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */; };
 		565E0D4C22B6686900E434AD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E0D4B22B6686900E434AD /* Theme.swift */; };
+		567DD3E623539177008948C2 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567DD3E423539177008948C2 /* InitialViewController.swift */; };
+		567DD3E723539177008948C2 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 567DD3E523539177008948C2 /* InitialViewController.xib */; };
 		568205B22350D99300351245 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568205B02350D99300351245 /* MainViewController.swift */; };
 		568205B32350D99300351245 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568205B12350D99300351245 /* MainViewController.xib */; };
-		568205B72350DE5F00351245 /* TemperatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568205B52350DE5F00351245 /* TemperatureCollectionViewCell.swift */; };
-		568205B82350DE5F00351245 /* TemperatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568205B62350DE5F00351245 /* TemperatureCollectionViewCell.xib */; };
 		568205BA2350DE9E00351245 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568205B92350DE9E00351245 /* CardView.swift */; };
+		568205BC23511D2A00351245 /* UIViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568205BB23511D2A00351245 /* UIViewControllerEx.swift */; };
+		568205BF235127F000351245 /* OutdoorTemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568205BD235127F000351245 /* OutdoorTemperatureViewController.swift */; };
+		568205C0235127F000351245 /* OutdoorTemperatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568205BE235127F000351245 /* OutdoorTemperatureViewController.xib */; };
 		568B069B22BCEC5B00CCE6AC /* NumberFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */; };
 		568B069C22BCEDF800CCE6AC /* NumberFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */; };
 		568B069E22BCFB5200CCE6AC /* AppReviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069D22BCFB5200CCE6AC /* AppReviewer.swift */; };
@@ -49,12 +49,9 @@
 		56B6CB222299D81B00277DD7 /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB212299D81B00277DD7 /* Knob.swift */; };
 		56D70D8D22B4F60A00F6E156 /* HotWaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */; };
 		56D70D8F22B4F66100F6E156 /* TemperatureModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */; };
-		56D70D9222B503A200F6E156 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9022B503A200F6E156 /* InitialViewController.swift */; };
-		56D70D9322B503A200F6E156 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D70D9122B503A200F6E156 /* InitialViewController.xib */; };
 		56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */; };
 		56D70D9822B512DB00F6E156 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */; };
 		56D70DA222B6848A00F6E156 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DA122B6848A00F6E156 /* BaseViewController.swift */; };
-		56D70DA422B684A200F6E156 /* PageBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DA322B684A200F6E156 /* PageBaseViewController.swift */; };
 		56D70DAB22B6B6A200F6E156 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D70DAA22B6B6A200F6E156 /* NotificationCenter.framework */; };
 		56D70DAE22B6B6A300F6E156 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DAD22B6B6A300F6E156 /* TodayViewController.swift */; };
 		56D70DB122B6B6A300F6E156 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D70DAF22B6B6A300F6E156 /* MainInterface.storyboard */; };
@@ -131,14 +128,11 @@
 		56170370229C723500629790 /* StyleableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableButton.swift; sourceTree = "<group>"; };
 		56170371229C723500629790 /* StyleableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableTextField.swift; sourceTree = "<group>"; };
 		56170372229C723500629790 /* StyleableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableSwitch.swift; sourceTree = "<group>"; };
-		56170378229C78AA00629790 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		56170379229C78AA00629790 /* IntroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
 		5631560C228DC6A100C0B8D8 /* MasterThermEasyControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterThermEasyControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5631560F228DC6A100C0B8D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56315616228DC6A300C0B8D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56315619228DC6A300C0B8D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5631561B228DC6A300C0B8D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56315621228DC74200C0B8D8 /* OldMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMainViewController.swift; sourceTree = "<group>"; };
 		56315623228DC79D00C0B8D8 /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		56315624228DC79D00C0B8D8 /* TemperatureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperatureViewController.xib; sourceTree = "<group>"; };
 		563A281422919BB5002A3708 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -148,11 +142,14 @@
 		565E0D4722B6682900E434AD /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		565E0D4822B6682900E434AD /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		565E0D4B22B6686900E434AD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		567DD3E423539177008948C2 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		567DD3E523539177008948C2 /* InitialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 		568205B02350D99300351245 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		568205B12350D99300351245 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		568205B52350DE5F00351245 /* TemperatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCollectionViewCell.swift; sourceTree = "<group>"; };
-		568205B62350DE5F00351245 /* TemperatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperatureCollectionViewCell.xib; sourceTree = "<group>"; };
 		568205B92350DE9E00351245 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		568205BB23511D2A00351245 /* UIViewControllerEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerEx.swift; sourceTree = "<group>"; };
+		568205BD235127F000351245 /* OutdoorTemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorTemperatureViewController.swift; sourceTree = "<group>"; };
+		568205BE235127F000351245 /* OutdoorTemperatureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutdoorTemperatureViewController.xib; sourceTree = "<group>"; };
 		568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatUtils.swift; sourceTree = "<group>"; };
 		568B069D22BCFB5200CCE6AC /* AppReviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewer.swift; sourceTree = "<group>"; };
 		56AC78742291A0C10025D128 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -164,12 +161,9 @@
 		56B6CB212299D81B00277DD7 /* Knob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
 		56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotWaterModel.swift; sourceTree = "<group>"; };
 		56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureModelBase.swift; sourceTree = "<group>"; };
-		56D70D9022B503A200F6E156 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
-		56D70D9122B503A200F6E156 /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 		56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		56D70DA122B6848A00F6E156 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		56D70DA322B684A200F6E156 /* PageBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBaseViewController.swift; sourceTree = "<group>"; };
 		56D70DA922B6B6A200F6E156 /* MasterThermEasyControl.Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MasterThermEasyControl.Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D70DAA22B6B6A200F6E156 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		56D70DAD22B6B6A300F6E156 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -215,18 +209,18 @@
 			isa = PBXGroup;
 			children = (
 				56D70DA022B6847700F6E156 /* Base */,
+				567DD3E423539177008948C2 /* InitialViewController.swift */,
+				567DD3E523539177008948C2 /* InitialViewController.xib */,
 				56315623228DC79D00C0B8D8 /* TemperatureViewController.swift */,
 				56315624228DC79D00C0B8D8 /* TemperatureViewController.xib */,
 				56170369229C6B0100629790 /* LoginViewController.swift */,
 				5617036A229C6B0100629790 /* LoginViewController.xib */,
-				56170378229C78AA00629790 /* IntroViewController.swift */,
-				56170379229C78AA00629790 /* IntroViewController.xib */,
-				56D70D9022B503A200F6E156 /* InitialViewController.swift */,
-				56D70D9122B503A200F6E156 /* InitialViewController.xib */,
 				56D70DD222B6E65F00F6E156 /* ProfileViewController.swift */,
 				56D70DD322B6E65F00F6E156 /* ProfileViewController.xib */,
 				56D70DD822B81A7300F6E156 /* HeatPumpInfoViewController.swift */,
 				56D70DD922B81A7300F6E156 /* HeatPumpInfoViewController.xib */,
+				568205BD235127F000351245 /* OutdoorTemperatureViewController.swift */,
+				568205BE235127F000351245 /* OutdoorTemperatureViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -268,7 +262,6 @@
 		5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */ = {
 			isa = PBXGroup;
 			children = (
-				568205B42350DE0F00351245 /* ViewCells */,
 				56D70DC222B6C3C600F6E156 /* MasterThermEasyControl.entitlements */,
 				56D70D9B22B530DA00F6E156 /* Utils */,
 				56D70D9422B512B300F6E156 /* Keychain */,
@@ -283,7 +276,6 @@
 				56315616228DC6A300C0B8D8 /* Assets.xcassets */,
 				56315618228DC6A300C0B8D8 /* LaunchScreen.storyboard */,
 				5631561B228DC6A300C0B8D8 /* Info.plist */,
-				56315621228DC74200C0B8D8 /* OldMainViewController.swift */,
 				568205B02350D99300351245 /* MainViewController.swift */,
 				568205B12350D99300351245 /* MainViewController.xib */,
 			);
@@ -306,17 +298,9 @@
 				563A281722919E7B002A3708 /* DictionaryEx.swift */,
 				563A281922919E92002A3708 /* CharsetEx.swift */,
 				563A281B22919ECE002A3708 /* StringEx.swift */,
+				568205BB23511D2A00351245 /* UIViewControllerEx.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		568205B42350DE0F00351245 /* ViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				568205B52350DE5F00351245 /* TemperatureCollectionViewCell.swift */,
-				568205B62350DE5F00351245 /* TemperatureCollectionViewCell.xib */,
-			);
-			path = ViewCells;
 			sourceTree = "<group>";
 		};
 		56AC78732291A08D0025D128 /* Model */ = {
@@ -376,7 +360,6 @@
 			isa = PBXGroup;
 			children = (
 				56D70DA122B6848A00F6E156 /* BaseViewController.swift */,
-				56D70DA322B684A200F6E156 /* PageBaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -518,16 +501,15 @@
 				565E0D4922B6682900E434AD /* SF-Pro-Display-Medium.otf in Resources */,
 				5617036C229C6B0100629790 /* LoginViewController.xib in Resources */,
 				565E0D4A22B6682900E434AD /* SF-Pro-Display-Thin.otf in Resources */,
-				5617037B229C78AA00629790 /* IntroViewController.xib in Resources */,
 				5631561A228DC6A300C0B8D8 /* LaunchScreen.storyboard in Resources */,
 				560DCB05234E2A0D00B15ACB /* Localizable.strings in Resources */,
 				56D70DDB22B81A7300F6E156 /* HeatPumpInfoViewController.xib in Resources */,
+				568205C0235127F000351245 /* OutdoorTemperatureViewController.xib in Resources */,
+				567DD3E723539177008948C2 /* InitialViewController.xib in Resources */,
 				568205B32350D99300351245 /* MainViewController.xib in Resources */,
 				56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */,
 				56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */,
-				568205B82350DE5F00351245 /* TemperatureCollectionViewCell.xib in Resources */,
 				56D70DD522B6E65F00F6E156 /* ProfileViewController.xib in Resources */,
-				56D70D9322B503A200F6E156 /* InitialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,34 +623,32 @@
 				56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */,
 				568B069E22BCFB5200CCE6AC /* AppReviewer.swift in Sources */,
 				5617036B229C6B0100629790 /* LoginViewController.swift in Sources */,
-				56315622228DC74200C0B8D8 /* OldMainViewController.swift in Sources */,
 				56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */,
 				563A281C22919ECE002A3708 /* StringEx.swift in Sources */,
 				56B6CB1F2299CBFC00277DD7 /* R.generated.swift in Sources */,
 				568205BA2350DE9E00351245 /* CardView.swift in Sources */,
-				5617037A229C78AA00629790 /* IntroViewController.swift in Sources */,
+				567DD3E623539177008948C2 /* InitialViewController.swift in Sources */,
 				56D70DE022BABA4600F6E156 /* HeatPumpModel.swift in Sources */,
 				56170374229C76B300629790 /* StyleableImageView.swift in Sources */,
 				56D70DD422B6E65F00F6E156 /* ProfileViewController.swift in Sources */,
 				56D70DDD22BAB90C00F6E156 /* ModelBase.swift in Sources */,
 				56D70D8D22B4F60A00F6E156 /* HotWaterModel.swift in Sources */,
+				568205BC23511D2A00351245 /* UIViewControllerEx.swift in Sources */,
 				565E0D4C22B6686900E434AD /* Theme.swift in Sources */,
 				56D70DD722B8197900F6E156 /* AlertUtils.swift in Sources */,
 				56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */,
 				56D70D8F22B4F66100F6E156 /* TemperatureModelBase.swift in Sources */,
-				56D70DA422B684A200F6E156 /* PageBaseViewController.swift in Sources */,
 				563A281A22919E92002A3708 /* CharsetEx.swift in Sources */,
 				56D70DDA22B81A7300F6E156 /* HeatPumpInfoViewController.swift in Sources */,
-				56D70D9222B503A200F6E156 /* InitialViewController.swift in Sources */,
 				56B6CB1A2293386D00277DD7 /* Session.swift in Sources */,
 				56170377229C76B300629790 /* StyleableTextField.swift in Sources */,
-				568205B72350DE5F00351245 /* TemperatureCollectionViewCell.swift in Sources */,
 				56315625228DC79D00C0B8D8 /* TemperatureViewController.swift in Sources */,
 				56AC78752291A0C10025D128 /* LoginResponse.swift in Sources */,
 				563A281822919E7C002A3708 /* DictionaryEx.swift in Sources */,
 				56170376229C76B300629790 /* StyleableSwitch.swift in Sources */,
 				56170375229C76B300629790 /* StyleableLabel.swift in Sources */,
 				56B6CB222299D81B00277DD7 /* Knob.swift in Sources */,
+				568205BF235127F000351245 /* OutdoorTemperatureViewController.swift in Sources */,
 				56D70D9822B512DB00F6E156 /* KeychainPasswordItem.swift in Sources */,
 				56D70DA222B6848A00F6E156 /* BaseViewController.swift in Sources */,
 			);
@@ -870,6 +850,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl/MasterThermEasyControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 42NG6AU5AL;
 				INFOPLIST_FILE = MasterThermEasyControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -879,7 +860,7 @@
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ljezny.MasterThermEasyControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -892,6 +873,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl/MasterThermEasyControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 42NG6AU5AL;
 				INFOPLIST_FILE = MasterThermEasyControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -901,7 +883,7 @@
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ljezny.MasterThermEasyControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

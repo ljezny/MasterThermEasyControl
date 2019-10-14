@@ -8,45 +8,23 @@
 
 import UIKit
 
-class MainViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
-    @IBOutlet weak var collectionView: UICollectionView!
+class MainViewController: UIViewController {
+    @IBOutlet weak var headerStack: UIStackView!
+    @IBOutlet weak var contentStack: UIStackView!
+    @IBOutlet weak var bottomStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.collectionView.setCollectionViewLayout(createLayout(), animated: false)
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.register(R.nib.temperatureCollectionViewCell)
-        
         self.reloadData()
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.temperatureCollectionViewCell, for: indexPath)!
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
-        return cell
-    }
-    
-    private func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalHeight(1.0),
-                                              heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .fractionalWidth(1.0))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                         subitems: [item])
-
-        let section = NSCollectionLayoutSection(group: group)
-        
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        return layout
+        contentStack.axis = isLandscape() || isLargeWidthWindow() ? .horizontal : .vertical
+        contentStack.distribution = isLandscape() || isLargeWidthWindow() ? .fillEqually : .fill
+        bottomStack.axis = isLargeWidthWindow() ? .horizontal : .vertical
+        bottomStack.distribution = isLandscape() || isLargeWidthWindow() ? .fillEqually : .fill
     }
     
     func relogin() {
@@ -78,6 +56,34 @@ class MainViewController: UIViewController,UICollectionViewDelegate,UICollection
             switch result {
             case .success:
                 if let dataResponse = dataResponse, let module = module {
+                    let models = TemperatureModelBase.createListFromData(response: dataResponse, moduleResponse: module)
+                    
+                    if let mainTemperatureModel = models.first {
+                        let vc = TemperatureViewController(nib: R.nib.temperatureViewController)
+                        vc.model = mainTemperatureModel
+                        self.addViewController(child: vc, parentView: self.contentStack)
+                    }
+                    if let hotWaterModel = models.last {
+                        let vc = TemperatureViewController(nib: R.nib.temperatureViewController)
+                        vc.model = hotWaterModel
+                        self.addViewController(child: vc, parentView: self.contentStack)
+                    }
+                    
+                    let heatPumpInfoVC = HeatPumpInfoViewController(nib: R.nib.heatPumpInfoViewController)
+                    let heatPumpModel = HeatPumpModel(moduleInfo: Session.shared.loginResponse?.modules.first?.module_name)
+                    heatPumpModel.updateFromData(response: dataResponse)
+                    heatPumpInfoVC.model = heatPumpModel
+                    //heatPumpInfoVC.mainViewController = self
+                    self.addViewController(child: heatPumpInfoVC, parentView: self.bottomStack)
+                    
+                    let outdoorTempVC = OutdoorTemperatureViewController(nib: R.nib.outdoorTemperatureViewController)
+                    outdoorTempVC.model = heatPumpModel
+                    self.addViewController(child: outdoorTempVC, parentView: self.headerStack)
+                    
+                    let profileVC = ProfileViewController(nib: R.nib.profileViewController)
+                    profileVC.mainViewController = self
+                    self.addViewController(child: profileVC, parentView: self.bottomStack)
+                    
                     /*if self.temperatureControllers.isEmpty {
                         TemperatureModelBase.createListFromData(response: dataResponse, moduleResponse: module).forEach({ (m) in
                             let vc = TemperatureViewController(nib: R.nib.temperatureViewController)
@@ -135,6 +141,13 @@ class MainViewController: UIViewController,UICollectionViewDelegate,UICollection
             self?.reloadData()
         }
         self.present(loginViewController, animated: true, completion: nil)
+    }
+    
+    func addViewController(child: UIViewController, parentView: UIStackView) {
+        addChild(child)
+        child.view.translatesAutoresizingMaskIntoConstraints = false
+        parentView.addArrangedSubview(child.view)
+        child.didMove(toParent: self)
     }
     
 }

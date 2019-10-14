@@ -9,7 +9,7 @@
 import UIKit
 import Bond
 
-class TemperatureViewController: PageBaseViewController {
+class TemperatureViewController: BaseViewController {
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var knob: Knob!
     @IBOutlet weak var setTemperatureLabel: UILabel!
@@ -18,6 +18,8 @@ class TemperatureViewController: PageBaseViewController {
     @IBOutlet weak var maxSetTemperatureLabel: StyleableLabel!
     @IBOutlet weak var nameLabel: StyleableLabel!
     @IBOutlet weak var iconImage: UIImageView!
+    
+    @IBOutlet weak var contentStack: UIStackView!
     
     var model: TemperatureModelBase? = nil {
         didSet {
@@ -70,6 +72,12 @@ class TemperatureViewController: PageBaseViewController {
 
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        contentStack.axis = isLargeWidthWindow() ? .horizontal : .vertical
+    }
+    
     func updateGradient(v: Double) {
         self.gradientView.progress.value = v / (self.knob.maximumValue - self.knob.minimumValue)
     }
@@ -97,7 +105,7 @@ class TemperatureViewController: PageBaseViewController {
                     //TODO: some retry needed
                     break
                 case .unauthorized:
-                    self.mainViewController?.presentLogin(direction: .reverse)
+                    self.mainViewController?.presentLogin()
                     break
                 case .expired:
                     self.mainViewController?.relogin()

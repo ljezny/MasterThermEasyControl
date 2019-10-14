@@ -45,16 +45,20 @@ import UIKit
             self.font = Theme.getLightFont(size: 16.0)
             self.textColor = UIColor.white
             break
+        case "bodyInverted":
+            self.font = Theme.getLightFont(size: 16.0)
+            self.textColor = UIColor.black
+            break
         case "caption":
             self.font = Theme.getLightFont(size: 24.0)
             self.textColor = UIColor.white
             break
         case "hugevalue":
-            self.font = Theme.getLightFont(size: 48.0)
+            self.font = Theme.getLightFont(size: 36.0)
             self.textColor = UIColor.white
             break
         case "mainvalue":
-            self.font = Theme.getRegularFont(size: 48.0)
+            self.font = Theme.getRegularFont(size: 36.0)
             self.textColor = UIColor.white
             break
         case "value":

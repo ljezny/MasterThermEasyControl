@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 import GZIP
 
-class ProfileViewController: PageBaseViewController,MFMailComposeViewControllerDelegate {
+class ProfileViewController: BaseViewController,MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class ProfileViewController: PageBaseViewController,MFMailComposeViewControllerD
     
     @IBAction func logoutAction(_ sender: Any) {
         Session.shared.clearCredentials()
-        self.mainViewController?.presentLogin(direction: UIPageViewController.NavigationDirection.reverse)
+        self.mainViewController?.presentLogin()
     }
     
     

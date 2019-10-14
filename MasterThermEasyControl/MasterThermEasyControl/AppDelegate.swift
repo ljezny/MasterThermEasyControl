@@ -8,9 +8,9 @@
 
 import UIKit
 import CocoaLumberjack
-import AppCenter
-import AppCenterAnalytics
-import AppCenterCrashes
+//import AppCenter
+//import AppCenterAnalytics
+//import AppCenterCrashes
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -49,10 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        MSAppCenter.start("72f0b1f5-7156-4bb6-bfaa-dd2f0fd849c1", withServices:[
+        /*MSAppCenter.start("72f0b1f5-7156-4bb6-bfaa-dd2f0fd849c1", withServices:[
             MSAnalytics.self,
             MSCrashes.self
-            ])
+            ])*/
         
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)

@@ -41,6 +41,12 @@ import UIKit
             self.layer.borderColor = UIColor.white.cgColor
             self.layer.borderWidth = 1.0
             break
+        case "secondary":
+            self.titleLabel?.font = Theme.getRegularFont(size: 16)
+            self.setTitleColor(UIColor.orange, for: .normal)
+            self.setTitleColor(UIColor.orange.withAlphaComponent(0.5), for: .disabled)
+            self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+            break
         default:
             break
         }

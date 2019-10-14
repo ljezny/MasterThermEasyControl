@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OutdoorTemperatureViewController" customModule="MasterThermEasyControl" customModuleProvider="target">
+            <connections>
+                <outlet property="gradientView" destination="yrk-jf-XNP" id="jma-F4-7yn"/>
+                <outlet property="outsideTempLabel" destination="1Ja-f0-Ttu" id="VZU-gk-EZY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="CardView" customModule="MasterThermEasyControl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrk-jf-XNP" customClass="GradientView" customModule="MasterThermEasyControl" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hle-vS-hEd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOj-SD-8De" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                            <rect key="frame" x="24" y="68" width="183" height="770"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="caption"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="heatpump.temperature.outside"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 C" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ja-f0-Ttu" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                            <rect key="frame" x="207" y="68" width="183" height="770"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="hugevalue"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUG-lx-Xhj" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
+                            <rect key="frame" x="390" y="68" width="0.0" height="770"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="heatpump.temperature.outside.help"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <edgeInsets key="layoutMargins" top="24" left="24" bottom="24" right="24"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yrk-jf-XNP" secondAttribute="bottom" id="8eY-JG-5Gu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yrk-jf-XNP" secondAttribute="trailing" id="NpG-kt-wlc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Hle-vS-hEd" secondAttribute="bottom" id="X2k-Cl-jnb"/>
+                <constraint firstItem="Hle-vS-hEd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Z4G-LI-61q"/>
+                <constraint firstItem="yrk-jf-XNP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dOe-iu-4Hq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hle-vS-hEd" secondAttribute="trailing" id="fCg-wI-j9x"/>
+                <constraint firstItem="Hle-vS-hEd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fWh-tp-bM2"/>
+                <constraint firstItem="yrk-jf-XNP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="raT-GF-DIJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="98"/>
+        </view>
+    </objects>
+</document>

@@ -8,10 +8,7 @@
 
 import UIKit
 
-class HeatPumpInfoViewController: PageBaseViewController {
-
-    @IBOutlet weak var outsideTempLabel: StyleableLabel!
-    
+class HeatPumpInfoViewController: BaseViewController {
     @IBOutlet weak var setTempLabel: StyleableLabel!
     @IBOutlet weak var realTempLabel: StyleableLabel!
     @IBOutlet weak var ownerLabel: StyleableLabel!
@@ -22,9 +19,6 @@ class HeatPumpInfoViewController: PageBaseViewController {
             //setup bindings
             let _ = self.view
             
-            model?.outsideTemperature.map({ (d) -> String? in
-                return NumberFormatUtils.formatTemperature(value: d)
-            }).bind(to: outsideTempLabel.reactive.text).dispose(in: self.bag)
             model?.requestedHeatWaterTemperature.map({ (d) -> String? in
                return NumberFormatUtils.formatTemperature(value: d)
             }).bind(to: setTempLabel.reactive.text).dispose(in: self.bag)

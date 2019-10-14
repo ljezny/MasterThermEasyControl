@@ -9,7 +9,9 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+    
+    weak var mainViewController:MainViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

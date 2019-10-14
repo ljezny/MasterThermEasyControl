@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InitialViewController: PageBaseViewController {
+class InitialViewController: BaseViewController {
 
     @IBOutlet weak var appNameLabel: StyleableLabel!
     @IBOutlet weak var logoStack: UIStackView!
