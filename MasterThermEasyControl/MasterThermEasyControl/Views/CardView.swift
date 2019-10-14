@@ -20,7 +20,7 @@ import UIKit
     }
     
     func setup() {
-        self.layer.cornerRadius = 16
+        self.layer.cornerRadius = 24
         self.layer.masksToBounds = true
     }
 }
