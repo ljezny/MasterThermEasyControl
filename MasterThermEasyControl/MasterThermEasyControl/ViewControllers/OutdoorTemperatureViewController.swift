@@ -9,7 +9,7 @@
 import UIKit
 import Bond
 
-class OutdoorTemperatureViewController: UIViewController {
+class OutdoorTemperatureViewController: BaseViewController {
 
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var outsideTempLabel: StyleableLabel!

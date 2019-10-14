@@ -14,8 +14,6 @@ class InitialViewController: BaseViewController {
     @IBOutlet weak var logoStack: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
             
         let attributedString = NSMutableAttributedString(string: "MasterTherm\rEasy Control", attributes: [
             .font: Theme.getRegularFont(size: 30),

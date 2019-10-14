@@ -32,8 +32,6 @@ class TemperatureModelBase: ModelBase {
         result.forEach { (m) in
             m.updateFromData(response: response)
         }
-        //return result
-        
         return result.filter({ (v) -> Bool in
             v.isEnabled.value
         })

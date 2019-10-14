@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,14 +23,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="UGs-PC-OgQ">
-                            <rect key="frame" x="156" y="407.5" width="102.5" height="81"/>
+                            <rect key="frame" x="113.5" y="339" width="187" height="218"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="s3T-a8-f0S">
-                                    <rect key="frame" x="0.0" y="0.0" width="102.5" height="16"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="187" height="153"/>
                                     <color key="tintColor" red="0.93218237161636353" green="0.46980232000350952" blue="0.18397355079650879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk0-bv-a1r" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="40" width="102.5" height="41"/>
+                                    <rect key="frame" x="0.0" y="177" width="187" height="41"/>
                                     <string key="text">MasterTherm
 Easy Control</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -58,6 +55,7 @@ Easy Control</string>
                 <constraint firstAttribute="trailing" secondItem="Rs9-Dx-7WP" secondAttribute="trailing" id="frk-VP-cYR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="98"/>
         </view>
     </objects>
     <resources>

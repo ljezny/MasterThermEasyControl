@@ -8,6 +8,7 @@
 
 import UIKit
 import Bond
+
 class HeatPumpModel: ModelBase {
     let outsideTemperature = Observable<Double?>(nil)
     let realHeatWaterTemperature = Observable<Double?>(nil)

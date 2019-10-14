@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="bottomStack" destination="65z-fE-NOc" id="yPZ-7x-jbg"/>
                 <outlet property="contentStack" destination="bri-DT-BQu" id="Ycg-at-cV5"/>
+                <outlet property="footerStack" destination="qdJ-1y-FYr" id="G8J-l8-1Xa"/>
                 <outlet property="headerStack" destination="xVf-8w-fAb" id="B96-m8-eNs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,10 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJA-1I-0Og">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJA-1I-0Og">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="wJq-Xj-NGZ">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="wJq-Xj-NGZ">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="668"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="xVf-8w-fAb">
@@ -33,7 +34,12 @@
                                     <rect key="frame" x="24" y="220" width="366" height="200"/>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="65z-fE-NOc">
-                                    <rect key="frame" x="24" y="444" width="366" height="200"/>
+                                    <rect key="frame" x="24" y="444" width="366" height="176"/>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" id="qdJ-1y-FYr">
+                                    <rect key="frame" x="24" y="644" width="366" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <viewLayoutGuide key="safeArea" id="CBZ-vx-rOL"/>
                                 </stackView>
                             </subviews>
                             <edgeInsets key="layoutMargins" top="24" left="24" bottom="24" right="24"/>
