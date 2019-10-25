@@ -48,10 +48,6 @@ class MainViewController: UIViewController {
         Session.shared.relogin { (result) in
             switch result {
             case .success:
-                let heatPumpModel = HeatPumpModel(moduleInfo: Session.shared.loginResponse?.modules.first?.module_name)
-                self.heatPumpInfoVC.model = heatPumpModel
-                self.outdoorTempVC.model = heatPumpModel
-                
                 self.reloadData()
                 break
             case .connectionError:
@@ -77,6 +73,10 @@ class MainViewController: UIViewController {
             switch result {
             case .success:
                 if let dataResponse = dataResponse, let module = module {
+                    let heatPumpModel = HeatPumpModel(moduleInfo: Session.shared.loginResponse?.modules.first?.module_name)
+                    self.heatPumpInfoVC.model = heatPumpModel
+                    self.outdoorTempVC.model = heatPumpModel
+                    
                     let models = TemperatureModelBase.createListFromData(response: dataResponse, moduleResponse: module)
                     
                     if self.temperatureViewControllers.isEmpty {
