@@ -55,7 +55,7 @@
 		56D70DAB22B6B6A200F6E156 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D70DAA22B6B6A200F6E156 /* NotificationCenter.framework */; };
 		56D70DAE22B6B6A300F6E156 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70DAD22B6B6A300F6E156 /* TodayViewController.swift */; };
 		56D70DB122B6B6A300F6E156 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D70DAF22B6B6A300F6E156 /* MainInterface.storyboard */; };
-		56D70DB522B6B6A300F6E156 /* Easy Control.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 56D70DA922B6B6A200F6E156 /* Easy Control.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		56D70DB522B6B6A300F6E156 /* Easy Control Quicklook.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 56D70DA922B6B6A200F6E156 /* Easy Control Quicklook.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		56D70DBA22B6B6DB00F6E156 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB1B2299CA7400277DD7 /* GradientView.swift */; };
 		56D70DBB22B6B73000F6E156 /* StyleableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56170370229C723500629790 /* StyleableButton.swift */; };
 		56D70DBC22B6B73000F6E156 /* StyleableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617036F229C723500629790 /* StyleableImageView.swift */; };
@@ -108,7 +108,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				56D70DB522B6B6A300F6E156 /* Easy Control.appex in Embed App Extensions */,
+				56D70DB522B6B6A300F6E156 /* Easy Control Quicklook.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,7 +164,7 @@
 		56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		56D70D9622B512DB00F6E156 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		56D70DA122B6848A00F6E156 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		56D70DA922B6B6A200F6E156 /* Easy Control.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Easy Control.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D70DA922B6B6A200F6E156 /* Easy Control Quicklook.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Easy Control Quicklook.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D70DAA22B6B6A200F6E156 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		56D70DAD22B6B6A300F6E156 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		56D70DB022B6B6A300F6E156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				5631560C228DC6A100C0B8D8 /* Easy Control.app */,
-				56D70DA922B6B6A200F6E156 /* Easy Control.appex */,
+				56D70DA922B6B6A200F6E156 /* Easy Control Quicklook.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 			);
 			name = MasterThermEasyControl.Today;
 			productName = MasterThermEasyControl.Today;
-			productReference = 56D70DA922B6B6A200F6E156 /* Easy Control.appex */;
+			productReference = 56D70DA922B6B6A200F6E156 /* Easy Control Quicklook.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -906,7 +906,7 @@
 				);
 				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ljezny.MasterThermEasyControl.MasterThermEasyControl-Today";
-				PRODUCT_NAME = "Easy Control";
+				PRODUCT_NAME = "Easy Control Quicklook";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 4.2;
@@ -931,7 +931,7 @@
 				);
 				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ljezny.MasterThermEasyControl.MasterThermEasyControl-Today";
-				PRODUCT_NAME = "Easy Control";
+				PRODUCT_NAME = "Easy Control Quicklook";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 4.2;
