@@ -37,7 +37,7 @@ class Session {
             } else if let loginResponse = loginResponse {
                 if loginResponse.returncode == 1 {
                     self.clearCredentials()
-                    completion(.unauthorized)
+                    completion(.connectionError)
                 } else {
                     self.storeCredentials(user: user, password: password)
                     self.loginResponse = loginResponse
