@@ -9,11 +9,13 @@ target 'MasterThermEasyControl' do
 
   # Pods for MasterThermEasyControl
   pod 'HandyJSON', '~> 5.0.0'
-  pod 'Bond'
-  pod 'R.swift'
-  pod 'CocoaLumberjack/Swift'
+  pod 'ReactiveKit', '3.16.3'
+  pod 'Bond', '7.6.6'
+  pod 'R.swift', '5.1.0'
+  pod 'CocoaLumberjack/Swift','3.6.1'
   pod 'GZIP', '1.2.2'
-  pod 'AppCenter'
+  pod 'AppCenter','3.1.0'
+  
 end
 
 target 'MasterThermEasyControl.Today' do
@@ -22,9 +24,9 @@ target 'MasterThermEasyControl.Today' do
     
     # Pods for MasterThermEasyControl
     pod 'HandyJSON', '~> 5.0.0'
-    pod 'Bond'
-    pod 'CocoaLumberjack/Swift'
+    pod 'Bond', '7.6.6'
+    pod 'CocoaLumberjack/Swift','3.6.1'
     pod 'GZIP', '1.2.2'
-    pod 'AppCenter'
+    pod 'AppCenter','3.1.0'
     #pod 'R.swift'
 end

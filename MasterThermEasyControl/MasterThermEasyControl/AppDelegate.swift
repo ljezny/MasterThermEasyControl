@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func initLogger() -> DDFileLogger {
-        DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+        if let ttyInstance = DDTTYLogger.sharedInstance {
+            DDLog.add(ttyInstance) // TTY = Xcode console
+        }
          
         let logger: DDFileLogger = DDFileLogger() // File Logger
         logger.rollingFrequency = TimeInterval(60*60*24)  // 24 hours
