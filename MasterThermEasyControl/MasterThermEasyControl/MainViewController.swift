@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class MainViewController: UIViewController {
     @IBOutlet weak var headerStack: UIStackView!
@@ -35,6 +36,11 @@ class MainViewController: UIViewController {
         self.reloadData()
         
         self.present(InitialViewController(nib: R.nib.initialViewController), animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        SKStoreReviewController.requestReview()
     }
     
     override func viewDidLayoutSubviews() {

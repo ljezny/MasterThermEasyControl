@@ -68,8 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(familyName, fontNames)
         })
         
-        incrementAppRuns()
-        
         DDLogInfo("MasterTherm Easy Control app started.")
         
         return true
