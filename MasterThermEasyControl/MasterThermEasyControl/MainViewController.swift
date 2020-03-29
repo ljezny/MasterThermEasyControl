@@ -18,6 +18,8 @@ class MainViewController: UIViewController {
     let outdoorTempVC = OutdoorTemperatureViewController(nib: R.nib.outdoorTemperatureViewController)
     let profileVC = ProfileViewController(nib: R.nib.profileViewController)
     
+    var logoutCompletion: (()->())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -59,7 +61,6 @@ class MainViewController: UIViewController {
                 }), animated: true)
                 break
             case .unauthorized:
-                self.presentLogin()
                 break
             case .expired:
                 //no op
@@ -104,7 +105,6 @@ class MainViewController: UIViewController {
                 //TODO: some retry needed
                 break
             case .unauthorized:
-                self.presentLogin()
                 break
             case .expired:
                 self.relogin()

@@ -11,23 +11,8 @@ import UIKit
 import GZIP
 
 class ProfileViewController: BaseViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-
-    
-    
     @IBAction func logoutAction(_ sender: Any) {
         Session.shared.clearCredentials()
-        self.mainViewController?.presentLogin()
+        self.mainViewController?.logoutCompletion?()
     }
-    
-    
-   
-
-    
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitialViewController" customModule="MasterThermEasyControl" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitialViewController" customModule="Easy_Control" customModuleProvider="target">
             <connections>
                 <outlet property="appNameLabel" destination="rk0-bv-a1r" id="Tw8-Mo-Itl"/>
                 <outlet property="logoStack" destination="UGs-PC-OgQ" id="UjP-04-CHq"/>
@@ -23,14 +23,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="UGs-PC-OgQ">
-                            <rect key="frame" x="113.5" y="339" width="187" height="218"/>
+                            <rect key="frame" x="156" y="377.5" width="102.5" height="141.5"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="s3T-a8-f0S">
-                                    <rect key="frame" x="0.0" y="0.0" width="187" height="153"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="102.5" height="76.5"/>
                                     <color key="tintColor" red="0.93218237161636353" green="0.46980232000350952" blue="0.18397355079650879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk0-bv-a1r" customClass="StyleableLabel" customModule="MasterThermEasyControl" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="177" width="187" height="41"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk0-bv-a1r" customClass="StyleableLabel" customModule="Easy_Control" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="100.5" width="102.5" height="41"/>
                                     <string key="text">MasterTherm
 Easy Control</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
