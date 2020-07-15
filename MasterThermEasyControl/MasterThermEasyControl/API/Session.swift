@@ -8,6 +8,7 @@
 
 import UIKit
 import Bond
+import CocoaLumberjack
 
 enum ApiResult {
     case success
@@ -31,14 +32,18 @@ class Session {
     }
     
     func login(user: String, password:String, completion:@escaping (ApiResult)->()) {
+        DDLogInfo("Session.login \(user)")
         apiManager.login(userName: user, password: password) { (loginResponse, error) in
-            if let _ = error {
+            if let error = error {
+                DDLogInfo("Session.login error \(error)")
                 completion(.connectionError)
             } else if let loginResponse = loginResponse {
                 if loginResponse.returncode == 1 {
+                    DDLogInfo("Session.login error response code: \(loginResponse.returncode)")
                     self.clearCredentials()
                     completion(.unauthorized)
                 } else {
+                    DDLogInfo("Session.login success")
                     self.storeCredentials(user: user, password: password)
                     self.loginResponse = loginResponse
                     completion(.success)
@@ -48,14 +53,18 @@ class Session {
     }
     
     func relogin(completion:@escaping (ApiResult)->()) {
+        DDLogInfo("Session.relogin")
         if let account = UserDefaults.init(suiteName: Session.SHARED_APP_GROUP_KEY)?.string(forKey: Session.ACCOUNT_USER_DEFAULTS_KEY) {
             let keychainPasswordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName, account: account,accessGroup: KeychainConfiguration.accessGroup)
+            DDLogInfo("Session.relogin has credentials")
             if let password = try? keychainPasswordItem.readPassword() {
                 self.login(user: account, password: password, completion: completion)
             } else {
+                DDLogInfo("Session.relogin unable to read password")
                 completion(.unauthorized)
             }
         } else {
+            DDLogInfo("Session.relogin no stored credentials")
             completion(.unauthorized)
         }
     }

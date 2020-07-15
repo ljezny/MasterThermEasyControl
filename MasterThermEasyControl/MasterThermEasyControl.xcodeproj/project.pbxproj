@@ -39,7 +39,6 @@
 		568205C0235127F000351245 /* OutdoorTemperatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568205BE235127F000351245 /* OutdoorTemperatureViewController.xib */; };
 		568B069B22BCEC5B00CCE6AC /* NumberFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */; };
 		568B069C22BCEDF800CCE6AC /* NumberFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */; };
-		568B069E22BCFB5200CCE6AC /* AppReviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B069D22BCFB5200CCE6AC /* AppReviewer.swift */; };
 		56AC78752291A0C10025D128 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AC78742291A0C10025D128 /* LoginResponse.swift */; };
 		56B6CB152291EA6900277DD7 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB142291EA6900277DD7 /* DataResponse.swift */; };
 		56B6CB182293347000277DD7 /* HeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB172293347000277DD7 /* HeatModel.swift */; };
@@ -151,7 +150,6 @@
 		568205BD235127F000351245 /* OutdoorTemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorTemperatureViewController.swift; sourceTree = "<group>"; };
 		568205BE235127F000351245 /* OutdoorTemperatureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutdoorTemperatureViewController.xib; sourceTree = "<group>"; };
 		568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatUtils.swift; sourceTree = "<group>"; };
-		568B069D22BCFB5200CCE6AC /* AppReviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewer.swift; sourceTree = "<group>"; };
 		56AC78742291A0C10025D128 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		56B6CB142291EA6900277DD7 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
 		56B6CB172293347000277DD7 /* HeatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatModel.swift; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 			children = (
 				56D70DD622B8197900F6E156 /* AlertUtils.swift */,
 				568B069A22BCEC5B00CCE6AC /* NumberFormatUtils.swift */,
-				568B069D22BCFB5200CCE6AC /* AppReviewer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -621,7 +618,6 @@
 				568205B22350D99300351245 /* MainViewController.swift in Sources */,
 				56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */,
 				56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */,
-				568B069E22BCFB5200CCE6AC /* AppReviewer.swift in Sources */,
 				5617036B229C6B0100629790 /* LoginViewController.swift in Sources */,
 				56315610228DC6A200C0B8D8 /* AppDelegate.swift in Sources */,
 				563A281C22919ECE002A3708 /* StringEx.swift in Sources */,
@@ -857,7 +853,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ljezny.MasterThermEasyControl;
 				PRODUCT_NAME = "Easy Control";
 				SUPPORTS_MACCATALYST = NO;
@@ -880,7 +876,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ljezny.MasterThermEasyControl;
 				PRODUCT_NAME = "Easy Control";
 				SUPPORTS_MACCATALYST = NO;
@@ -904,7 +900,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ljezny.MasterThermEasyControl.MasterThermEasyControl-Today";
 				PRODUCT_NAME = "Easy Control Quicklook";
 				SKIP_INSTALL = YES;
@@ -929,7 +925,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.ljezny.MasterThermEasyControl.MasterThermEasyControl-Today";
 				PRODUCT_NAME = "Easy Control Quicklook";
 				SKIP_INSTALL = YES;

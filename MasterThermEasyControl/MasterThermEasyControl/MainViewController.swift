@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class MainViewController: UIViewController {
     @IBOutlet weak var headerStack: UIStackView!
@@ -17,6 +18,8 @@ class MainViewController: UIViewController {
     let heatPumpInfoVC = HeatPumpInfoViewController(nib: R.nib.heatPumpInfoViewController)
     let outdoorTempVC = OutdoorTemperatureViewController(nib: R.nib.outdoorTemperatureViewController)
     let profileVC = ProfileViewController(nib: R.nib.profileViewController)
+    
+    var logoutCompletion: (()->())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,11 @@ class MainViewController: UIViewController {
         self.reloadData()
         
         self.present(InitialViewController(nib: R.nib.initialViewController), animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        SKStoreReviewController.requestReview()
     }
     
     override func viewDidLayoutSubviews() {
@@ -59,7 +67,6 @@ class MainViewController: UIViewController {
                 }), animated: true)
                 break
             case .unauthorized:
-                self.presentLogin()
                 break
             case .expired:
                 //no op
@@ -104,7 +111,6 @@ class MainViewController: UIViewController {
                 //TODO: some retry needed
                 break
             case .unauthorized:
-                self.presentLogin()
                 break
             case .expired:
                 self.relogin()

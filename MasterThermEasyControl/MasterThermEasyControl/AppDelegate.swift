@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let mainViewController = MainViewController()
+
     
     var fileLoger: DDFileLogger?
     
@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func initLogger() -> DDFileLogger {
-        DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+        if let ttyInstance = DDTTYLogger.sharedInstance {
+            DDLog.add(ttyInstance) // TTY = Xcode console
+        }
          
         let logger: DDFileLogger = DDFileLogger() // File Logger
         logger.rollingFrequency = TimeInterval(60*60*24)  // 24 hours
@@ -59,20 +61,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         self.fileLoger = self.initLogger()
         
-        if let window = self.window{
-            window.rootViewController = mainViewController
-            window.makeKeyAndVisible()
-        }
+        presentInitial()
+        
         UIFont.familyNames.forEach({ familyName in
             let fontNames = UIFont.fontNames(forFamilyName: familyName)
             print(familyName, fontNames)
         })
         
-        incrementAppRuns()
-        
         DDLogInfo("MasterTherm Easy Control app started.")
         
         return true
+    }
+    
+    func presentInitial() {
+        if let window = self.window{
+            window.rootViewController = InitialViewController(nib: R.nib.initialViewController)
+            window.makeKeyAndVisible()
+            
+            Session.shared.relogin { (result) in
+                switch result {
+                case .success:
+                    self.presentMain()
+                    break
+                case .connectionError:
+                    window.rootViewController?.present(AlertUtils.createNoInternetAlert(completion: {
+                        DispatchQueue.main.after(when: 2.0, block: {
+                            self.presentInitial() // retry
+                        })
+                    }), animated: true)
+                    break
+                case .expired:
+                    //should not happend
+                    break
+                case .unauthorized:
+                    self.presentLogin()
+                break
+                }
+            }
+        }
+    }
+    
+    func presentLogin() {
+        if let window = self.window{
+            let loginViewController = LoginViewController(nib: R.nib.loginViewController)
+            loginViewController.loginCompletion = {
+                self.presentMain()
+            }
+            window.rootViewController = loginViewController
+            window.makeKeyAndVisible()
+        }
+    }
+    
+    func presentMain() {
+        let mainViewController = MainViewController()
+        mainViewController.logoutCompletion = {
+            self.presentLogin()
+        }
+        if let window = self.window{
+            window.rootViewController = mainViewController
+            window.makeKeyAndVisible()
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -91,7 +139,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        mainViewController.relogin()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

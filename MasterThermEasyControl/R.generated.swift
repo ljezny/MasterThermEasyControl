@@ -11,37 +11,168 @@ import UIKit
 struct R: Rswift.Validatable {
   fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap(Locale.init) ?? Locale.current
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
-  
+
+  /// Find first language and bundle for which the table exists
+  fileprivate static func localeBundle(tableName: String, preferredLanguages: [String]) -> (Foundation.Locale, Foundation.Bundle)? {
+    // Filter preferredLanguages to localizations, use first locale
+    var languages = preferredLanguages
+      .map(Locale.init)
+      .prefix(1)
+      .flatMap { locale -> [String] in
+        if hostingBundle.localizations.contains(locale.identifier) {
+          if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+            return [locale.identifier, language]
+          } else {
+            return [locale.identifier]
+          }
+        } else if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+          return [language]
+        } else {
+          return []
+        }
+      }
+
+    // If there's no languages, use development language as backstop
+    if languages.isEmpty {
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages = [developmentLocalization]
+      }
+    } else {
+      // Insert Base as second item (between locale identifier and languageCode)
+      languages.insert("Base", at: 1)
+
+      // Add development language as backstop
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages.append(developmentLocalization)
+      }
+    }
+
+    // Find first language for which table exists
+    // Note: key might not exist in chosen language (in that case, key will be shown)
+    for language in languages {
+      if let lproj = hostingBundle.url(forResource: language, withExtension: "lproj"),
+         let lbundle = Bundle(url: lproj)
+      {
+        let strings = lbundle.url(forResource: tableName, withExtension: "strings")
+        let stringsdict = lbundle.url(forResource: tableName, withExtension: "stringsdict")
+
+        if strings != nil || stringsdict != nil {
+          return (Locale(identifier: language), lbundle)
+        }
+      }
+    }
+
+    // If table is available in main bundle, don't look for localized resources
+    let strings = hostingBundle.url(forResource: tableName, withExtension: "strings", subdirectory: nil, localization: nil)
+    let stringsdict = hostingBundle.url(forResource: tableName, withExtension: "stringsdict", subdirectory: nil, localization: nil)
+
+    if strings != nil || stringsdict != nil {
+      return (applicationLocale, hostingBundle)
+    }
+
+    // If table is not found for requested languages, key will be shown
+    return nil
+  }
+
+  /// Load string from Info.plist file
+  fileprivate static func infoPlistString(path: [String], key: String) -> String? {
+    var dict = hostingBundle.infoDictionary
+    for step in path {
+      guard let obj = dict?[step] as? [String: Any] else { return nil }
+      dict = obj
+    }
+    return dict?[key] as? String
+  }
+
   static func validate() throws {
     try font.validate()
     try intern.validate()
   }
-  
+
+  #if os(iOS) || os(tvOS)
+  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  struct storyboard {
+    /// Storyboard `LaunchScreen`.
+    static let launchScreen = _R.storyboard.launchScreen()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
+    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+  #endif
+
+  /// This `R.entitlements` struct is generated, and contains static references to 4 properties.
+  struct entitlements {
+    static let comAppleSecurityAppSandbox = true
+    static let comAppleSecurityNetworkClient = true
+
+    struct comAppleSecurityApplicationGroups {
+      static let groupMasterthermeasycontrol = infoPlistString(path: ["com.apple.security.application-groups"], key: "group.masterthermeasycontrol") ?? "group.masterthermeasycontrol"
+
+      fileprivate init() {}
+    }
+
+    struct keychainAccessGroups {
+      static let appIdentifierPrefixCzLjeznyMasterThermEasyControl = infoPlistString(path: ["keychain-access-groups"], key: "$(AppIdentifierPrefix)cz.ljezny.MasterThermEasyControl") ?? "$(AppIdentifierPrefix)cz.ljezny.MasterThermEasyControl"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 2 files.
+  struct file {
+    /// Resource file `SF-Pro-Display-Medium.otf`.
+    static let sfProDisplayMediumOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SF-Pro-Display-Medium", pathExtension: "otf")
+    /// Resource file `SF-Pro-Display-Thin.otf`.
+    static let sfProDisplayThinOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SF-Pro-Display-Thin", pathExtension: "otf")
+
+    /// `bundle.url(forResource: "SF-Pro-Display-Medium", withExtension: "otf")`
+    static func sfProDisplayMediumOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sfProDisplayMediumOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SF-Pro-Display-Thin", withExtension: "otf")`
+    static func sfProDisplayThinOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sfProDisplayThinOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.font` struct is generated, and contains static references to 2 fonts.
   struct font: Rswift.Validatable {
     /// Font `SFProDisplay-Medium`.
     static let sfProDisplayMedium = Rswift.FontResource(fontName: "SFProDisplay-Medium")
     /// Font `SFProDisplay-Thin`.
     static let sfProDisplayThin = Rswift.FontResource(fontName: "SFProDisplay-Thin")
-    
+
     /// `UIFont(name: "SFProDisplay-Medium", size: ...)`
     static func sfProDisplayMedium(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sfProDisplayMedium, size: size)
     }
-    
+
     /// `UIFont(name: "SFProDisplay-Thin", size: ...)`
     static func sfProDisplayThin(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sfProDisplayThin, size: size)
     }
-    
+
     static func validate() throws {
       if R.font.sfProDisplayMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Medium' could not be loaded, is 'SF-Pro-Display-Medium.otf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.sfProDisplayThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Thin' could not be loaded, is 'SF-Pro-Display-Thin.otf' added to the UIAppFonts array in this targets Info.plist?") }
     }
-    
+
     fileprivate init() {}
   }
-  
+
   /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
     /// Image `ic_heatwater`.
@@ -62,55 +193,73 @@ struct R: Rswift.Validatable {
     static let palka = Rswift.ImageResource(bundle: R.hostingBundle, name: "palka")
     /// Image `splash_logo`.
     static let splash_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "splash_logo")
-    
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_heatwater", bundle: ..., traitCollection: ...)`
     static func ic_heatwater(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_heatwater, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_home", bundle: ..., traitCollection: ...)`
     static func ic_home(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_home, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_outside", bundle: ..., traitCollection: ...)`
     static func ic_outside(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_outside, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_pump", bundle: ..., traitCollection: ...)`
     static func ic_pump(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_pump, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_user", bundle: ..., traitCollection: ...)`
     static func ic_user(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_user, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_water", bundle: ..., traitCollection: ...)`
     static func ic_water(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_water, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "jezny", bundle: ..., traitCollection: ...)`
     static func jezny(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.jezny, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "palka", bundle: ..., traitCollection: ...)`
     static func palka(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.palka, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "splash_logo", bundle: ..., traitCollection: ...)`
     static func splash_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.splash_logo, compatibleWith: traitCollection)
     }
-    
+    #endif
+
     fileprivate init() {}
   }
-  
+
   /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `HeatPumpInfoViewController`.
@@ -127,497 +276,775 @@ struct R: Rswift.Validatable {
     static let profileViewController = _R.nib._ProfileViewController()
     /// Nib `TemperatureViewController`.
     static let temperatureViewController = _R.nib._TemperatureViewController()
-    
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "HeatPumpInfoViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.heatPumpInfoViewController) instead")
     static func heatPumpInfoViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.heatPumpInfoViewController)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "InitialViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.initialViewController) instead")
     static func initialViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.initialViewController)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "LoginViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.loginViewController) instead")
     static func loginViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.loginViewController)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "MainViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.mainViewController) instead")
     static func mainViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.mainViewController)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "OutdoorTemperatureViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.outdoorTemperatureViewController) instead")
     static func outdoorTemperatureViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.outdoorTemperatureViewController)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "ProfileViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.profileViewController) instead")
     static func profileViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.profileViewController)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "TemperatureViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.temperatureViewController) instead")
     static func temperatureViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.temperatureViewController)
     }
-    
+    #endif
+
     static func heatPumpInfoViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
       return R.nib.heatPumpInfoViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
     }
-    
+
     static func initialViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.initialViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
-    
+
     static func loginViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.loginViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
-    
+
     static func mainViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.mainViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
-    
+
     static func outdoorTemperatureViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
       return R.nib.outdoorTemperatureViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
     }
-    
+
     static func profileViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
       return R.nib.profileViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
     }
-    
+
     static func temperatureViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
       return R.nib.temperatureViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
     }
-    
+
     fileprivate init() {}
   }
-  
-  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
-  struct storyboard {
-    /// Storyboard `LaunchScreen`.
-    static let launchScreen = _R.storyboard.launchScreen()
-    
-    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    
-    fileprivate init() {}
-  }
-  
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 34 localization keys.
     struct localizable {
       /// en translation: Cancel
-      /// 
+      ///
       /// Locales: en, cs
       static let generalCancel = Rswift.StringResource(key: "general.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Connection failed
-      /// 
+      ///
       /// Locales: en, cs
       static let connectionErrorTitle = Rswift.StringResource(key: "connection.error.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Contact
-      /// 
+      ///
       /// Locales: en, cs
       static let profileContactButton = Rswift.StringResource(key: "profile.contact.button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Continue
-      /// 
+      ///
       /// Locales: en, cs
       static let introContinueButton = Rswift.StringResource(key: "intro.continue.button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Current
-      /// 
+      ///
       /// Locales: en, cs
       static let heatpumpTemperatureSet = Rswift.StringResource(key: "heatpump.temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Current
-      /// 
+      ///
       /// Locales: en, cs
       static let temperatureReal = Rswift.StringResource(key: "temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: E-mail
-      /// 
+      ///
       /// Locales: en, cs
       static let loginEmailPlaceholder = Rswift.StringResource(key: "login.email.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Greetings, app is great but i am missing ...
-      /// 
+      ///
       /// Locales: en, cs
       static let profileDescribeProblem = Rswift.StringResource(key: "profile.describe.problem", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Heat pump
-      /// 
+      ///
       /// Locales: en, cs
       static let heatpumpTitle = Rswift.StringResource(key: "heatpump.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Heat water temperature
-      /// 
+      ///
       /// Locales: en, cs
       static let heatpumpTemperature = Rswift.StringResource(key: "heatpump.temperature", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Home
-      /// 
+      ///
       /// Locales: en, cs
       static let heatmodelName = Rswift.StringResource(key: "heatmodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Hot water
-      /// 
+      ///
       /// Locales: en, cs
       static let hotwatermodelName = Rswift.StringResource(key: "hotwatermodel.name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: If you miss a feature in the app or there is a bug, you can contact me. I will be glad for feedback. Please note that this is not a commercial application, but a hobby one.
-      /// 
+      ///
       /// Locales: en, cs
       static let profileContactMessage = Rswift.StringResource(key: "profile.contact.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: If you no longer wish to use the application, please log out and the application will safely delete your login information from the keychain.
-      /// 
+      ///
       /// Locales: en, cs
       static let profileLogoutMessage = Rswift.StringResource(key: "profile.logout.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Jiří Pálka
-      /// 
+      ///
       /// Locales: en, cs
       static let generalNamePalka = Rswift.StringResource(key: "general.name.palka", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Login
-      /// 
+      ///
       /// Locales: en, cs
       static let loginButton = Rswift.StringResource(key: "login.button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Login failed
-      /// 
+      ///
       /// Locales: en, cs
       static let unauthorizedTitle = Rswift.StringResource(key: "unauthorized.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Logout
-      /// 
+      ///
       /// Locales: en, cs
       static let profileLogoutButton = Rswift.StringResource(key: "profile.logout.button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Looks like you don't have an Internet connection. Please check the connection and try again.
-      /// 
+      ///
       /// Locales: en, cs
       static let connectionErrorMessage = Rswift.StringResource(key: "connection.error.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Lukáš Jezný
-      /// 
+      ///
       /// Locales: en, cs
       static let generalNameJezny = Rswift.StringResource(key: "general.name.jezny", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: MasterTherm Easy Control
-      /// 
+      ///
       /// Locales: en, cs
       static let generalAppname = Rswift.StringResource(key: "general.appname", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: My name is Jiří Pálka and I am a freelance graphic designer. I have completely designed the UI and supervised its proper use of MasterTherm Easy Control. I hope you will like the application and ease of use.
-      /// 
+      ///
       /// Locales: en, cs
       static let introMessagePalka = Rswift.StringResource(key: "intro.message.palka", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
-      /// en translation: My name is Lukáš Jezný and I am the creator of MasterTherm Easy Control and thank you for downloading it. I have been developing freelance mobile applications for several years. I also own a MasterTherm heat pump on my home. The official application for controlling this pump did not suit my design and usage and therefore I tried to publish my own solution for controlling this pump. I do not plan to set temperature curves and more complex parameters yet. In my free time, I work on development and new features and add them as needed. A watch app is planned.  I'll be happy to hear any comments you make about using the app and report any issues. Contact form is available after login.  Only heat pumps with firmware version higher than 11 are currently supported. Multiple circuits are supported, but this is not thoroughly tested because I own a single circuit pump. I would also like to support the solar and swimming pool in the application, so if you have a solar or swimming pool, please contact us. I tried and tested the application on my own heat pump and I did not cause any defects. If you still have concerns, please use the original app. The application is entirely up to you.
-      /// 
+      /// en translation: My name is Lukáš Jezný and I am the creator of MasterTherm Easy Control and thank you for downloading it. I have been developing freelance mobile applications for several years. I also own a MasterTherm heat pump on my home. The official application for controlling this pump did not suit my design and usage and therefore I tried to publish my own solution for controlling this pump. I do not plan to set temperature curves and more complex parameters yet. In my free time, I work on development and new features and add them as needed. A watch app is planned.  I'll be happy to hear any comments you make about using the app and report any issues. Contact form is available after login.  Only heat pumps with firmware version higher than 11 are currently supported. Multiple circuits are supported, but this is not thoroughly tested because I own a single circuit pump. I would also like to support the solar and swimming pool in the application, so if you have a solar or swimming pool, please contact us. I tried and tested the application on my own heat pump and I did not cause any defects. If you still have concerns, please use the original app. The application usage is entirely up to you.
+      ///
       /// Locales: en, cs
       static let introMessageJezny = Rswift.StringResource(key: "intro.message.jezny", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: OK
-      /// 
+      ///
       /// Locales: en, cs
       static let generalOk = Rswift.StringResource(key: "general.ok", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Outdoor temperature
-      /// 
+      ///
       /// Locales: en, cs
       static let heatpumpTemperatureOutside = Rswift.StringResource(key: "heatpump.temperature.outside", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Password
-      /// 
+      ///
       /// Locales: en, cs
       static let loginPasswordPlaceholder = Rswift.StringResource(key: "login.password.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Profile
-      /// 
+      ///
       /// Locales: en, cs
       static let profileTitle = Rswift.StringResource(key: "profile.title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Required
-      /// 
+      ///
       /// Locales: en, cs
       static let heatpumpTemperatureReal = Rswift.StringResource(key: "heatpump.temperature.real", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Required
-      /// 
+      ///
       /// Locales: en, cs
       static let temperatureSet = Rswift.StringResource(key: "temperature.set", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: The required heating water temperature is calculated by the control unit on the basis of an equithermal curve - the current outdoor temperature and the thermal inertia of the building.
-      /// 
+      ///
       /// Locales: en, cs
       static let heatpumpTemperatureHelp = Rswift.StringResource(key: "heatpump.temperature.help", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: To log in, use the credentials provided from MasterTherm which you use to log in on the web interface or the original mobile app. We store the credentials securely in keychain and your password will be sent securely via an encrypted connection. The app does not process your data any further.
-      /// 
+      ///
       /// Locales: en, cs
       static let loginMessage = Rswift.StringResource(key: "login.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Try again
-      /// 
+      ///
       /// Locales: en, cs
       static let generalRetry = Rswift.StringResource(key: "general.retry", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: You must have Mail installed and set up correctly.
-      /// 
+      ///
       /// Locales: en, cs
       static let profileContactError = Rswift.StringResource(key: "profile.contact.error", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
       /// en translation: Your credentials are incorrect. Please try again.
-      /// 
+      ///
       /// Locales: en, cs
       static let unauthorizedMessage = Rswift.StringResource(key: "unauthorized.message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "cs"], comment: nil)
-      
+
       /// en translation: Cancel
-      /// 
+      ///
       /// Locales: en, cs
-      static func generalCancel(_: Void = ()) -> String {
-        return NSLocalizedString("general.cancel", bundle: R.hostingBundle, comment: "")
+      static func generalCancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("general.cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "general.cancel"
+        }
+
+        return NSLocalizedString("general.cancel", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Connection failed
-      /// 
+      ///
       /// Locales: en, cs
-      static func connectionErrorTitle(_: Void = ()) -> String {
-        return NSLocalizedString("connection.error.title", bundle: R.hostingBundle, comment: "")
+      static func connectionErrorTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("connection.error.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "connection.error.title"
+        }
+
+        return NSLocalizedString("connection.error.title", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Contact
-      /// 
+      ///
       /// Locales: en, cs
-      static func profileContactButton(_: Void = ()) -> String {
-        return NSLocalizedString("profile.contact.button", bundle: R.hostingBundle, comment: "")
+      static func profileContactButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("profile.contact.button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "profile.contact.button"
+        }
+
+        return NSLocalizedString("profile.contact.button", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Continue
-      /// 
+      ///
       /// Locales: en, cs
-      static func introContinueButton(_: Void = ()) -> String {
-        return NSLocalizedString("intro.continue.button", bundle: R.hostingBundle, comment: "")
+      static func introContinueButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("intro.continue.button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "intro.continue.button"
+        }
+
+        return NSLocalizedString("intro.continue.button", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Current
-      /// 
+      ///
       /// Locales: en, cs
-      static func heatpumpTemperatureSet(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.set", bundle: R.hostingBundle, comment: "")
+      static func heatpumpTemperatureSet(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("heatpump.temperature.set", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "heatpump.temperature.set"
+        }
+
+        return NSLocalizedString("heatpump.temperature.set", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Current
-      /// 
+      ///
       /// Locales: en, cs
-      static func temperatureReal(_: Void = ()) -> String {
-        return NSLocalizedString("temperature.real", bundle: R.hostingBundle, comment: "")
+      static func temperatureReal(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("temperature.real", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "temperature.real"
+        }
+
+        return NSLocalizedString("temperature.real", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: E-mail
-      /// 
+      ///
       /// Locales: en, cs
-      static func loginEmailPlaceholder(_: Void = ()) -> String {
-        return NSLocalizedString("login.email.placeholder", bundle: R.hostingBundle, comment: "")
+      static func loginEmailPlaceholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login.email.placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login.email.placeholder"
+        }
+
+        return NSLocalizedString("login.email.placeholder", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Greetings, app is great but i am missing ...
-      /// 
+      ///
       /// Locales: en, cs
-      static func profileDescribeProblem(_: Void = ()) -> String {
-        return NSLocalizedString("profile.describe.problem", bundle: R.hostingBundle, comment: "")
+      static func profileDescribeProblem(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("profile.describe.problem", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "profile.describe.problem"
+        }
+
+        return NSLocalizedString("profile.describe.problem", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Heat pump
-      /// 
+      ///
       /// Locales: en, cs
-      static func heatpumpTitle(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.title", bundle: R.hostingBundle, comment: "")
+      static func heatpumpTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("heatpump.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "heatpump.title"
+        }
+
+        return NSLocalizedString("heatpump.title", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Heat water temperature
-      /// 
+      ///
       /// Locales: en, cs
-      static func heatpumpTemperature(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature", bundle: R.hostingBundle, comment: "")
+      static func heatpumpTemperature(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("heatpump.temperature", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "heatpump.temperature"
+        }
+
+        return NSLocalizedString("heatpump.temperature", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Home
-      /// 
+      ///
       /// Locales: en, cs
-      static func heatmodelName(_: Void = ()) -> String {
-        return NSLocalizedString("heatmodel.name", bundle: R.hostingBundle, comment: "")
+      static func heatmodelName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("heatmodel.name", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "heatmodel.name"
+        }
+
+        return NSLocalizedString("heatmodel.name", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Hot water
-      /// 
+      ///
       /// Locales: en, cs
-      static func hotwatermodelName(_: Void = ()) -> String {
-        return NSLocalizedString("hotwatermodel.name", bundle: R.hostingBundle, comment: "")
+      static func hotwatermodelName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("hotwatermodel.name", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "hotwatermodel.name"
+        }
+
+        return NSLocalizedString("hotwatermodel.name", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: If you miss a feature in the app or there is a bug, you can contact me. I will be glad for feedback. Please note that this is not a commercial application, but a hobby one.
-      /// 
+      ///
       /// Locales: en, cs
-      static func profileContactMessage(_: Void = ()) -> String {
-        return NSLocalizedString("profile.contact.message", bundle: R.hostingBundle, comment: "")
+      static func profileContactMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("profile.contact.message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "profile.contact.message"
+        }
+
+        return NSLocalizedString("profile.contact.message", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: If you no longer wish to use the application, please log out and the application will safely delete your login information from the keychain.
-      /// 
+      ///
       /// Locales: en, cs
-      static func profileLogoutMessage(_: Void = ()) -> String {
-        return NSLocalizedString("profile.logout.message", bundle: R.hostingBundle, comment: "")
+      static func profileLogoutMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("profile.logout.message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "profile.logout.message"
+        }
+
+        return NSLocalizedString("profile.logout.message", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Jiří Pálka
-      /// 
+      ///
       /// Locales: en, cs
-      static func generalNamePalka(_: Void = ()) -> String {
-        return NSLocalizedString("general.name.palka", bundle: R.hostingBundle, comment: "")
+      static func generalNamePalka(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("general.name.palka", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "general.name.palka"
+        }
+
+        return NSLocalizedString("general.name.palka", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Login
-      /// 
+      ///
       /// Locales: en, cs
-      static func loginButton(_: Void = ()) -> String {
-        return NSLocalizedString("login.button", bundle: R.hostingBundle, comment: "")
+      static func loginButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login.button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login.button"
+        }
+
+        return NSLocalizedString("login.button", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Login failed
-      /// 
+      ///
       /// Locales: en, cs
-      static func unauthorizedTitle(_: Void = ()) -> String {
-        return NSLocalizedString("unauthorized.title", bundle: R.hostingBundle, comment: "")
+      static func unauthorizedTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("unauthorized.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "unauthorized.title"
+        }
+
+        return NSLocalizedString("unauthorized.title", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Logout
-      /// 
+      ///
       /// Locales: en, cs
-      static func profileLogoutButton(_: Void = ()) -> String {
-        return NSLocalizedString("profile.logout.button", bundle: R.hostingBundle, comment: "")
+      static func profileLogoutButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("profile.logout.button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "profile.logout.button"
+        }
+
+        return NSLocalizedString("profile.logout.button", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Looks like you don't have an Internet connection. Please check the connection and try again.
-      /// 
+      ///
       /// Locales: en, cs
-      static func connectionErrorMessage(_: Void = ()) -> String {
-        return NSLocalizedString("connection.error.message", bundle: R.hostingBundle, comment: "")
+      static func connectionErrorMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("connection.error.message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "connection.error.message"
+        }
+
+        return NSLocalizedString("connection.error.message", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Lukáš Jezný
-      /// 
+      ///
       /// Locales: en, cs
-      static func generalNameJezny(_: Void = ()) -> String {
-        return NSLocalizedString("general.name.jezny", bundle: R.hostingBundle, comment: "")
+      static func generalNameJezny(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("general.name.jezny", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "general.name.jezny"
+        }
+
+        return NSLocalizedString("general.name.jezny", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: MasterTherm Easy Control
-      /// 
+      ///
       /// Locales: en, cs
-      static func generalAppname(_: Void = ()) -> String {
-        return NSLocalizedString("general.appname", bundle: R.hostingBundle, comment: "")
+      static func generalAppname(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("general.appname", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "general.appname"
+        }
+
+        return NSLocalizedString("general.appname", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: My name is Jiří Pálka and I am a freelance graphic designer. I have completely designed the UI and supervised its proper use of MasterTherm Easy Control. I hope you will like the application and ease of use.
-      /// 
+      ///
       /// Locales: en, cs
-      static func introMessagePalka(_: Void = ()) -> String {
-        return NSLocalizedString("intro.message.palka", bundle: R.hostingBundle, comment: "")
+      static func introMessagePalka(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("intro.message.palka", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "intro.message.palka"
+        }
+
+        return NSLocalizedString("intro.message.palka", bundle: bundle, comment: "")
       }
-      
-      /// en translation: My name is Lukáš Jezný and I am the creator of MasterTherm Easy Control and thank you for downloading it. I have been developing freelance mobile applications for several years. I also own a MasterTherm heat pump on my home. The official application for controlling this pump did not suit my design and usage and therefore I tried to publish my own solution for controlling this pump. I do not plan to set temperature curves and more complex parameters yet. In my free time, I work on development and new features and add them as needed. A watch app is planned.  I'll be happy to hear any comments you make about using the app and report any issues. Contact form is available after login.  Only heat pumps with firmware version higher than 11 are currently supported. Multiple circuits are supported, but this is not thoroughly tested because I own a single circuit pump. I would also like to support the solar and swimming pool in the application, so if you have a solar or swimming pool, please contact us. I tried and tested the application on my own heat pump and I did not cause any defects. If you still have concerns, please use the original app. The application is entirely up to you.
-      /// 
+
+      /// en translation: My name is Lukáš Jezný and I am the creator of MasterTherm Easy Control and thank you for downloading it. I have been developing freelance mobile applications for several years. I also own a MasterTherm heat pump on my home. The official application for controlling this pump did not suit my design and usage and therefore I tried to publish my own solution for controlling this pump. I do not plan to set temperature curves and more complex parameters yet. In my free time, I work on development and new features and add them as needed. A watch app is planned.  I'll be happy to hear any comments you make about using the app and report any issues. Contact form is available after login.  Only heat pumps with firmware version higher than 11 are currently supported. Multiple circuits are supported, but this is not thoroughly tested because I own a single circuit pump. I would also like to support the solar and swimming pool in the application, so if you have a solar or swimming pool, please contact us. I tried and tested the application on my own heat pump and I did not cause any defects. If you still have concerns, please use the original app. The application usage is entirely up to you.
+      ///
       /// Locales: en, cs
-      static func introMessageJezny(_: Void = ()) -> String {
-        return NSLocalizedString("intro.message.jezny", bundle: R.hostingBundle, comment: "")
+      static func introMessageJezny(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("intro.message.jezny", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "intro.message.jezny"
+        }
+
+        return NSLocalizedString("intro.message.jezny", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: OK
-      /// 
+      ///
       /// Locales: en, cs
-      static func generalOk(_: Void = ()) -> String {
-        return NSLocalizedString("general.ok", bundle: R.hostingBundle, comment: "")
+      static func generalOk(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("general.ok", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "general.ok"
+        }
+
+        return NSLocalizedString("general.ok", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Outdoor temperature
-      /// 
+      ///
       /// Locales: en, cs
-      static func heatpumpTemperatureOutside(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.outside", bundle: R.hostingBundle, comment: "")
+      static func heatpumpTemperatureOutside(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("heatpump.temperature.outside", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "heatpump.temperature.outside"
+        }
+
+        return NSLocalizedString("heatpump.temperature.outside", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Password
-      /// 
+      ///
       /// Locales: en, cs
-      static func loginPasswordPlaceholder(_: Void = ()) -> String {
-        return NSLocalizedString("login.password.placeholder", bundle: R.hostingBundle, comment: "")
+      static func loginPasswordPlaceholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login.password.placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login.password.placeholder"
+        }
+
+        return NSLocalizedString("login.password.placeholder", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Profile
-      /// 
+      ///
       /// Locales: en, cs
-      static func profileTitle(_: Void = ()) -> String {
-        return NSLocalizedString("profile.title", bundle: R.hostingBundle, comment: "")
+      static func profileTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("profile.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "profile.title"
+        }
+
+        return NSLocalizedString("profile.title", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Required
-      /// 
+      ///
       /// Locales: en, cs
-      static func heatpumpTemperatureReal(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.real", bundle: R.hostingBundle, comment: "")
+      static func heatpumpTemperatureReal(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("heatpump.temperature.real", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "heatpump.temperature.real"
+        }
+
+        return NSLocalizedString("heatpump.temperature.real", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Required
-      /// 
+      ///
       /// Locales: en, cs
-      static func temperatureSet(_: Void = ()) -> String {
-        return NSLocalizedString("temperature.set", bundle: R.hostingBundle, comment: "")
+      static func temperatureSet(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("temperature.set", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "temperature.set"
+        }
+
+        return NSLocalizedString("temperature.set", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: The required heating water temperature is calculated by the control unit on the basis of an equithermal curve - the current outdoor temperature and the thermal inertia of the building.
-      /// 
+      ///
       /// Locales: en, cs
-      static func heatpumpTemperatureHelp(_: Void = ()) -> String {
-        return NSLocalizedString("heatpump.temperature.help", bundle: R.hostingBundle, comment: "")
+      static func heatpumpTemperatureHelp(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("heatpump.temperature.help", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "heatpump.temperature.help"
+        }
+
+        return NSLocalizedString("heatpump.temperature.help", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: To log in, use the credentials provided from MasterTherm which you use to log in on the web interface or the original mobile app. We store the credentials securely in keychain and your password will be sent securely via an encrypted connection. The app does not process your data any further.
-      /// 
+      ///
       /// Locales: en, cs
-      static func loginMessage(_: Void = ()) -> String {
-        return NSLocalizedString("login.message", bundle: R.hostingBundle, comment: "")
+      static func loginMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login.message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login.message"
+        }
+
+        return NSLocalizedString("login.message", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Try again
-      /// 
+      ///
       /// Locales: en, cs
-      static func generalRetry(_: Void = ()) -> String {
-        return NSLocalizedString("general.retry", bundle: R.hostingBundle, comment: "")
+      static func generalRetry(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("general.retry", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "general.retry"
+        }
+
+        return NSLocalizedString("general.retry", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: You must have Mail installed and set up correctly.
-      /// 
+      ///
       /// Locales: en, cs
-      static func profileContactError(_: Void = ()) -> String {
-        return NSLocalizedString("profile.contact.error", bundle: R.hostingBundle, comment: "")
+      static func profileContactError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("profile.contact.error", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "profile.contact.error"
+        }
+
+        return NSLocalizedString("profile.contact.error", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Your credentials are incorrect. Please try again.
-      /// 
+      ///
       /// Locales: en, cs
-      static func unauthorizedMessage(_: Void = ()) -> String {
-        return NSLocalizedString("unauthorized.message", bundle: R.hostingBundle, comment: "")
+      static func unauthorizedMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("unauthorized.message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "unauthorized.message"
+        }
+
+        return NSLocalizedString("unauthorized.message", bundle: bundle, comment: "")
       }
-      
+
       fileprivate init() {}
     }
-    
+
     fileprivate init() {}
   }
-  
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
     }
-    
+
     fileprivate init() {}
   }
-  
+
   fileprivate class Class {}
-  
+
   fileprivate init() {}
 }
 
 struct _R: Rswift.Validatable {
   static func validate() throws {
-    try storyboard.validate()
+    #if os(iOS) || os(tvOS)
     try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
+    try storyboard.validate()
+    #endif
   }
-  
+
+  #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _HeatPumpInfoViewController.validate()
@@ -626,140 +1053,147 @@ struct _R: Rswift.Validatable {
       try _OutdoorTemperatureViewController.validate()
       try _TemperatureViewController.validate()
     }
-    
+
     struct _HeatPumpInfoViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "HeatPumpInfoViewController"
-      
+
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
       }
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "ic_pump", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_pump' is used in nib 'HeatPumpInfoViewController', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
-      
+
       fileprivate init() {}
     }
-    
+
     struct _InitialViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "InitialViewController"
-      
+
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "splash_logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'splash_logo' is used in nib 'InitialViewController', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
-      
+
       fileprivate init() {}
     }
-    
+
     struct _LoginViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "LoginViewController"
-      
+
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "ic_user", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_user' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "jezny", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'jezny' is used in nib 'LoginViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "palka", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'palka' is used in nib 'LoginViewController', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
-      
+
       fileprivate init() {}
     }
-    
+
     struct _MainViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "MainViewController"
-      
+
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
-      
+
       fileprivate init() {}
     }
-    
+
     struct _OutdoorTemperatureViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "OutdoorTemperatureViewController"
-      
+
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
       }
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "ic_outside", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_outside' is used in nib 'OutdoorTemperatureViewController', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
-      
+
       fileprivate init() {}
     }
-    
+
     struct _ProfileViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ProfileViewController"
-      
+
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
       }
-      
+
       fileprivate init() {}
     }
-    
+
     struct _TemperatureViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "TemperatureViewController"
-      
+
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CardView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CardView
       }
-      
+
       static func validate() throws {
         if UIKit.UIImage(named: "ic_home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_home' is used in nib 'TemperatureViewController', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
-      
+
       fileprivate init() {}
     }
-    
+
     fileprivate init() {}
   }
-  
+  #endif
+
+  #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
+      #endif
     }
-    
+
+    #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
-      
+
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-      
+
       static func validate() throws {
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
     fileprivate init() {}
   }
-  
+  #endif
+
   fileprivate init() {}
 }
