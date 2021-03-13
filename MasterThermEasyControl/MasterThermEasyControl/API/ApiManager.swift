@@ -16,7 +16,7 @@ class ApiManager: NSObject {
     let session = URLSession.shared
     
     static let BASE_URL = "https://mastertherm.vip-it.cz/plugins"
-    static let PARAMS_BASE_URL = "http://mastertherm.vip-it.cz:8091/mt"
+    static let PARAMS_BASE_URL = "https://mastertherm.vip-it.cz/mt"
     
     private var messageId = 1
     
@@ -65,7 +65,7 @@ class ApiManager: NSObject {
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "POST"
             let parameters: [String: Any] = [
-                "messageId": "\(messageId)",
+                "messageId": messageId,
                 "moduleId": moduleId,
                 "fullRange" : "true"
             ]
