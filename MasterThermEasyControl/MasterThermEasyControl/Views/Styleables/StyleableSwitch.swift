@@ -10,9 +10,9 @@ import UIKit
 
 @IBDesignable class StyleableSwitch: UISwitch {
 
-    @IBInspectable var style: String?{
+    @IBInspectable var switchStyle: String?{
         didSet{
-            setStyle(style: self.style)
+            setStyle(style: self.switchStyle)
         }
     }
     
@@ -25,7 +25,7 @@ import UIKit
     }
     
     func setStyle(style: String?) -> Void {
-        switch style! {
+        switch switchStyle! {
         case "tint":
             //self.onTintColor = Theme.tintColor                  // ON state
             //self.backgroundColor = Theme.darkBackgroundColor    // background

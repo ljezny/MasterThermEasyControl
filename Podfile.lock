@@ -22,12 +22,13 @@ PODS:
   - ReactiveKit (3.16.3)
 
 DEPENDENCIES:
-  - AppCenter
-  - Bond
-  - CocoaLumberjack/Swift
+  - AppCenter (= 3.1.0)
+  - Bond (= 7.6.6)
+  - CocoaLumberjack/Swift (= 3.6.1)
   - GZIP (= 1.2.2)
   - HandyJSON (~> 5.0.0)
-  - R.swift
+  - R.swift (= 5.1.0)
+  - ReactiveKit (= 3.16.3)
 
 SPEC REPOS:
   trunk:
@@ -52,6 +53,6 @@ SPEC CHECKSUMS:
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   ReactiveKit: faec214ebc027b371b8037e0cf6336bacd42b889
 
-PODFILE CHECKSUM: ba78e825767e3df2cb2d0ba7b074662f8b519cea
+PODFILE CHECKSUM: bb65b89607a1b86d38749a6c80e513c00f4d704b
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
