@@ -33,7 +33,7 @@ class ApiManager: NSObject {
                 "upwd" : password.sha1()
             ]
             request.httpBody = parameters.percentEscaped().data(using: .utf8)
-            DDLogDebug("login request started.")
+            DDLogDebug("login request started: \(parameters.percentEscaped())")
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     DDLogError("login request error: \(error)")

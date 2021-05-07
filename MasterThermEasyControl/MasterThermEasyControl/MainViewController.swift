@@ -36,6 +36,10 @@ class MainViewController: UIViewController {
         self.reloadData()
         
         self.present(InitialViewController(nib: R.nib.initialViewController), animated: false)
+        
+        NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) {[weak self] n in
+            self?.reloadData()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
