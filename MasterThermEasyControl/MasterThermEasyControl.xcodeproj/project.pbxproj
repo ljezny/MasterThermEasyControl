@@ -46,11 +46,6 @@
 		56B6CB1C2299CA7400277DD7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB1B2299CA7400277DD7 /* GradientView.swift */; };
 		56B6CB1F2299CBFC00277DD7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB1E2299CBFC00277DD7 /* R.generated.swift */; };
 		56B6CB222299D81B00277DD7 /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6CB212299D81B00277DD7 /* Knob.swift */; };
-		56CAF98C29094E30006F8F8E /* WatchAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CAF98B29094E30006F8F8E /* WatchAppApp.swift */; };
-		56CAF98E29094E30006F8F8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CAF98D29094E30006F8F8E /* ContentView.swift */; };
-		56CAF99029094E32006F8F8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CAF98F29094E32006F8F8E /* Assets.xcassets */; };
-		56CAF99329094E32006F8F8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CAF99229094E32006F8F8E /* Preview Assets.xcassets */; };
-		56CAF99629094E32006F8F8E /* WatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 56CAF98929094E30006F8F8E /* WatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		56D70D8D22B4F60A00F6E156 /* HotWaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */; };
 		56D70D8F22B4F66100F6E156 /* TemperatureModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */; };
 		56D70D9722B512DB00F6E156 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */; };
@@ -96,13 +91,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		56CAF99429094E32006F8F8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56315604228DC6A100C0B8D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 56CAF98829094E30006F8F8E;
-			remoteInfo = "WatchApp Watch App";
-		};
 		56D70DB322B6B6A300F6E156 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 56315604228DC6A100C0B8D8 /* Project object */;
@@ -113,17 +101,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		56CAF99729094E32006F8F8E /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				56CAF99629094E32006F8F8E /* WatchApp Watch App.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		56D70DB922B6B6A300F6E156 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,11 +157,6 @@
 		56B6CB1B2299CA7400277DD7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		56B6CB1E2299CBFC00277DD7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		56B6CB212299D81B00277DD7 /* Knob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
-		56CAF98929094E30006F8F8E /* WatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		56CAF98B29094E30006F8F8E /* WatchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAppApp.swift; sourceTree = "<group>"; };
-		56CAF98D29094E30006F8F8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		56CAF98F29094E32006F8F8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		56CAF99229094E32006F8F8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		56D70D8C22B4F60A00F6E156 /* HotWaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotWaterModel.swift; sourceTree = "<group>"; };
 		56D70D8E22B4F66100F6E156 /* TemperatureModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureModelBase.swift; sourceTree = "<group>"; };
 		56D70D9522B512DB00F6E156 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
@@ -216,13 +188,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E0CE1F2468A0177449F14C /* Pods_MasterThermEasyControl.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		56CAF98629094E30006F8F8E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +242,6 @@
 				56B6CB1E2299CBFC00277DD7 /* R.generated.swift */,
 				5631560E228DC6A100C0B8D8 /* MasterThermEasyControl */,
 				56D70DAC22B6B6A200F6E156 /* MasterThermEasyControl.Today */,
-				56CAF98A29094E30006F8F8E /* WatchApp Watch App */,
 				5631560D228DC6A100C0B8D8 /* Products */,
 				A39C377EABBF02FC7C886D3B /* Pods */,
 				D611E6C580849BD450F38F5C /* Frameworks */,
@@ -289,7 +253,6 @@
 			children = (
 				5631560C228DC6A100C0B8D8 /* Easy Control.app */,
 				56D70DA922B6B6A200F6E156 /* Easy Control Quicklook.appex */,
-				56CAF98929094E30006F8F8E /* WatchApp Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -372,25 +335,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		56CAF98A29094E30006F8F8E /* WatchApp Watch App */ = {
-			isa = PBXGroup;
-			children = (
-				56CAF98B29094E30006F8F8E /* WatchAppApp.swift */,
-				56CAF98D29094E30006F8F8E /* ContentView.swift */,
-				56CAF98F29094E32006F8F8E /* Assets.xcassets */,
-				56CAF99129094E32006F8F8E /* Preview Content */,
-			);
-			path = "WatchApp Watch App";
-			sourceTree = "<group>";
-		};
-		56CAF99129094E32006F8F8E /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				56CAF99229094E32006F8F8E /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		56D70D9422B512B300F6E156 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,34 +407,15 @@
 				5631560A228DC6A100C0B8D8 /* Resources */,
 				E9406F599A4BFB2E50F5D725 /* [CP] Embed Pods Frameworks */,
 				56D70DB922B6B6A300F6E156 /* Embed App Extensions */,
-				56CAF99729094E32006F8F8E /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				56D70DB422B6B6A300F6E156 /* PBXTargetDependency */,
-				56CAF99529094E32006F8F8E /* PBXTargetDependency */,
 			);
 			name = MasterThermEasyControl;
 			productName = MasterThermEasyControl;
 			productReference = 5631560C228DC6A100C0B8D8 /* Easy Control.app */;
-			productType = "com.apple.product-type.application";
-		};
-		56CAF98829094E30006F8F8E /* WatchApp Watch App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 56CAF99A29094E32006F8F8E /* Build configuration list for PBXNativeTarget "WatchApp Watch App" */;
-			buildPhases = (
-				56CAF98529094E30006F8F8E /* Sources */,
-				56CAF98629094E30006F8F8E /* Frameworks */,
-				56CAF98729094E30006F8F8E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "WatchApp Watch App";
-			productName = "WatchApp Watch App";
-			productReference = 56CAF98929094E30006F8F8E /* WatchApp Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		56D70DA822B6B6A200F6E156 /* MasterThermEasyControl.Today */ = {
@@ -517,7 +442,7 @@
 		56315604228DC6A100C0B8D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Lukas Jezny";
 				TargetAttributes = {
@@ -531,9 +456,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					56CAF98829094E30006F8F8E = {
-						CreatedOnToolsVersion = 14.0.1;
 					};
 					56D70DA822B6B6A200F6E156 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -564,7 +486,6 @@
 			targets = (
 				5631560B228DC6A100C0B8D8 /* MasterThermEasyControl */,
 				56D70DA822B6B6A200F6E156 /* MasterThermEasyControl.Today */,
-				56CAF98829094E30006F8F8E /* WatchApp Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -586,15 +507,6 @@
 				56315626228DC79D00C0B8D8 /* TemperatureViewController.xib in Resources */,
 				56315617228DC6A300C0B8D8 /* Assets.xcassets in Resources */,
 				56D70DD522B6E65F00F6E156 /* ProfileViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		56CAF98729094E30006F8F8E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				56CAF99329094E32006F8F8E /* Preview Assets.xcassets in Resources */,
-				56CAF99029094E32006F8F8E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,15 +650,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56CAF98529094E30006F8F8E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				56CAF98E29094E30006F8F8E /* ContentView.swift in Sources */,
-				56CAF98C29094E30006F8F8E /* WatchAppApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		56D70DA522B6B6A200F6E156 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -781,11 +684,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		56CAF99529094E32006F8F8E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 56CAF98829094E30006F8F8E /* WatchApp Watch App */;
-			targetProxy = 56CAF99429094E32006F8F8E /* PBXContainerItemProxy */;
-		};
 		56D70DB422B6B6A300F6E156 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -945,7 +843,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1EB2AABB870DBD7713726A5D /* Pods-MasterThermEasyControl.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl/MasterThermEasyControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -969,7 +866,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4A230C0024BC301D1175C04 /* Pods-MasterThermEasyControl.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MasterThermEasyControl/MasterThermEasyControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -986,70 +882,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		56CAF99829094E32006F8F8E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WatchApp Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 42NG6AU5AL;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchApp;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = cz.ljezny.MasterThermEasyControl;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ljezny.MasterThermEasyControl.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Debug;
-		};
-		56CAF99929094E32006F8F8E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WatchApp Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 42NG6AU5AL;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchApp;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = cz.ljezny.MasterThermEasyControl;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ljezny.MasterThermEasyControl.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -1120,15 +952,6 @@
 			buildConfigurations = (
 				5631561F228DC6A300C0B8D8 /* Debug */,
 				56315620228DC6A300C0B8D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		56CAF99A29094E32006F8F8E /* Build configuration list for PBXNativeTarget "WatchApp Watch App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				56CAF99829094E32006F8F8E /* Debug */,
-				56CAF99929094E32006F8F8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
